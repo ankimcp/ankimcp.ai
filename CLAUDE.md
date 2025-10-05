@@ -41,7 +41,7 @@ hugo mod get -u github.com/imfing/hextra
 hugo mod tidy
 
 # Initialize module (only needed once)
-hugo mod init github.com/anki-mcp-organization/ankimcp.ai
+hugo mod init github.com/anki-mcp/ankimcp.ai
 ```
 
 ### Content Creation
