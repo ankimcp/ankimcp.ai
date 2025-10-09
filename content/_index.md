@@ -36,9 +36,15 @@ layout: hextra-home
     style="background: radial-gradient(ellipse at 50% 80%,rgba(142,53,74,0.15),hsla(0,0%,100%,0));"
   >}}
   {{< hextra/feature-card
-    title="More Coming Soon"
-    subtitle="Free, open source, and actively developed - more engaging features on the horizon"
+    title="Audio Flashcard Creation"
+    subtitle="Generate native pronunciation audio with AI voice services and embed directly into your Anki cards"
     class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(221,210,59,0.15),hsla(0,0%,100%,0));"
+  >}}
+  {{< hextra/feature-card
+    title="Pre-built Prompts"
+    subtitle="Start immediately with ready-to-use prompts for common Anki workflows and learning scenarios"
+    class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
+    style="background: radial-gradient(ellipse at 50% 80%,rgba(76,175,80,0.15),hsla(0,0%,100%,0));"
   >}}
 {{< /hextra/feature-grid >}}
