@@ -47,4 +47,10 @@ layout: hextra-home
     class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(76,175,80,0.15),hsla(0,0%,100%,0));"
   >}}
+  {{< hextra/feature-card
+    title="More Coming Soon"
+    subtitle="Free, open source, and actively developed - more engaging features on the horizon"
+    class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
+    style="background: radial-gradient(ellipse at 50% 80%,rgba(194,97,254,0.15),hsla(0,0%,100%,0));"
+  >}}
 {{< /hextra/feature-grid >}}
