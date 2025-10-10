@@ -46,7 +46,7 @@ params:
   banner:
     key: 'release-v0.6.0'
     message: |
-      🎉 **v0.6.0 Released!** Check out the latest version with new features and improvements. [Download now →](https://github.com/anki-mcp/anki-mcp-desktop/releases/tag/v0.6.0)
+      🎉 **v0.6.0 Released!** Check out the latest version with new features and improvements. [Read more →](/blog/v0.6.0-twenty-rules-prompt) | [Download →](https://github.com/anki-mcp/anki-mcp-desktop/releases/tag/v0.6.0)
 
   analytics:
     umami:
