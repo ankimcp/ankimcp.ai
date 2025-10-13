@@ -35,3 +35,5 @@ This is an open-source project. Visit our [GitHub repository](https://github.com
 ### Credits
 
 This website is built with [Hextra](https://imfing.github.io/hextra/), a modern, fast, and flexible Hugo theme.
+
+{{< newsletter >}}

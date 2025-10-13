@@ -4,7 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Hugo static site for documenting the Anki MCP Desktop project, hosted at `ankimcp.ai`. The site uses the Hextra theme via Hugo Modules and will be deployed to GitHub Pages (initially, later self-hosted).
+This is a Hugo static site for documenting the Anki MCP Desktop project, hosted at `ankimcp.ai`.
+
+**What is Anki MCP?** A Model Context Protocol (MCP) server that enables AI assistants (like Claude) to interact with Anki flashcard decks - create cards, search content, and manage reviews through natural language. This website documents the desktop application; the actual MCP server code lives at https://github.com/anki-mcp/anki-mcp-desktop.
+
+The site uses the Hextra theme via Hugo Modules and deploys to GitHub Pages (with plans to self-host later).
 
 **Important**: "Anki" is a registered trademark of Ankitects Pty Ltd. This is an independent community project NOT affiliated with Ankitects. Always include trademark disclaimers when adding content.
 
@@ -67,6 +71,8 @@ This site uses **Hugo Modules** (not git submodules) to manage the Hextra theme.
 ### Configuration Strategy
 Start with minimal `hugo.yaml` config and add features incrementally. Test after each addition. Hextra provides sensible defaults - only override what's necessary.
 
+**Banner System**: The site uses a key-based banner system (see `params.banner.key` in hugo.yaml). When you update the banner message, **always change the key value** (e.g., from `release-v0.6.0` to `release-v0.7.0`). This forces the banner to reappear for users who previously dismissed it.
+
 ### Content Structure
 ```
 content/
@@ -106,8 +112,8 @@ content/
 
 ### Trademark Compliance
 Always include disclaimers when referencing Anki:
-- Footer: "Anki® is a registered trademark of Anki Universal. This is an independent community project not affiliated with Anki Universal."
-- Prominent placement on homepage
+- Correct wording: "Anki® is a registered trademark of Ankitects Pty Ltd. This is an independent community project not affiliated with Ankitects Pty Ltd."
+- Include in footer and prominently on homepage
 
 ## Common Issues
 
