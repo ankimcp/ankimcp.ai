@@ -27,7 +27,9 @@
         <div class="hx:flex hx:w-full hx:flex-col hx:items-center hx:sm:items-start">
             {{- if (.Site.Params.footer.displayPoweredBy | default true) }}
             <div class="hx:font-semibold hx:flex hx:gap-4 hx:text-sm">
-                <a href="mailto:support@ankimcp.ai" class="hover:hx:text-gray-900 hx:dark:hover:text-gray-100">Email</a>
+                <a class="ml-onclick-form hover:hx:text-gray-900 hx:dark:hover:text-gray-100" href="javascript:void(0)" onclick="ml('show', 'ZGJ6BF', true)">Newsletter</a>
+                <span>·</span>
+                <a href="mailto:support@ankimcp.ai" class="hover:hx:text-gray-900 hx:dark:hover:text-gray-100">Email Us</a>
                 <span>·</span>
                 <a href="https://discord.gg/JVNcxNB3e7" target="_blank" rel="noopener noreferrer" class="hover:hx:text-gray-900 hx:dark:hover:text-gray-100">Discord</a>
                 <span>·</span>
