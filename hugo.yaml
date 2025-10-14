@@ -32,6 +32,12 @@ markup:
     renderer:
       unsafe: true
 
+minify:
+  disableJS: true
+  tdewolff:
+    html:
+      keepWhitespace: false
+
 params:
   description: AI-powered flashcard management for Anki using Model Context Protocol
 
