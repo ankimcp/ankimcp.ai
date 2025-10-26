@@ -19,12 +19,19 @@ Anki MCP lets AI assistants like Claude or ChatGPT talk to your Anki flashcards.
 
 Pick the one that matches how you use AI:
 
-### Desktop Mode
+### Desktop Mode (Claude Desktop)
 **Best for: Claude Desktop users**
 
-Install once, use anytime. Your AI assistant runs on your computer and connects directly to Anki.
+Install once, use anytime. One-click installation with the MCPB bundle.
 
 → [Desktop Installation Guide](installation/desktop)
+
+### MCP Clients Mode
+**Best for: Cursor IDE, Cline users**
+
+Use with popular MCP desktop clients via STDIO mode. Simple NPM package configuration.
+
+→ [MCP Clients Installation Guide](installation/mcp-clients)
 
 ### Web Mode
 **Best for: ChatGPT, Claude.ai, or any web-based AI**

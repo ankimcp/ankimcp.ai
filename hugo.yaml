@@ -50,9 +50,9 @@ params:
     - /images/og-image.jpg
 
   banner:
-    key: 'release-v0.6.0'
+    key: 'release-v0.7.1'
     message: |
-      🎉 **v0.6.0 Released!** Check out the latest version with new features and improvements. [Read more →](/blog/v0.6.0-twenty-rules-prompt) | [Download →](https://github.com/anki-mcp/anki-mcp-desktop/releases/tag/v0.6.0)
+      🎉 **v0.7.1 Released!** STDIO mode support for Cursor IDE and Cline. [Read more →](/blog/v0.7.1-stdio-mode-release) | [Download →](https://github.com/anki-mcp/anki-mcp-desktop/releases/tag/v0.7.1)
 
   analytics:
     umami:

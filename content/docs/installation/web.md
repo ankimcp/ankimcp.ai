@@ -54,7 +54,7 @@ npm install -g anki-mcp-http
 Then you can run it with the shorter command:
 
 ```bash
-ankimcp
+anki-mcp-http
 ```
 
 **Either way**, you'll see:

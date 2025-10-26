@@ -71,18 +71,28 @@ This site uses **Hugo Modules** (not git submodules) to manage the Hextra theme.
 ### Configuration Strategy
 Start with minimal `hugo.yaml` config and add features incrementally. Test after each addition. Hextra provides sensible defaults - only override what's necessary.
 
-**Banner System**: The site uses a key-based banner system (see `params.banner.key` in hugo.yaml). When you update the banner message, **always change the key value** (e.g., from `release-v0.6.0` to `release-v0.7.0`). This forces the banner to reappear for users who previously dismissed it.
+**Critical Configuration Details**:
+- **JS Minification Disabled**: `minify.disableJS: true` in hugo.yaml is REQUIRED. JS minification breaks the MailerLite newsletter popup integration. Never enable JS minification.
+- **Banner System**: Uses a key-based banner system (`params.banner.key` in hugo.yaml). When updating the banner message, **always change the key value** (e.g., from `release-v0.6.0` to `release-v0.7.0`) to force it to reappear for users who previously dismissed it.
+- **Analytics**: Site uses Umami analytics (self-hosted at analytics.anatoly.dev). Configuration is in `params.analytics.umami`.
+- **MailerLite Integration**: Newsletter popup is embedded directly in the homepage (`content/_index.md`) with an onclick handler. Do not modify this integration without testing the popup functionality.
 
 ### Content Structure
 ```
 content/
-├── _index.md              # Homepage
+├── _index.md              # Homepage (includes MailerLite popup integration)
 ├── docs/                  # Documentation section
 │   ├── _index.md
-│   ├── getting-started/
-│   ├── tools-reference/
-│   └── development/
-└── blog/                  # Blog posts (optional)
+│   ├── installation/      # Installation guides for different modes
+│   │   ├── desktop.md    # Desktop mode (Claude Desktop)
+│   │   ├── mcp-clients.md # STDIO mode (Cursor, Cline)
+│   │   └── web.md        # Web mode (ChatGPT, Claude.ai)
+│   ├── audio-flashcards.md
+│   ├── prompts.md
+│   └── getting-help.md
+├── blog/                  # Release announcements and updates
+│   └── _index.md
+└── about/                 # About page
     └── _index.md
 ```
 
@@ -114,6 +124,15 @@ content/
 Always include disclaimers when referencing Anki:
 - Correct wording: "Anki® is a registered trademark of Ankitects Pty Ltd. This is an independent community project not affiliated with Ankitects Pty Ltd."
 - Include in footer and prominently on homepage
+
+### Release Announcements
+When announcing a new version:
+1. Create a blog post in `content/blog/` following the naming pattern: `vX.Y.Z-feature-name-release.md`
+2. Update the banner in `hugo.yaml`:
+   - Change `params.banner.key` to match the version (e.g., `release-v0.7.0`)
+   - Update the message with the new version number and blog post link
+   - Include a download link to the GitHub release
+3. Blog posts should highlight key features and link to GitHub release notes for full details
 
 ## Common Issues
 
