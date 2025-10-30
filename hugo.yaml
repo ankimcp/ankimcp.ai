@@ -50,9 +50,9 @@ params:
     - /images/og-image.jpg
 
   banner:
-    key: 'release-v0.7.1'
+    key: 'release-v0.8.0'
     message: |
-      🎉 **v0.7.1 Released!** STDIO mode support for Cursor IDE and Cline. [Read more →](/blog/v0.7.1-stdio-mode-release) | [Download →](https://github.com/anki-mcp/anki-mcp-desktop/releases/tag/v0.7.1)
+      🎉 **v0.8.0 Released!** Integrated ngrok tunneling - one command to connect web-based AI assistants! [Read more →](/blog/v0.8.0-integrated-ngrok-tunneling) | [Download →](https://github.com/anki-mcp/anki-mcp-desktop/releases/tag/v0.8.0)
 
   analytics:
     umami:

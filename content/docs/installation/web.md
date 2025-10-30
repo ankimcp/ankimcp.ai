@@ -28,19 +28,24 @@ Your Computer                    The Internet               AI Assistant
 3. **Node.js** - To run the server
    Download: [nodejs.org](https://nodejs.org/) (version 20 or newer)
 
-4. **ngrok** - Creates a secure tunnel to your computer
-   Download: [ngrok.com](https://ngrok.com)
+4. **ngrok** (for tunneling) - Creates a secure tunnel to your computer
+   - Download: [ngrok.com](https://ngrok.com)
+   - Install: `npm install -g ngrok`
+   - Get auth token from [dashboard.ngrok.com](https://dashboard.ngrok.com)
+   - Setup: `ngrok config add-authtoken <your-token>`
 
 ## Installation Steps
 
-### Step 1: Start the Server
+### Method 1: One Command (Recommended - v0.8.0+)
+
+**New in v0.8.0:** Start the server with integrated ngrok tunneling using just one command!
 
 **Option A: Quick Start (No Installation)**
 
 Open your terminal and run:
 
 ```bash
-npx anki-mcp-http
+npx anki-mcp-http --ngrok
 ```
 
 **Option B: Install Globally (Shorter Command)**
@@ -54,41 +59,71 @@ npm install -g anki-mcp-http
 Then you can run it with the shorter command:
 
 ```bash
-anki-mcp-http
+anki-mcp-http --ngrok
 ```
 
 **Either way**, you'll see:
+```
+╔════════════════════════════════════════════════════════════════╗
+║              AnkiMCP HTTP Server v0.8.0                        ║
+╚════════════════════════════════════════════════════════════════╝
+
+🚀 Server running on: http://127.0.0.1:3000
+🔌 AnkiConnect URL:   http://localhost:8765
+🌐 Ngrok tunnel:      https://abc123.ngrok-free.app
+
+Share this URL with your AI assistant:
+  https://abc123.ngrok-free.app
+```
+
+Copy the ngrok URL (the `https://abc123.ngrok-free.app` part) - you'll need it in the next step.
+
+**Leave this terminal window open** - the server needs to stay running.
+
+**Benefits:**
+- ✅ One command instead of two
+- ✅ Automatic cleanup when you press Ctrl+C
+- ✅ URL displayed clearly in the banner
+- ✅ Works with custom ports: `anki-mcp-http --port 8080 --ngrok`
+
+### Method 2: Manual Setup (Alternative)
+
+If you prefer to manage ngrok separately, you can still use the manual method:
+
+**Step 1:** Start the server in one terminal:
+
+```bash
+npx anki-mcp-http
+```
+
+You'll see:
 ```
 🚀 Server running on: http://127.0.0.1:3000
 🔌 AnkiConnect URL: http://localhost:8765
 ```
 
-**Leave this terminal window open** - the server needs to stay running.
-
-### Step 2: Create a Tunnel
-
-Open a **second** terminal window and run:
+**Step 2:** Open a **second** terminal and start ngrok:
 
 ```bash
 ngrok http 3000
 ```
 
-You'll see something like:
+You'll see:
 ```
-Forwarding  https://abc123.ngrok.io → http://localhost:3000
+Forwarding  https://abc123.ngrok-free.app → http://localhost:3000
 ```
 
-Copy the URL (the part that says `https://abc123.ngrok.io`) - you'll need it next.
+Copy the URL (the `https://abc123.ngrok-free.app` part).
 
-**Keep this terminal window open too.**
+**Keep both terminal windows open.**
 
-### Step 3: Connect Your AI
+## Connect Your AI
 
-Now connect your AI assistant to the server.
+Now connect your AI assistant to the server using the ngrok URL you copied.
 
 **For Claude.ai:**
 
-In Claude's web interface, go to Settings → Connectors → Add custom connector, then paste your ngrok URL (the `https://abc123.ngrok.io` from Step 2).
+In Claude's web interface, go to Settings → Connectors → Add custom connector, then paste your ngrok URL.
 
 Full tutorial: [Getting Started with Custom Connectors](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
 
@@ -120,20 +155,30 @@ Once connected, your AI can:
 You can customize the server:
 
 ```bash
+# Start with ngrok tunnel (v0.8.0+)
+npx anki-mcp-http --ngrok
+
 # Use a different port
 npx anki-mcp-http --port 8080
+
+# Different port + ngrok
+npx anki-mcp-http --port 8080 --ngrok
 
 # Allow connections from other computers on your network
 npx anki-mcp-http --host 0.0.0.0
 
 # Connect to AnkiConnect on another computer
 npx anki-mcp-http --anki-connect http://192.168.1.100:8765
+
+# Combine all options
+npx anki-mcp-http --port 8080 --anki-connect http://localhost:8765 --ngrok
 ```
 
 ## Troubleshooting
 
 **AI says it can't connect:**
-- Make sure both terminal windows are still open (server + ngrok)
+- If using `--ngrok`: Make sure the terminal window is still open
+- If using manual method: Make sure both terminal windows are still open (server + ngrok)
 - Check that Anki Desktop is running
 - Try the ngrok URL in your browser - you should see a response
 
@@ -141,16 +186,26 @@ npx anki-mcp-http --anki-connect http://192.168.1.100:8765
 - Make sure Node.js is installed: `node --version`
 - Should show v20 or higher
 
+**ngrok fails with --ngrok flag:**
+- Make sure ngrok is installed: `npm install -g ngrok`
+- Make sure you've configured your auth token: `ngrok config add-authtoken <your-token>`
+- Get your token from [dashboard.ngrok.com](https://dashboard.ngrok.com)
+- If ngrok fails, the server will still start in local mode (you can use manual method)
+
 **ngrok tunnel closes:**
 - ngrok free accounts have time limits
-- Just restart ngrok and give your AI the new URL
+- Just restart the server (with `--ngrok`) or ngrok manually
+- Your AI will need the new URL
 
 **Still not working?**
 See [Getting Help](../getting-help) for support options.
 
 ## Security Note
 
-The ngrok URL is public (anyone with the link can access it). Only share it with trusted AI assistants. When you're done studying, you can close both terminal windows to stop the server.
+The ngrok URL is public (anyone with the link can access it). Only share it with trusted AI assistants. When you're done studying:
+
+- **With `--ngrok`:** Press Ctrl+C to stop both the server and tunnel
+- **With manual method:** Close both terminal windows to stop the server and tunnel
 
 ## Next Steps
 

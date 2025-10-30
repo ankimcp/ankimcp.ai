@@ -8,15 +8,15 @@ This is a Hugo static site for documenting the Anki MCP Desktop project, hosted 
 
 **What is Anki MCP?** A Model Context Protocol (MCP) server that enables AI assistants (like Claude) to interact with Anki flashcard decks - create cards, search content, and manage reviews through natural language. This website documents the desktop application; the actual MCP server code lives at https://github.com/anki-mcp/anki-mcp-desktop.
 
-The site uses the Hextra theme via Hugo Modules and deploys to GitHub Pages (with plans to self-host later).
+The site uses the Hextra theme via Hugo Modules and deploys to GitHub Pages with a custom domain.
 
 **Important**: "Anki" is a registered trademark of Ankitects Pty Ltd. This is an independent community project NOT affiliated with Ankitects. Always include trademark disclaimers when adding content.
 
 ## Technology Stack
 
-- **Hugo** (extended version required) - Static site generator
+- **Hugo** (extended version required) - Static site generator (production uses v0.151.0)
 - **Hextra theme** - Installed as Hugo Module (NOT git submodule)
-- **Go** - Required for Hugo Modules functionality
+- **Go** - Required for Hugo Modules functionality (v1.21 in CI/CD)
 - **GitHub Actions** - Automated deployment to GitHub Pages
 
 ## Development Commands
@@ -72,10 +72,22 @@ This site uses **Hugo Modules** (not git submodules) to manage the Hextra theme.
 Start with minimal `hugo.yaml` config and add features incrementally. Test after each addition. Hextra provides sensible defaults - only override what's necessary.
 
 **Critical Configuration Details**:
-- **JS Minification Disabled**: `minify.disableJS: true` in hugo.yaml is REQUIRED. JS minification breaks the MailerLite newsletter popup integration. Never enable JS minification.
-- **Banner System**: Uses a key-based banner system (`params.banner.key` in hugo.yaml). When updating the banner message, **always change the key value** (e.g., from `release-v0.6.0` to `release-v0.7.0`) to force it to reappear for users who previously dismissed it.
-- **Analytics**: Site uses Umami analytics (self-hosted at analytics.anatoly.dev). Configuration is in `params.analytics.umami`.
-- **MailerLite Integration**: Newsletter popup is embedded directly in the homepage (`content/_index.md`) with an onclick handler. Do not modify this integration without testing the popup functionality.
+
+⚠️ **JS MINIFICATION MUST STAY DISABLED** ⚠️
+- `minify.disableJS: true` in hugo.yaml is **REQUIRED** and **NON-NEGOTIABLE**
+- JS minification breaks the MailerLite newsletter popup integration
+- Never enable JS minification under any circumstances
+
+**Banner System**:
+- Uses a key-based dismissal system (`params.banner.key` in hugo.yaml)
+- Hextra stores banner dismissal state in browser localStorage using the key
+- **Always change the key value** when updating the message (e.g., `release-v0.6.0` → `release-v0.7.0`)
+- Changing the key forces the banner to reappear for all users who dismissed the previous version
+- Format: Use semantic versioning for releases, or descriptive keys for other announcements
+
+**Analytics**: Site uses Umami analytics (self-hosted at analytics.anatoly.dev). Configuration is in `params.analytics.umami`.
+
+**MailerLite Integration**: Newsletter popup is embedded directly in the homepage (`content/_index.md`) with an onclick handler. Do not modify this integration without testing the popup functionality.
 
 ### Content Structure
 ```
@@ -99,15 +111,21 @@ content/
 ## Deployment
 
 ### GitHub Pages
-- Automated via GitHub Actions workflow (`.github/workflows/`)
-- Builds on push to `main` branch
-- Publishes to `gh-pages` branch
-- Custom domain configured via DNS
+- Automated via GitHub Actions workflow (`.github/workflows/hugo.yml`)
+- Builds on push to `main` branch or manual dispatch
+- Uses Hugo v0.151.0 extended and Go v1.21
+- Uploads artifact to GitHub Pages deployment
+- Custom domain: ankimcp.ai (configured via Porkbun DNS)
 
 ### DNS (Porkbun)
 - A records point to GitHub Pages IPs
 - CNAME for www subdomain
 - HTTPS enabled via GitHub Pages
+
+### Build Process
+The CI/CD pipeline runs:
+1. `hugo mod get` - Download Hugo modules
+2. `hugo --gc --minify` - Build with garbage collection and minification (CSS/HTML only, JS excluded)
 
 ## Content Guidelines
 
