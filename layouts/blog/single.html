@@ -1,0 +1,58 @@
+{{ define "main" }}
+<article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+  <main class="hx:w-full hx:min-w-0 hx:max-w-6xl hx:px-6 hx:pt-4 hx:md:px-12">
+    <!-- Breadcrumb -->
+    <div class="hx:mt-1.5 hx:flex hx:items-center hx:gap-1 hx:overflow-hidden hx:text-sm hx:text-gray-500 hx:dark:text-gray-400 hx:contrast-more:text-current">
+      <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100">
+        <a href="/blog/">Blog</a>
+      </div>
+      <svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+      </svg>
+      <div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">
+        {{ .Title }}
+      </div>
+    </div>
+
+    <!-- Title -->
+    <h1 class="hx:mt-2 hx:text-4xl hx:font-bold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100">
+      {{ .Title }}
+    </h1>
+
+    <!-- Author and Date -->
+    <div class="hx:mt-4 hx:mb-16 hx:text-gray-500 hx:dark:text-gray-400 hx:text-sm hx:flex hx:items-center hx:flex-wrap hx:gap-y-2">
+      {{ if .Params.author }}
+        <span class="hx:mr-1">By
+          {{ if .Params.author_link }}
+            <a href="{{ .Params.author_link }}" class="hx:font-medium hx:text-gray-700 hx:dark:text-gray-300 hover:hx:text-primary-600 hx:dark:hover:text-primary-500" target="_blank" rel="noopener">
+              {{ .Params.author }}
+            </a>
+          {{ else }}
+            <span class="hx:font-medium hx:text-gray-700 hx:dark:text-gray-300">{{ .Params.author }}</span>
+          {{ end }}
+        </span>
+        <span class="hx:mr-1">•</span>
+      {{ end }}
+      <span class="hx:mr-1">{{ .Date.Format "January 2, 2006" }}</span>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      {{ .Content }}
+    </div>
+
+    <!-- Tags if present -->
+    {{ if .Params.tags }}
+    <div class="hx:mt-16 hx:pt-8 hx:border-t hx:border-gray-200 hx:dark:border-gray-700">
+      <div class="hx:flex hx:flex-wrap hx:gap-2">
+        {{ range .Params.tags }}
+        <span class="hx:inline-flex hx:items-center hx:rounded-md hx:bg-gray-50 hx:px-2 hx:py-1 hx:text-xs hx:font-medium hx:text-gray-600 hx:ring-1 hx:ring-inset hx:ring-gray-500/10 hx:dark:bg-gray-400/10 hx:dark:text-gray-400 hx:dark:ring-gray-400/20">
+          {{ . }}
+        </span>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </main>
+</article>
+{{ end }}

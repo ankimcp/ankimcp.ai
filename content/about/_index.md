@@ -19,10 +19,10 @@ Anki MCP Desktop is an independent, community-driven project that bridges the ga
 
 ### Created By
 
-**[Anatoly](https://anatoly.dev)** - Creator and Lead Developer
+**[Anatoly](https://anatoly.dev)**
 [LinkedIn](https://www.linkedin.com/in/anatolyt/) | [Personal Site](https://anatoly.dev)
 
-I'm a developer and daily Anki user who got tired of manually formatting flashcards. When Anthropic released the Model Context Protocol (MCP), I immediately saw the potential to connect AI assistants directly to Anki. What started as a personal tool to speed up my own studying has grown into a project used by learners worldwide.
+I'm a fullstack developer and student, and daily Anki user who got tired of manually formatting flashcards. When Anthropic released the Model Context Protocol (MCP), I immediately saw the potential to connect AI assistants directly to Anki. What started as a personal tool to speed up my own studying has grown into a project used by learners worldwide.
 
 This project is actively maintained and developed with assistance from [Claude Code](https://claude.ai/code), Anthropic's AI coding assistant. Every feature is tested in my own daily study routine before release.
 
