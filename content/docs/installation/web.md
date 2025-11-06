@@ -4,6 +4,7 @@ linkTitle: "Web Installation"
 description: "Step-by-step guide to connect web-based AI assistants like ChatGPT, Claude.ai, and Gemini to your Anki flashcards using integrated ngrok tunneling."
 keywords: ["chatgpt anki", "claude.ai anki", "anki web mode", "ai flashcards online", "ngrok anki", "gemini anki"]
 weight: 2
+sitemap_priority: 0.9
 ---
 
 This guide is for **web-based AI assistants** like ChatGPT, Claude.ai, Gemini, or any AI that works in a browser. If you use Claude Desktop, see the [Desktop Installation Guide](../desktop) instead.

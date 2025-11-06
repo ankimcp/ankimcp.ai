@@ -1,5 +1,6 @@
 ---
 title: Documentation
+sitemap_priority: 0.8
 ---
 
 Welcome to Anki MCP documentation.

@@ -4,6 +4,7 @@ linkTitle: "Desktop Installation"
 description: "Easy 5-minute installation guide to connect Claude Desktop with your Anki flashcards. Create cards instantly and review with AI-powered natural language."
 keywords: ["anki mcp desktop", "claude desktop anki", "install anki mcp", "ai flashcards claude", "anki integration"]
 weight: 1
+sitemap_priority: 0.9
 ---
 
 This guide is for **Claude Desktop** users. If you use ChatGPT or Claude.ai, see the [Web Installation Guide](../web) instead.
