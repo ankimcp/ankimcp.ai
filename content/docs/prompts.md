@@ -1,5 +1,8 @@
 ---
-title: Using Prompts
+title: "AI Prompts for Better Anki Flashcards - Twenty Rules & Best Practices"
+linkTitle: "Using Prompts"
+description: "Optimize flashcard creation with built-in AI prompts following the Twenty Rules of Knowledge Formulation. Create more effective cards that improve retention."
+keywords: ["anki ai prompts", "twenty rules anki", "flashcard best practices", "ai study prompts", "anki formulation rules"]
 weight: 25
 ---
 

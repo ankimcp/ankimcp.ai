@@ -1,6 +1,10 @@
 ---
-title: Creating Audio Flashcards
+title: "Create AI Audio Flashcards for Anki - Voice & Pronunciation Cards"
+linkTitle: "Audio Flashcards"
+description: "Generate native pronunciation audio with AI voice services like ElevenLabs and embed directly into Anki flashcards. Perfect for language learning."
+keywords: ["anki audio flashcards", "ai voice flashcards", "elevenlabs anki", "pronunciation cards", "language learning anki"]
 weight: 30
+toc: true
 ---
 
 Learn how to create flashcards with audio content using Anki MCP's `mediaActions` tool in combination with audio-generating MCP servers.

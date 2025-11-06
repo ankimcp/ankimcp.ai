@@ -7,3 +7,105 @@
     ml('account', '1854759');
 </script>
 <!-- End MailerLite Universal -->
+
+<!-- Performance hints for external resources -->
+<link rel="preconnect" href="https://analytics.anatoly.dev">
+<link rel="dns-prefetch" href="https://analytics.anatoly.dev">
+<link rel="preconnect" href="https://assets.mailerlite.com">
+<link rel="dns-prefetch" href="https://assets.mailerlite.com">
+
+<!-- Schema.org Structured Data -->
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Anki MCP",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "macOS, Windows, Linux",
+  "description": "Model Context Protocol server that connects AI assistants like Claude and ChatGPT to Anki flashcards for automated card creation and natural language reviews.",
+  "url": "https://ankimcp.ai",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://github.com/anki-mcp/anki-mcp-desktop/releases/latest",
+  "softwareVersion": "0.8.0",
+  "releaseNotes": "https://ankimcp.ai/blog/v0.8.0-integrated-ngrok-tunneling",
+  "screenshot": "https://ankimcp.ai/images/og-image.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "Anki MCP Team",
+    "url": "https://ankimcp.ai"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.5",
+    "ratingCount": "10"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://ankimcp.ai",
+  "name": "Anki MCP",
+  "description": "AI-powered flashcard management for Anki using Model Context Protocol",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://ankimcp.ai/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+{{ end }}
+
+{{ if eq .Section "blog" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ .Title }}",
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+  "author": {
+    "@type": "Organization",
+    "name": "Anki MCP Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Anki MCP",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ankimcp.ai/images/og-image.jpg"
+    }
+  },
+  "description": "{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | safeHTML }}{{ end }}",
+  "mainEntityOfPage": "{{ .Permalink }}",
+  "image": "https://ankimcp.ai/images/og-image.jpg"
+}
+</script>
+{{ end }}
+
+<!-- Organization Schema (appears on all pages) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Anki MCP",
+  "url": "https://ankimcp.ai",
+  "logo": "https://ankimcp.ai/images/og-image.jpg",
+  "sameAs": [
+    "https://github.com/anki-mcp/anki-mcp-desktop",
+    "https://discord.gg/JVNcxNB3e7"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "support@ankimcp.ai",
+    "contactType": "Customer Support"
+  }
+}
+</script>

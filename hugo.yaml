@@ -2,6 +2,20 @@ baseURL: https://ankimcp.ai/
 languageCode: en-us
 title: Anki MCP
 
+# Sitemap configuration for better SEO
+sitemap:
+  changefreq: weekly
+  filename: sitemap.xml
+  priority: 0.5
+
+# Enhanced frontmatter configuration
+frontmatter:
+  lastmod:
+    - lastmod
+    - :git
+    - date
+    - publishDate
+
 module:
   imports:
     - path: github.com/imfing/hextra
@@ -39,12 +53,24 @@ minify:
       keepWhitespace: false
 
 params:
-  description: AI-powered flashcard management for Anki using Model Context Protocol
+  description: Connect AI assistants like Claude and ChatGPT to your Anki flashcards. Create cards instantly, review with natural language, and study smarter with AI-powered spaced repetition.
+
+  # SEO metadata
+  author: Anki MCP Team
+  keywords: ["anki mcp", "claude anki", "chatgpt anki", "ai flashcards", "anki integration", "model context protocol", "spaced repetition ai"]
 
   # OpenGraph metadata for social sharing (WhatsApp, Facebook, etc)
   opengraph:
-    title: Anki MCP - AI-powered flashcard management
-    description: Transform your Anki experience with AI - natural language reviews and instant card creation
+    title: "Anki MCP - Connect Claude & ChatGPT to Anki Flashcards"
+    description: Transform Anki into an AI-powered study system. Natural language reviews, instant card creation, and audio flashcards with Claude, ChatGPT, and web-based AI.
+    type: website
+    locale: en_US
+
+  # Twitter Card metadata
+  twitter:
+    card: summary_large_image
+    title: "Anki MCP - AI-Powered Flashcard Management"
+    description: Connect Claude & ChatGPT to your Anki flashcards for instant card creation and natural language reviews.
 
   images:
     - /images/og-image.jpg

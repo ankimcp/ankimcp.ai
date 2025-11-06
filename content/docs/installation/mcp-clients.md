@@ -1,5 +1,8 @@
 ---
-title: MCP Clients Installation
+title: "Install Anki MCP for Cursor, Cline & MCP Clients"
+linkTitle: "MCP Clients"
+description: "Configure Anki MCP with STDIO-compatible MCP clients like Cursor IDE, Cline, and Zed. Connect your AI coding assistant to Anki flashcards."
+keywords: ["anki mcp cursor", "cline anki", "mcp client anki", "cursor ide flashcards", "stdio mode anki"]
 weight: 2
 ---
 

@@ -1,17 +1,19 @@
 ---
-title: Anki MCP
+title: "Anki MCP - Connect Claude & ChatGPT to Your Anki Flashcards"
+description: "Transform Anki into an AI-powered study system. Create flashcards instantly, review with natural language, and generate audio cards with Claude, ChatGPT, and other AI assistants."
+keywords: ["anki mcp", "claude anki", "chatgpt anki", "ai flashcards", "anki integration", "model context protocol"]
 layout: hextra-home
 ---
 
 <div class="hx:mt-6 hx:mb-6">
 {{< hextra/hero-headline >}}
-  Transform your Anki experience&nbsp;<br class="hx:sm:block hx:hidden" />with AI
+  Connect Claude & ChatGPT&nbsp;<br class="hx:sm:block hx:hidden" />to Your Anki Flashcards
 {{< /hextra/hero-headline >}}
 </div>
 
 <div class="hx:mb-12">
 {{< hextra/hero-subtitle >}}
-  AI-powered flashcard management for Anki&nbsp;<br class="hx:sm:block hx:hidden" />using Model Context Protocol
+  Create cards instantly, review with natural language,&nbsp;<br class="hx:sm:block hx:hidden" />and study smarter with AI-powered Anki integration
 {{< /hextra/hero-subtitle >}}
 </div>
 

@@ -1,5 +1,8 @@
 ---
-title: Desktop Installation
+title: "Install Anki MCP for Claude Desktop - Step-by-Step Guide"
+linkTitle: "Desktop Installation"
+description: "Easy 5-minute installation guide to connect Claude Desktop with your Anki flashcards. Create cards instantly and review with AI-powered natural language."
+keywords: ["anki mcp desktop", "claude desktop anki", "install anki mcp", "ai flashcards claude", "anki integration"]
 weight: 1
 ---
 

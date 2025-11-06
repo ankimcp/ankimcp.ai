@@ -1,5 +1,7 @@
 ---
-title: About
+title: "About Anki MCP - AI-Powered Flashcard Management"
+description: "Learn about Anki MCP, the open-source Model Context Protocol server that connects AI assistants like Claude and ChatGPT to your Anki flashcards for smarter studying."
+keywords: ["anki mcp", "about", "ai flashcards", "model context protocol", "open source"]
 ---
 
 ## About Anki MCP
@@ -8,9 +10,11 @@ Anki MCP Desktop is an independent, community-driven project that bridges the ga
 
 ### Current Status
 
-- **Version**: 0.1.0 (Beta)
-- **Status**: Active development
-- **API Stability**: Pre-1.0, subject to change
+- **Version**: 0.8.0
+- **Status**: Active development with weekly releases
+- **Downloads**: 100-150 weekly downloads
+- **Open Source**: 27+ GitHub stars and growing
+- **API Stability**: Approaching 1.0 with stable core features
 
 ### Project Vision
 

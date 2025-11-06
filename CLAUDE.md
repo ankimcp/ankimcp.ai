@@ -15,9 +15,11 @@ The site uses the Hextra theme via Hugo Modules and deploys to GitHub Pages with
 ## Technology Stack
 
 - **Hugo** (extended version required) - Static site generator (production uses v0.151.0)
-- **Hextra theme** - Installed as Hugo Module (NOT git submodule)
-- **Go** - Required for Hugo Modules functionality (v1.21 in CI/CD)
+- **Hextra theme** (v0.11.1) - Installed as Hugo Module (NOT git submodule)
+- **Go** - Required for Hugo Modules functionality (v1.21 in CI/CD, v1.24.4 in go.mod)
 - **GitHub Actions** - Automated deployment to GitHub Pages
+- **Umami Analytics** - Self-hosted privacy-focused analytics
+- **MailerLite** - Newsletter management system
 
 ## Development Commands
 
@@ -87,7 +89,17 @@ Start with minimal `hugo.yaml` config and add features incrementally. Test after
 
 **Analytics**: Site uses Umami analytics (self-hosted at analytics.anatoly.dev). Configuration is in `params.analytics.umami`.
 
-**MailerLite Integration**: Newsletter popup is embedded directly in the homepage (`content/_index.md`) with an onclick handler. Do not modify this integration without testing the popup functionality.
+**MailerLite Integration**:
+- Universal script loaded via `layouts/partials/custom/head-end.html`
+- Newsletter popup triggers via onclick handlers in homepage and footer
+- Form ID: `ZGJ6BF` (used in ml('show', 'ZGJ6BF', true) calls)
+- **CRITICAL**: JS minification breaks this integration - never enable it
+
+### Custom Layouts
+The site overrides some Hextra theme templates:
+- `layouts/partials/custom/head-end.html` - MailerLite script injection
+- `layouts/partials/footer.html` - Custom footer with newsletter/contact links
+- `layouts/shortcodes/newsletter.html` - Newsletter shortcode (if used in content)
 
 ### Content Structure
 ```
@@ -172,9 +184,12 @@ Hugo Modules requires Go installed. Install from https://go.dev/
 ## File Organization
 
 - `/content/` - All markdown content (docs, blog posts, pages)
-- `/static/` - Static assets (images, downloads, etc.)
-- `/layouts/` - Custom layout overrides (only if needed)
+- `/static/` - Static assets served as-is
+  - `/static/CNAME` - GitHub Pages custom domain configuration
+  - `/static/images/` - Site images and OpenGraph metadata
+- `/layouts/` - Custom layout overrides for Hextra theme
 - `/assets/` - Custom CSS/JS (only if needed)
+- `/public/` - Generated site output (gitignored)
 - `hugo.yaml` - Main site configuration
 - `.claude-draft/` - Planning documents (excluded from git)
 - `go.mod`, `go.sum` - Hugo module dependencies (auto-generated)
@@ -187,3 +202,32 @@ Hugo Modules requires Go installed. Install from https://go.dev/
 4. Test search functionality
 5. Verify all links work
 6. Build with `hugo --minify` to catch errors
+7. **Test MailerLite popup**: Click newsletter button and confirm popup appears
+
+## Quick Troubleshooting
+
+### Port Already in Use
+If `hugo server` fails with "address already in use":
+```bash
+# Kill existing Hugo processes
+killall hugo
+# Or use a different port
+hugo server -p 1314
+```
+
+### Module Download Failures
+If Hugo can't fetch the Hextra module:
+```bash
+# Clear Go module cache
+go clean -modcache
+# Retry module fetch
+hugo mod get
+```
+
+### Build Errors After Theme Update
+After updating Hextra theme:
+```bash
+hugo mod clean
+hugo mod tidy
+hugo mod get -u
+```

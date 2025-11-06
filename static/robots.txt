@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+Sitemap: https://ankimcp.ai/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Block any future admin or private paths
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Allow search engines to index everything else
+Allow: /docs/
+Allow: /blog/
+Allow: /about/
+
+# Specific bot instructions
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
