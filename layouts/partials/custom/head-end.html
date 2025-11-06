@@ -38,14 +38,10 @@
   "releaseNotes": "https://ankimcp.ai/blog/v0.8.0-integrated-ngrok-tunneling",
   "screenshot": "https://ankimcp.ai/images/og-image.jpg",
   "author": {
-    "@type": "Organization",
-    "name": "Anki MCP Team",
-    "url": "https://ankimcp.ai"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.5",
-    "ratingCount": "10"
+    "@type": "Person",
+    "name": "Anatoly",
+    "url": "https://anatoly.dev",
+    "sameAs": "https://www.linkedin.com/in/anatolyt/"
   }
 }
 </script>
@@ -75,8 +71,9 @@
   "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
   "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
   "author": {
-    "@type": "Organization",
-    "name": "Anki MCP Team"
+    "@type": "Person",
+    "name": "{{ with .Params.author }}{{ . }}{{ else }}Anatoly{{ end }}",
+    "url": "{{ with .Params.author_link }}{{ . }}{{ else }}https://anatoly.dev{{ end }}"
   },
   "publisher": {
     "@type": "Organization",

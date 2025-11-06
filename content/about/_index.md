@@ -2,6 +2,7 @@
 title: "About Anki MCP - AI-Powered Flashcard Management"
 description: "Learn about Anki MCP, the open-source Model Context Protocol server that connects AI assistants like Claude and ChatGPT to your Anki flashcards for smarter studying."
 keywords: ["anki mcp", "about", "ai flashcards", "model context protocol", "open source"]
+sitemap_priority: 0.7
 ---
 
 ## About Anki MCP
@@ -16,9 +17,20 @@ Anki MCP Desktop is an independent, community-driven project that bridges the ga
 - **Open Source**: 27+ GitHub stars and growing
 - **API Stability**: Approaching 1.0 with stable core features
 
+### Created By
+
+**[Anatoly](https://anatoly.dev)** - Creator and Lead Developer
+[LinkedIn](https://www.linkedin.com/in/anatolyt/) | [Personal Site](https://anatoly.dev)
+
+I'm a developer and daily Anki user who got tired of manually formatting flashcards. When Anthropic released the Model Context Protocol (MCP), I immediately saw the potential to connect AI assistants directly to Anki. What started as a personal tool to speed up my own studying has grown into a project used by learners worldwide.
+
+This project is actively maintained and developed with assistance from [Claude Code](https://claude.ai/code), Anthropic's AI coding assistant. Every feature is tested in my own daily study routine before release.
+
+**Why I Built This**: I use Anki for programming, language learning, and technical concepts. Creating well-formatted cards was taking hours every week. Now, with Anki MCP, I can create cards instantly while reading documentation, watching lectures, or having conversations with AI. This tool saves me hours weekly and makes studying more engaging.
+
 ### Project Vision
 
-Our goal is to make spaced repetition learning more accessible and powerful by integrating it with AI assistants like Claude.
+Our goal is to make spaced repetition learning more accessible and powerful by integrating it with AI assistants like Claude, making it easier for everyone to build and maintain their knowledge.
 
 ### Legal Notice
 
