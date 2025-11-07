@@ -86,4 +86,20 @@ See [Getting Help](../getting-help) for support options.
 - Have Claude create flashcards from text you're studying
 - Ask Claude to explain difficult concepts on your cards
 
+## Bonus: Enable Filesystem MCP (Recommended for Images)
+
+If you want to add images to your cards efficiently, install the Filesystem MCP extension:
+
+1. In Claude Desktop: **Settings → Extensions**
+2. Browse the extensions catalog
+3. Install **"Filesystem MCP"**
+4. Configure it to access your Pictures/Downloads folder
+
+**Why install this?**
+- Allows Claude to automatically locate image files on your computer
+- Makes adding images to cards much faster (no manual path entry)
+- Avoids slow base64 conversion when pasting images
+
+**Without it:** You'll need to provide full file paths manually (e.g., `/Users/yourname/Desktop/image.jpg`)
+
 Happy studying! 📚
