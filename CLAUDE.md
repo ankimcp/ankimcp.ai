@@ -97,9 +97,39 @@ Start with minimal `hugo.yaml` config and add features incrementally. Test after
 
 ### Custom Layouts
 The site overrides some Hextra theme templates:
-- `layouts/partials/custom/head-end.html` - MailerLite script injection
+- `layouts/partials/custom/head-end.html` - Critical file containing:
+  - Canonical URL tags (prevents duplicate content penalties)
+  - MailerLite universal script
+  - Schema.org structured data (SoftwareApplication, WebSite, BlogPosting, Organization)
+  - Performance hints (preconnect, dns-prefetch)
 - `layouts/partials/footer.html` - Custom footer with newsletter/contact links
 - `layouts/shortcodes/newsletter.html` - Newsletter shortcode (if used in content)
+
+### SEO Architecture
+The site implements comprehensive SEO features:
+
+**Structured Data (Schema.org)**:
+- `SoftwareApplication` schema on homepage - Helps Google understand the product
+- `BlogPosting` schema on blog posts - Rich snippets in search results
+- `Organization` schema sitewide - Brand identity for knowledge graph
+- `WebSite` schema with SearchAction - Enables Google sitelinks search box
+
+**Important**: When updating versions, ALWAYS update the `softwareVersion` and `releaseNotes` fields in the SoftwareApplication schema in `layouts/partials/custom/head-end.html`.
+
+**Sitemap Configuration**:
+- Configured in `hugo.yaml` with weekly change frequency
+- Default priority: 0.5 (override per-page with `sitemap_priority` frontmatter)
+- Auto-generated at `/sitemap.xml`
+- Referenced in robots.txt
+
+**Canonical URLs**:
+- Every page has `<link rel="canonical">` to prevent duplicate content issues
+- Implemented in `layouts/partials/custom/head-end.html`
+
+**Performance Optimization**:
+- DNS prefetching for analytics.anatoly.dev and MailerLite
+- Preconnect hints for external resources
+- Enables faster third-party script loading
 
 ### Content Structure
 ```
@@ -162,7 +192,44 @@ When announcing a new version:
    - Change `params.banner.key` to match the version (e.g., `release-v0.7.0`)
    - Update the message with the new version number and blog post link
    - Include a download link to the GitHub release
-3. Blog posts should highlight key features and link to GitHub release notes for full details
+3. **Update schema.org structured data** in `layouts/partials/custom/head-end.html`:
+   - Update `softwareVersion` field to match new version
+   - Update `releaseNotes` URL to point to new blog post
+4. Blog posts should highlight key features and link to GitHub release notes for full details
+
+### Content Frontmatter Standards
+All content pages should include SEO-optimized frontmatter:
+
+**Required fields:**
+- `title` - Page title (appears in browser tab and search results)
+- `description` - Meta description for search engines (150-160 chars ideal)
+
+**Recommended fields:**
+- `keywords` - Array of SEO keywords relevant to the page
+- `sitemap_priority` - Priority in sitemap.xml (0.0-1.0, default 0.5)
+  - Homepage: 1.0
+  - Important docs (FAQ, Installation): 0.8
+  - Regular docs: 0.7
+  - Blog posts: 0.6
+- `weight` - Order in navigation/sidebar (lower = appears first)
+- `linkTitle` - Shorter title for navigation (if different from main title)
+
+**Blog-specific fields:**
+- `author` - Author name (defaults to "Anatoly" in schema.org)
+- `author_link` - Author URL (defaults to https://anatoly.dev)
+- `date` - Publication date (auto-set by Hugo)
+
+Example:
+```yaml
+---
+title: "Complete Guide to Audio Flashcards"
+linkTitle: "Audio Flashcards"
+description: "Create audio flashcards in Anki using AI assistants - complete guide with examples"
+keywords: ["audio flashcards", "anki audio", "tts flashcards"]
+sitemap_priority: 0.7
+weight: 5
+---
+```
 
 ## Common Issues
 
@@ -203,6 +270,7 @@ Hugo Modules requires Go installed. Install from https://go.dev/
 5. Verify all links work
 6. Build with `hugo --minify` to catch errors
 7. **Test MailerLite popup**: Click newsletter button and confirm popup appears
+8. **Validate structured data**: Use Google's [Rich Results Test](https://search.google.com/test/rich-results) on homepage and blog posts
 
 ## Quick Troubleshooting
 

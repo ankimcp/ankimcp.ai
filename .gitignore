@@ -14,3 +14,6 @@ Thumbs.db
 
 # IDE
 .idea/
+
+# Draft content (not ready for production)
+content/docs/faq.md
