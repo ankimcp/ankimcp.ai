@@ -35,7 +35,7 @@ Add this to your client's MCP configuration file:
   "mcpServers": {
     "anki-mcp": {
       "command": "npx",
-      "args": ["-y", "anki-mcp-http", "--stdio"],
+      "args": ["-y", "@ankimcp/anki-mcp-server", "--stdio"],
       "env": {
         "ANKI_CONNECT_URL": "http://localhost:8765"
       }
@@ -48,7 +48,7 @@ Add this to your client's MCP configuration file:
 
 First, install the package globally:
 ```bash
-npm install -g anki-mcp-http
+npm install -g @ankimcp/anki-mcp-server
 ```
 
 Then add this to your client's MCP configuration file:
@@ -57,7 +57,7 @@ Then add this to your client's MCP configuration file:
 {
   "mcpServers": {
     "anki-mcp": {
-      "command": "anki-mcp-http",
+      "command": "anki-mcp-server",
       "args": ["--stdio"],
       "env": {
         "ANKI_CONNECT_URL": "http://localhost:8765"
@@ -93,7 +93,7 @@ Cline has a built-in settings UI for managing MCP servers:
 
 **Alternative:** Edit `cline_mcp_settings.json` directly with the basic configuration.
 
-**Windows users**: If you encounter `spawn npx ENOENT` errors, use `"command": "cmd"` with `"args": ["/c", "npx", "-y", "anki-mcp-http", "--stdio"]`
+**Windows users**: If you encounter `spawn npx ENOENT` errors, use `"command": "cmd"` with `"args": ["/c", "npx", "-y", "@ankimcp/anki-mcp-server", "--stdio"]`
 
 ## Try It Out
 
@@ -138,7 +138,7 @@ This is a common Windows issue. Use the Windows-specific configuration with `cmd
   "mcpServers": {
     "anki-mcp": {
       "command": "cmd",
-      "args": ["/c", "npx", "-y", "anki-mcp-http", "--stdio"]
+      "args": ["/c", "npx", "-y", "@ankimcp/anki-mcp-server", "--stdio"]
     }
   }
 }
@@ -161,7 +161,7 @@ If your AnkiConnect runs on a different port or computer:
   "mcpServers": {
     "anki-mcp": {
       "command": "npx",
-      "args": ["-y", "anki-mcp-http", "--stdio"],
+      "args": ["-y", "@ankimcp/anki-mcp-server", "--stdio"],
       "env": {
         "ANKI_CONNECT_URL": "http://192.168.1.100:8765"
       }
@@ -172,7 +172,7 @@ If your AnkiConnect runs on a different port or computer:
 
 ## Need Help?
 
-- [GitHub Discussions](https://github.com/anki-mcp/anki-mcp-desktop/discussions) - Ask questions and share tips
+- [GitHub Discussions](https://github.com/ankimcp/anki-mcp-server/discussions) - Ask questions and share tips
 - [Discord Server](https://discord.gg/JVNcxNB3e7) - Chat with the community
 - [Email Support](mailto:support@ankimcp.ai) - Direct support
 

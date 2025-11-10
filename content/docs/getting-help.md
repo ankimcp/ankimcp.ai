@@ -11,7 +11,7 @@ Connect with other Anki MCP users, ask questions, and share your experience.
 
 Ask questions, share ideas, and discuss features on GitHub.
 
-**[GitHub Discussions →](https://github.com/anki-mcp/anki-mcp-desktop/discussions)**
+**[GitHub Discussions →](https://github.com/ankimcp/anki-mcp-server/discussions)**
 
 ### Discord Server
 
@@ -27,8 +27,8 @@ Write to us.
 
 ## Bug Reports
 
-Found a bug? Open an issue on [GitHub](https://github.com/anki-mcp/anki-mcp-desktop/issues).
+Found a bug? Open an issue on [GitHub](https://github.com/ankimcp/anki-mcp-server/issues).
 
 ## Contributing
 
-Want to contribute? Check out the [GitHub repository](https://github.com/anki-mcp/anki-mcp-desktop) to get started.
+Want to contribute? Check out the [GitHub repository](https://github.com/ankimcp/anki-mcp-server) to get started.

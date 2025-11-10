@@ -26,9 +26,9 @@ Install these three things first:
 
 ### Step 1: Download the Extension
 
-1. Go to [GitHub Releases](https://github.com/anki-mcp-organization/anki-mcp-desktop/releases)
+1. Go to [GitHub Releases](https://github.com/ankimcp/anki-mcp-server/releases)
 2. Download the latest `.mcpb` file
-   (It looks like: `anki-mcp-desktop-0.3.0.mcpb`)
+   (It looks like: `anki-mcp-server-0.8.0.mcpb`)
 
 ### Step 2: Install in Claude Desktop
 

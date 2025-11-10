@@ -17,3 +17,6 @@ Thumbs.db
 
 # Draft content (not ready for production)
 content/docs/faq.md
+
+# SEO analysis documents (not for production)
+SEO/

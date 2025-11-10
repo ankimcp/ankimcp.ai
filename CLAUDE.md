@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a Hugo static site for documenting the Anki MCP Desktop project, hosted at `ankimcp.ai`.
 
-**What is Anki MCP?** A Model Context Protocol (MCP) server that enables AI assistants (like Claude) to interact with Anki flashcard decks - create cards, search content, and manage reviews through natural language. This website documents the desktop application; the actual MCP server code lives at https://github.com/anki-mcp/anki-mcp-desktop.
+**What is Anki MCP?** A Model Context Protocol (MCP) server that enables AI assistants (like Claude) to interact with Anki flashcard decks - create cards, search content, and manage reviews through natural language. This website documents the server; the actual MCP server code lives at https://github.com/ankimcp/anki-mcp-server.
 
 The site uses the Hextra theme via Hugo Modules and deploys to GitHub Pages with a custom domain.
 
@@ -47,7 +47,7 @@ hugo mod get -u github.com/imfing/hextra
 hugo mod tidy
 
 # Initialize module (only needed once)
-hugo mod init github.com/anki-mcp/ankimcp.ai
+hugo mod init github.com/ankimcp/ankimcp.ai
 ```
 
 ### Content Creation
@@ -102,11 +102,16 @@ The site overrides some Hextra theme templates:
   - MailerLite universal script
   - Schema.org structured data (SoftwareApplication, WebSite, BlogPosting, Organization)
   - Performance hints (preconnect, dns-prefetch)
+- `layouts/blog/single.html` - Custom blog post layout with visible author attribution for E-E-A-T SEO
 - `layouts/partials/footer.html` - Custom footer with newsletter/contact links
 - `layouts/shortcodes/newsletter.html` - Newsletter shortcode (if used in content)
 
 ### SEO Architecture
-The site implements comprehensive SEO features:
+The site implements comprehensive SEO features with focus on **E-E-A-T** (Experience, Expertise, Authoritativeness, Trustworthiness):
+- Visible author attribution on all blog posts (custom layout)
+- Author links to personal website (establishes credentials)
+- Organization schema linking to GitHub and Discord (brand signals)
+- SoftwareApplication schema with version tracking (product authority)
 
 **Structured Data (Schema.org)**:
 - `SoftwareApplication` schema on homepage - Helps Google understand the product
@@ -138,11 +143,14 @@ content/
 ├── docs/                  # Documentation section
 │   ├── _index.md
 │   ├── installation/      # Installation guides for different modes
+│   │   ├── _index.md
 │   │   ├── desktop.md    # Desktop mode (Claude Desktop)
 │   │   ├── mcp-clients.md # STDIO mode (Cursor, Cline)
 │   │   └── web.md        # Web mode (ChatGPT, Claude.ai)
 │   ├── audio-flashcards.md
+│   ├── image-flashcards.md
 │   ├── prompts.md
+│   ├── faq.md
 │   └── getting-help.md
 ├── blog/                  # Release announcements and updates
 │   └── _index.md
@@ -215,9 +223,10 @@ All content pages should include SEO-optimized frontmatter:
 - `linkTitle` - Shorter title for navigation (if different from main title)
 
 **Blog-specific fields:**
-- `author` - Author name (defaults to "Anatoly" in schema.org)
-- `author_link` - Author URL (defaults to https://anatoly.dev)
+- `author` - Author name (defaults to "Anatoly" in schema.org, displayed prominently in post header)
+- `author_link` - Author URL (defaults to https://anatoly.dev, creates clickable link in post header)
 - `date` - Publication date (auto-set by Hugo)
+- `tags` - Optional array of tags displayed at bottom of post
 
 Example:
 ```yaml

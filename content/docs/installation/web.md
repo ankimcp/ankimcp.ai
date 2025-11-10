@@ -49,7 +49,7 @@ Your Computer                    The Internet               AI Assistant
 Open your terminal and run:
 
 ```bash
-npx anki-mcp-http --ngrok
+npx @ankimcp/anki-mcp-server --ngrok
 ```
 
 **Option B: Install Globally (Shorter Command)**
@@ -57,13 +57,13 @@ npx anki-mcp-http --ngrok
 If you plan to use this often, install it once:
 
 ```bash
-npm install -g anki-mcp-http
+npm install -g @ankimcp/anki-mcp-server
 ```
 
 Then you can run it with the shorter command:
 
 ```bash
-anki-mcp-http --ngrok
+@ankimcp/anki-mcp-server --ngrok
 ```
 
 **Either way**, you'll see:
@@ -88,7 +88,7 @@ Copy the ngrok URL (the `https://abc123.ngrok-free.app` part) - you'll need it i
 - ✅ One command instead of two
 - ✅ Automatic cleanup when you press Ctrl+C
 - ✅ URL displayed clearly in the banner
-- ✅ Works with custom ports: `anki-mcp-http --port 8080 --ngrok`
+- ✅ Works with custom ports: `@ankimcp/anki-mcp-server --port 8080 --ngrok`
 
 ### Method 2: Manual Setup (Alternative)
 
@@ -97,7 +97,7 @@ If you prefer to manage ngrok separately, you can still use the manual method:
 **Step 1:** Start the server in one terminal:
 
 ```bash
-npx anki-mcp-http
+npx @ankimcp/anki-mcp-server
 ```
 
 You'll see:
@@ -160,22 +160,22 @@ You can customize the server:
 
 ```bash
 # Start with ngrok tunnel (v0.8.0+)
-npx anki-mcp-http --ngrok
+npx @ankimcp/anki-mcp-server --ngrok
 
 # Use a different port
-npx anki-mcp-http --port 8080
+npx @ankimcp/anki-mcp-server --port 8080
 
 # Different port + ngrok
-npx anki-mcp-http --port 8080 --ngrok
+npx @ankimcp/anki-mcp-server --port 8080 --ngrok
 
 # Allow connections from other computers on your network
-npx anki-mcp-http --host 0.0.0.0
+npx @ankimcp/anki-mcp-server --host 0.0.0.0
 
 # Connect to AnkiConnect on another computer
-npx anki-mcp-http --anki-connect http://192.168.1.100:8765
+npx @ankimcp/anki-mcp-server --anki-connect http://192.168.1.100:8765
 
 # Combine all options
-npx anki-mcp-http --port 8080 --anki-connect http://localhost:8765 --ngrok
+npx @ankimcp/anki-mcp-server --port 8080 --anki-connect http://localhost:8765 --ngrok
 ```
 
 ## Troubleshooting

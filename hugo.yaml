@@ -37,7 +37,7 @@ menu:
         type: search
     - name: GitHub
       weight: 5
-      url: "https://github.com/anki-mcp/anki-mcp-desktop"
+      url: "https://github.com/ankimcp/anki-mcp-server"
       params:
         icon: github
 
@@ -76,9 +76,9 @@ params:
     - /images/og-image.jpg
 
   banner:
-    key: 'release-v0.8.0'
+    key: 'naming-update-2025'
     message: |
-      🎉 **v0.8.0 Released!** Integrated ngrok tunneling - one command to connect web-based AI assistants! [Read more →](/blog/v0.8.0-integrated-ngrok-tunneling) | [Download →](https://github.com/anki-mcp/anki-mcp-desktop/releases/tag/v0.8.0)
+      📢 **Important Update:** We've moved to a new organization and package name! [Read about the changes →](/blog/organization-and-naming-update)
 
   analytics:
     umami:
