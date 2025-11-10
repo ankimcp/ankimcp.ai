@@ -142,68 +142,6 @@ Create a flashcard in "Biology" deck:
 
 Open Anki and study your deck. The image will display on your card!
 
-## MediaActions Tool Reference
-
-### storeMediaFile
-
-Upload images from three sources:
-
-**From URL:**
-```javascript
-{
-  action: "storeMediaFile",
-  filename: "image.jpg",
-  url: "https://example.com/image.jpg",
-  deleteExisting: true  // optional, default true
-}
-```
-
-**From file path:**
-```javascript
-{
-  action: "storeMediaFile",
-  filename: "image.jpg",
-  path: "/Users/username/Desktop/image.jpg",
-  deleteExisting: true
-}
-```
-
-**From base64 (avoid if possible):**
-```javascript
-{
-  action: "storeMediaFile",
-  filename: "image.jpg",
-  data: "iVBORw0KGgoAAAANS...",  // base64 encoded
-  deleteExisting: true
-}
-```
-
-### Other Operations
-
-**List images:**
-```javascript
-{
-  action: "getMediaFilesNames",
-  pattern: "biology_*.png"  // optional glob pattern
-}
-```
-
-**Delete image:**
-```javascript
-{
-  action: "deleteMediaFile",
-  filename: "old_image.jpg"
-}
-```
-
-**Retrieve image:**
-```javascript
-{
-  action: "retrieveMediaFile",
-  filename: "image.jpg"
-}
-```
-
 ## Conversation Examples
 
 ### Example 1: Web Image
@@ -258,18 +196,6 @@ AI: [Downloads all 3 images using mediaActions]
 
 ## Best Practices
 
-### Image Quality
-
-**For diagrams and screenshots:**
-- PNG format for crisp text and lines
-- Keep resolution reasonable (1200px width max)
-- Compress large images before uploading
-
-**For photos:**
-- JPEG format for smaller file size
-- Balance quality vs file size
-- Consider resizing very large photos
-
 ### File Naming
 
 Use descriptive, consistent names:
@@ -319,109 +245,6 @@ Reference the same image in multiple cards:
 Card 1: <img src="cell.png"> What is structure A?
 Card 2: <img src="cell.png"> What is structure B?
 Card 3: <img src="cell.png"> Label all parts
-```
-
-## Image Sizing and Styling
-
-### Basic HTML Sizing
-
-Control image size using HTML:
-
-```html
-<img src="diagram.png" width="400">
-```
-
-or
-
-```html
-<img src="photo.jpg" style="max-width: 500px;">
-```
-
-### Centered Images
-
-```html
-<div style="text-align: center;">
-  <img src="diagram.png" width="400">
-</div>
-```
-
-### Responsive Images
-
-```html
-<img src="diagram.png" style="max-width: 100%; height: auto;">
-```
-
-### Multiple Images Side-by-Side
-
-```html
-<div style="display: flex; justify-content: space-around;">
-  <img src="before.jpg" width="45%">
-  <img src="after.jpg" width="45%">
-</div>
-```
-
-## Common Use Cases
-
-### Language Learning
-
-**Visual vocabulary:**
-```
-Front: <img src="spanish_apple.jpg">
-Back: La manzana (the apple)
-```
-
-**Cultural context:**
-```
-Front: <img src="spain_plaza.jpg"> Where is this?
-Back: Plaza Mayor in Madrid, Spain
-```
-
-### STEM Subjects
-
-**Math diagrams:**
-```
-Front: <img src="triangle.png"> Calculate the area
-Back: Area = ½ × base × height = ½ × 6 × 4 = 12 cm²
-```
-
-**Chemistry structures:**
-```
-Front: <img src="benzene.png"> Name this molecule
-Back: Benzene (C₆H₆)
-```
-
-**Biology illustrations:**
-```
-Front: <img src="cell_diagram.png"> Identify structure A
-Back: Nucleus - contains genetic material (DNA)
-```
-
-### History and Geography
-
-**Historical photos:**
-```
-Front: <img src="berlin_wall.jpg"> What historical event?
-Back: Fall of the Berlin Wall, 1989
-```
-
-**Maps:**
-```
-Front: <img src="europe_map.png"> Identify the country marked in red
-Back: Poland
-```
-
-### Art and Design
-
-**Color theory:**
-```
-Front: <img src="color_wheel.png"> What are complementary colors?
-Back: Colors opposite each other on the wheel (e.g., red-green)
-```
-
-**Architecture:**
-```
-Front: <img src="gothic_cathedral.jpg"> Identify the architectural style
-Back: Gothic architecture, characterized by pointed arches and ribbed vaults
 ```
 
 ## Troubleshooting
