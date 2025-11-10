@@ -13,7 +13,7 @@ We're making an important organizational change to better reflect the project's 
 ## What's Changing
 
 ### GitHub Organization & Repository
-- **Old**: `github.com/ankimcp/anki-mcp-server`
+- **Old**: `github.com/anki-mcp/anki-mcp-desktop`
 - **New**: `github.com/ankimcp/anki-mcp-server`
 
 ### NPM Package
