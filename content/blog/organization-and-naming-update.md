@@ -17,7 +17,7 @@ We're making an important organizational change to better reflect the project's 
 - **New**: `github.com/ankimcp/anki-mcp-server`
 
 ### NPM Package
-- **Old**: `anki-mcp-http` (unpublished/deprecated)
+- **Old**: `anki-mcp-http` (deprecated, maintained for backward compatibility)
 - **New**: `@ankimcp/anki-mcp-server`
 
 ### Why the Change?
