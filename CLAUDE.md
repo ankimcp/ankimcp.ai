@@ -4,307 +4,120 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Hugo static site for documenting the Anki MCP Desktop project, hosted at `ankimcp.ai`.
-
-**What is Anki MCP?** A Model Context Protocol (MCP) server that enables AI assistants (like Claude) to interact with Anki flashcard decks - create cards, search content, and manage reviews through natural language. This website documents the server; the actual MCP server code lives at https://github.com/ankimcp/anki-mcp-server.
-
-The site uses the Hextra theme via Hugo Modules and deploys to GitHub Pages with a custom domain.
+Hugo static site for documenting the Anki MCP Desktop project, hosted at `ankimcp.ai`. The actual MCP server code lives at https://github.com/ankimcp/anki-mcp-server.
 
 **Important**: "Anki" is a registered trademark of Ankitects Pty Ltd. This is an independent community project NOT affiliated with Ankitects. Always include trademark disclaimers when adding content.
 
 ## Technology Stack
 
-- **Hugo** (extended version required) - Static site generator (production uses v0.151.0)
-- **Hextra theme** (v0.11.1) - Installed as Hugo Module (NOT git submodule)
-- **Go** - Required for Hugo Modules functionality (v1.21 in CI/CD, v1.24.4 in go.mod)
-- **GitHub Actions** - Automated deployment to GitHub Pages
-- **Umami Analytics** - Self-hosted privacy-focused analytics
-- **MailerLite** - Newsletter management system
+- **Hugo** v0.151.0 extended (production) - Static site generator
+- **Hextra theme** v0.11.1 - Installed as Hugo Module (NOT git submodule)
+- **Go** 1.21 (CI/CD), 1.24.4 (go.mod) - Required for Hugo Modules
+- **GitHub Actions** - Deploys to GitHub Pages with custom domain
+- **Umami Analytics** - Self-hosted at analytics.anatoly.dev
+- **MailerLite** - Newsletter integration (Form ID: `ZGJ6BF`)
 
 ## Development Commands
 
-### Local Development
 ```bash
-# Start development server with drafts
-hugo server --buildDrafts
+# Local development
+hugo server --buildDrafts     # Include draft content
+hugo server                   # Published content only
+hugo --minify                 # Build for production
 
-# Start development server (published content only)
-hugo server
+# Module management
+hugo mod get -u github.com/imfing/hextra  # Update theme
+hugo mod tidy                              # Clean dependencies
+hugo mod clean                             # Clear cache if issues
 
-# Build site for production
-hugo --minify
-
-# Clean Hugo module cache (if issues)
-hugo mod clean
+# Content creation
+hugo new content/docs/your-page.md        # New docs page
+hugo new content/blog/your-post.md        # New blog post
 ```
 
-### Module Management
-```bash
-# Update Hextra theme to latest version
-hugo mod get -u github.com/imfing/hextra
+## Critical Configuration
 
-# Tidy module dependencies
-hugo mod tidy
+### ⚠️ JS Minification MUST Stay Disabled
+- `minify.disableJS: true` in hugo.yaml is **REQUIRED**
+- JS minification breaks MailerLite newsletter popup
+- Never enable under any circumstances
 
-# Initialize module (only needed once)
-hugo mod init github.com/ankimcp/ankimcp.ai
-```
-
-### Content Creation
-```bash
-# Create new content page
-hugo new content/docs/your-page.md
-
-# Create new blog post
-hugo new content/blog/your-post.md
-```
-
-## Architecture
-
-### Module-Based Theme
-This site uses **Hugo Modules** (not git submodules) to manage the Hextra theme. The theme is declared in `hugo.yaml` under `module.imports` and downloaded to Go's module cache on first build.
-
-**Why Modules?**
-- Cleaner dependency management
-- Easy updates with `hugo mod get -u`
-- Recommended by Hextra documentation
-- Avoids git submodule complexity
-
-### Configuration Strategy
-Start with minimal `hugo.yaml` config and add features incrementally. Test after each addition. Hextra provides sensible defaults - only override what's necessary.
-
-**Critical Configuration Details**:
-
-⚠️ **JS MINIFICATION MUST STAY DISABLED** ⚠️
-- `minify.disableJS: true` in hugo.yaml is **REQUIRED** and **NON-NEGOTIABLE**
-- JS minification breaks the MailerLite newsletter popup integration
-- Never enable JS minification under any circumstances
-
-**Banner System**:
-- Uses a key-based dismissal system (`params.banner.key` in hugo.yaml)
-- Hextra stores banner dismissal state in browser localStorage using the key
-- **Always change the key value** when updating the message (e.g., `release-v0.6.0` → `release-v0.7.0`)
-- Changing the key forces the banner to reappear for all users who dismissed the previous version
-- Format: Use semantic versioning for releases, or descriptive keys for other announcements
-
-**Analytics**: Site uses Umami analytics (self-hosted at analytics.anatoly.dev). Configuration is in `params.analytics.umami`.
-
-**MailerLite Integration**:
-- Universal script loaded via `layouts/partials/custom/head-end.html`
-- Newsletter popup triggers via onclick handlers in homepage and footer
-- Form ID: `ZGJ6BF` (used in ml('show', 'ZGJ6BF', true) calls)
-- **CRITICAL**: JS minification breaks this integration - never enable it
+### Banner System
+- Uses key-based dismissal (`params.banner.key` in hugo.yaml)
+- Stores dismissal state in localStorage
+- **Always change key** when updating message (e.g., `release-v0.6.0` → `release-v0.7.0`)
+- This forces banner to reappear for users who dismissed previous version
 
 ### Custom Layouts
-The site overrides some Hextra theme templates:
-- `layouts/partials/custom/head-end.html` - Critical file containing:
-  - Canonical URL tags (prevents duplicate content penalties)
+Key overrides in `/layouts/`:
+- `partials/custom/head-end.html` - Contains:
+  - Canonical URLs (SEO)
   - MailerLite universal script
-  - Schema.org structured data (SoftwareApplication, WebSite, BlogPosting, Organization)
+  - Schema.org structured data (SoftwareApplication, Organization, etc.)
   - Performance hints (preconnect, dns-prefetch)
-- `layouts/blog/single.html` - Custom blog post layout with visible author attribution for E-E-A-T SEO
-- `layouts/partials/footer.html` - Custom footer with newsletter/contact links
-- `layouts/shortcodes/newsletter.html` - Newsletter shortcode (if used in content)
+- `blog/single.html` - Custom blog layout with author attribution for E-E-A-T SEO
+- `partials/footer.html` - Newsletter/contact links
+- `shortcodes/newsletter.html` - Newsletter shortcode
 
-### SEO Architecture
-The site implements comprehensive SEO features with focus on **E-E-A-T** (Experience, Expertise, Authoritativeness, Trustworthiness):
-- Visible author attribution on all blog posts (custom layout)
-- Author links to personal website (establishes credentials)
-- Organization schema linking to GitHub and Discord (brand signals)
-- SoftwareApplication schema with version tracking (product authority)
+## Release Process
 
-**Structured Data (Schema.org)**:
-- `SoftwareApplication` schema on homepage - Helps Google understand the product
-- `BlogPosting` schema on blog posts - Rich snippets in search results
-- `Organization` schema sitewide - Brand identity for knowledge graph
-- `WebSite` schema with SearchAction - Enables Google sitelinks search box
+When announcing new versions:
+1. Create blog post: `content/blog/vX.Y.Z-feature-name-release.md`
+2. Update banner in `hugo.yaml`:
+   - Change `params.banner.key` to new version
+   - Update message and links
+3. **Update Schema.org** in `layouts/partials/custom/head-end.html`:
+   - Update `softwareVersion` field
+   - Update `releaseNotes` URL to new blog post
 
-**Important**: When updating versions, ALWAYS update the `softwareVersion` and `releaseNotes` fields in the SoftwareApplication schema in `layouts/partials/custom/head-end.html`.
+## Content Standards
 
-**Sitemap Configuration**:
-- Configured in `hugo.yaml` with weekly change frequency
-- Default priority: 0.5 (override per-page with `sitemap_priority` frontmatter)
-- Auto-generated at `/sitemap.xml`
-- Referenced in robots.txt
+### Frontmatter Requirements
+Required:
+- `title` - Page title
+- `description` - Meta description (150-160 chars ideal)
 
-**Canonical URLs**:
-- Every page has `<link rel="canonical">` to prevent duplicate content issues
-- Implemented in `layouts/partials/custom/head-end.html`
+Recommended:
+- `keywords` - SEO keywords array
+- `sitemap_priority` - 0.0-1.0 (Homepage: 1.0, Important docs: 0.8, Blog: 0.6)
+- `weight` - Navigation order (lower = first)
 
-**Performance Optimization**:
-- DNS prefetching for analytics.anatoly.dev and MailerLite
-- Preconnect hints for external resources
-- Enables faster third-party script loading
+Blog-specific:
+- `author` - Defaults to "Anatoly"
+- `author_link` - Defaults to https://anatoly.dev
+- `date` - Publication date
 
-### Content Structure
-```
-content/
-├── _index.md              # Homepage (includes MailerLite popup integration)
-├── docs/                  # Documentation section
-│   ├── _index.md
-│   ├── installation/      # Installation guides for different modes
-│   │   ├── _index.md
-│   │   ├── desktop.md    # Desktop mode (Claude Desktop)
-│   │   ├── mcp-clients.md # STDIO mode (Cursor, Cline)
-│   │   └── web.md        # Web mode (ChatGPT, Claude.ai)
-│   ├── audio-flashcards.md
-│   ├── image-flashcards.md
-│   ├── prompts.md
-│   ├── faq.md
-│   └── getting-help.md
-├── blog/                  # Release announcements and updates
-│   └── _index.md
-└── about/                 # About page
-    └── _index.md
-```
+### Writing Guidelines
+- **Primary audience**: Non-technical end users
+- Keep explanations simple and visual
+- Link to GitHub for developer documentation
+- Include Anki trademark disclaimer on homepage and footer
 
-## Deployment
+## Testing Checklist
 
-### GitHub Pages
-- Automated via GitHub Actions workflow (`.github/workflows/hugo.yml`)
-- Builds on push to `main` branch or manual dispatch
-- Uses Hugo v0.151.0 extended and Go v1.21
-- Uploads artifact to GitHub Pages deployment
-- Custom domain: ankimcp.ai (configured via Porkbun DNS)
-
-### DNS (Porkbun)
-- A records point to GitHub Pages IPs
-- CNAME for www subdomain
-- HTTPS enabled via GitHub Pages
-
-### Build Process
-The CI/CD pipeline runs:
-1. `hugo mod get` - Download Hugo modules
-2. `hugo --gc --minify` - Build with garbage collection and minification (CSS/HTML only, JS excluded)
-
-## Content Guidelines
-
-### Target Audience
-- **Primary**: End-users (non-developers) wanting to install and use Anki MCP
-- **Secondary**: Developers contributing to the project
-
-### Writing Style
-- Non-technical, beginner-friendly for getting started guides
-- Link to GitHub for in-depth developer documentation
-- Keep explanations simple and visual where possible
-
-### Trademark Compliance
-Always include disclaimers when referencing Anki:
-- Correct wording: "Anki® is a registered trademark of Ankitects Pty Ltd. This is an independent community project not affiliated with Ankitects Pty Ltd."
-- Include in footer and prominently on homepage
-
-### Release Announcements
-When announcing a new version:
-1. Create a blog post in `content/blog/` following the naming pattern: `vX.Y.Z-feature-name-release.md`
-2. Update the banner in `hugo.yaml`:
-   - Change `params.banner.key` to match the version (e.g., `release-v0.7.0`)
-   - Update the message with the new version number and blog post link
-   - Include a download link to the GitHub release
-3. **Update schema.org structured data** in `layouts/partials/custom/head-end.html`:
-   - Update `softwareVersion` field to match new version
-   - Update `releaseNotes` URL to point to new blog post
-4. Blog posts should highlight key features and link to GitHub release notes for full details
-
-### Content Frontmatter Standards
-All content pages should include SEO-optimized frontmatter:
-
-**Required fields:**
-- `title` - Page title (appears in browser tab and search results)
-- `description` - Meta description for search engines (150-160 chars ideal)
-
-**Recommended fields:**
-- `keywords` - Array of SEO keywords relevant to the page
-- `sitemap_priority` - Priority in sitemap.xml (0.0-1.0, default 0.5)
-  - Homepage: 1.0
-  - Important docs (FAQ, Installation): 0.8
-  - Regular docs: 0.7
-  - Blog posts: 0.6
-- `weight` - Order in navigation/sidebar (lower = appears first)
-- `linkTitle` - Shorter title for navigation (if different from main title)
-
-**Blog-specific fields:**
-- `author` - Author name (defaults to "Anatoly" in schema.org, displayed prominently in post header)
-- `author_link` - Author URL (defaults to https://anatoly.dev, creates clickable link in post header)
-- `date` - Publication date (auto-set by Hugo)
-- `tags` - Optional array of tags displayed at bottom of post
-
-Example:
-```yaml
----
-title: "Complete Guide to Audio Flashcards"
-linkTitle: "Audio Flashcards"
-description: "Create audio flashcards in Anki using AI assistants - complete guide with examples"
-keywords: ["audio flashcards", "anki audio", "tts flashcards"]
-sitemap_priority: 0.7
-weight: 5
----
-```
-
-## Common Issues
-
-### Theme Styling Not Working
-1. Verify Hugo extended version: `hugo version`
-2. Check module is installed: `hugo mod graph`
-3. Clear module cache: `hugo mod clean`
-4. Rebuild: `hugo server`
-
-### Module Not Found
-```bash
-hugo mod get github.com/imfing/hextra
-hugo mod tidy
-```
-
-### Go Not Available
-Hugo Modules requires Go installed. Install from https://go.dev/
-
-## File Organization
-
-- `/content/` - All markdown content (docs, blog posts, pages)
-- `/static/` - Static assets served as-is
-  - `/static/CNAME` - GitHub Pages custom domain configuration
-  - `/static/images/` - Site images and OpenGraph metadata
-- `/layouts/` - Custom layout overrides for Hextra theme
-- `/assets/` - Custom CSS/JS (only if needed)
-- `/public/` - Generated site output (gitignored)
-- `hugo.yaml` - Main site configuration
-- `.claude-draft/` - Planning documents (excluded from git)
-- `go.mod`, `go.sum` - Hugo module dependencies (auto-generated)
-
-## Testing Before Deployment
-
+Before deployment:
 1. Run `hugo server --buildDrafts` locally
-2. Verify all pages render correctly
-3. Check mobile responsiveness
-4. Test search functionality
-5. Verify all links work
-6. Build with `hugo --minify` to catch errors
-7. **Test MailerLite popup**: Click newsletter button and confirm popup appears
-8. **Validate structured data**: Use Google's [Rich Results Test](https://search.google.com/test/rich-results) on homepage and blog posts
+2. Test mobile responsiveness
+3. Verify MailerLite popup works (click newsletter button)
+4. Build with `hugo --minify` to catch errors
+5. Validate structured data with [Google's Rich Results Test](https://search.google.com/test/rich-results)
 
-## Quick Troubleshooting
+## Troubleshooting
 
 ### Port Already in Use
-If `hugo server` fails with "address already in use":
 ```bash
-# Kill existing Hugo processes
-killall hugo
-# Or use a different port
-hugo server -p 1314
+killall hugo               # Kill existing processes
+hugo server -p 1314        # Or use different port
 ```
 
-### Module Download Failures
-If Hugo can't fetch the Hextra module:
+### Module Issues
 ```bash
-# Clear Go module cache
-go clean -modcache
-# Retry module fetch
-hugo mod get
+hugo mod clean             # Clear cache
+hugo mod tidy             # Clean dependencies
+hugo mod get -u           # Re-fetch modules
 ```
 
-### Build Errors After Theme Update
-After updating Hextra theme:
-```bash
-hugo mod clean
-hugo mod tidy
-hugo mod get -u
-```
+### Theme Not Working
+1. Verify Hugo extended: `hugo version`
+2. Check module: `hugo mod graph`
+3. Clear and rebuild: `hugo mod clean && hugo server`
