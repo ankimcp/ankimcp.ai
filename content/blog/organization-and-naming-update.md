@@ -112,7 +112,7 @@ If you have any questions or encounter issues with the migration:
 - [Discord Server](https://discord.gg/JVNcxNB3e7) - Chat with the community
 - [Email Support](mailto:support@ankimcp.ai) - Direct support
 
-Thank you for your understanding and continued support as we evolve Anki MCP into a more robust and professional project!
+These changes are part of the ongoing effort to maintain a well-organized project.
 
 ---
 

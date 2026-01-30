@@ -135,8 +135,8 @@ The `twenty_rules` prompt is based on:
 
 ## Feedback and Suggestions
 
-Have ideas for new prompts? Let us know!
+Prompt suggestions can be submitted through:
 
 - [GitHub Discussions](https://github.com/ankimcp/anki-mcp-server/discussions)
 - [Discord Server](https://discord.gg/JVNcxNB3e7)
-- [Email Us](mailto:support@ankimcp.ai)
+- [Email](mailto:support@ankimcp.ai)

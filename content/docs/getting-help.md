@@ -15,9 +15,9 @@ Ask questions, share ideas, and discuss features on GitHub.
 
 ### Discord Server
 
-Join our Discord community for real-time chat and support.
+A Discord server is available for real-time chat and support.
 
-**[Join Discord →](https://discord.gg/JVNcxNB3e7)**
+**[Discord →](https://discord.gg/JVNcxNB3e7)**
 
 ### Email
 
@@ -31,4 +31,4 @@ Found a bug? Open an issue on [GitHub](https://github.com/ankimcp/anki-mcp-serve
 
 ## Contributing
 
-Want to contribute? Check out the [GitHub repository](https://github.com/ankimcp/anki-mcp-server) to get started.
+The [GitHub repository](https://github.com/ankimcp/anki-mcp-server) contains source code.

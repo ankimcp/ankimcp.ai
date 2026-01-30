@@ -38,7 +38,7 @@ Our goal is to make spaced repetition learning more accessible and powerful by i
 
 ### Community & Support
 
-Join our community to connect with other users, ask questions, and share your experience:
+The following channels are available:
 
 - **[GitHub Discussions](https://github.com/ankimcp/anki-mcp-server/discussions)** - Questions, ideas, and feedback
 - **[Discord Server](https://discord.gg/JVNcxNB3e7)** - Real-time chat and support
@@ -46,7 +46,7 @@ Join our community to connect with other users, ask questions, and share your ex
 
 ### Contributing
 
-This is an open-source project. Visit our [GitHub repository](https://github.com/ankimcp/anki-mcp-server) to contribute, report issues, or suggest features.
+The source code and issue tracker are on [GitHub](https://github.com/ankimcp/anki-mcp-server).
 
 ### Credits
 
