@@ -1,6 +1,6 @@
 ---
 title: "Terms of Service"
-description: "Terms of Service for ankimcp.ai and the Anki MCP open-source project."
+description: "Terms of Service for ankimcp.ai, the Anki MCP open-source project, and the Anki MCP SaaS cloud service."
 sitemap_priority: 0.3
 ---
 
@@ -8,11 +8,11 @@ sitemap_priority: 0.3
 
 **Effective Date:** April 1, 2026
 
-These Terms of Service ("Terms") govern your use of the ankimcp.ai website and the Anki MCP software ("Service"). By accessing or using the Service, you agree to these Terms.
+These Terms of Service ("Terms") govern your use of the ankimcp.ai website, the Anki MCP software, and the Anki MCP SaaS cloud service (collectively, the "Service"). By accessing or using the Service, you agree to these Terms.
 
 ### 1. Acceptance of Terms
 
-By using ankimcp.ai or the Anki MCP software, you agree to be bound by these Terms. If you do not agree, do not use the Service.
+By using ankimcp.ai, the Anki MCP software, or the SaaS cloud service, you agree to be bound by these Terms. If you do not agree, do not use the Service.
 
 ### 2. Description of Service
 
@@ -21,6 +21,7 @@ Anki MCP is a free, open-source Model Context Protocol (MCP) server that connect
 - The ankimcp.ai website (documentation, blog, and resources)
 - The community forum at forum.ankimcp.ai
 - The Anki MCP software distributed via GitHub
+- The Anki MCP SaaS cloud service — a hosted tunnel service that enables LLM clients (such as ChatGPT and Claude.ai) to connect to your local Anki installation over the internet via secure WebSocket tunnels
 
 ### 3. Open-Source License
 
@@ -33,6 +34,8 @@ The Service is provided **"as is"** and **"as available"** without warranties of
 - The Service will be uninterrupted or error-free
 - The software will be compatible with all systems or Anki versions
 - AI-generated flashcard content will be accurate or complete
+- The SaaS tunnel service will be available at all times or at any specific uptime level
+- LLM clients will always be able to connect to your tunnel
 
 You are solely responsible for your use of the software and any flashcard content created through it.
 
@@ -92,13 +95,86 @@ When using the forum, you agree **not** to:
 - We may suspend or delete accounts that violate these Terms.
 - When an account is deleted, posts are **anonymized** (author attribution removed) but post content is retained to preserve discussion continuity.
 
-### 7. Intellectual Property
+### 7. SaaS Cloud Service
+
+The Anki MCP SaaS cloud service ("SaaS Service") provides hosted tunnel infrastructure that enables LLM clients to connect to your local Anki installation. The following additional terms apply when you use the SaaS Service.
+
+#### Account Registration and Eligibility
+
+- SaaS accounts are managed through our self-hosted Keycloak identity provider (in the `ankimcp` realm, separate from the forum). You may sign in with Google, GitHub, or email/password.
+- You must be at least **13 years old** to create a SaaS account.
+- You may create one SaaS account per person.
+- You are responsible for keeping your account credentials secure. You are responsible for all activity that occurs under your account.
+- You must provide accurate information when creating your account.
+
+#### Subscription Tiers
+
+The SaaS Service currently offers two subscription tiers:
+
+- **Free tier:** limited connection time and features. No payment required. Available to all registered users.
+- **Paid tier:** extended connection time and additional features. Payment terms will be published when payment processing is implemented.
+
+We reserve the right to modify tier features, introduce new tiers, or adjust pricing with reasonable notice. Changes to paid tier pricing will not apply to active subscription periods.
+
+#### Tunnel Usage and Fair Use
+
+- Each account receives a unique tunnel UUID and optional custom slug for LLM client connections.
+- You may not share your tunnel credentials with others or allow others to use your tunnel.
+- You may not use the tunnel service for purposes unrelated to Anki flashcard management via MCP.
+- You may not use the tunnel to transmit illegal, harmful, or infringing content.
+- You may not attempt to reverse-engineer, probe, or exploit the tunnel infrastructure.
+- We reserve the right to impose rate limits, connection time limits, or other usage restrictions to ensure fair access for all users.
+
+#### LLM Client Connections
+
+- LLM clients connect to your tunnel via OAuth 2.0 (Dynamic Client Registration) through a separate, isolated Keycloak realm (`tunnels`).
+- You are responsible for deciding which LLM clients to authorize to access your Anki data.
+- We do not control, endorse, or take responsibility for the behavior of third-party LLM clients that connect to your tunnel.
+- You may revoke all LLM client access at any time by changing your tunnel slug, which invalidates all existing OAuth tokens.
+
+#### Service Availability
+
+- The SaaS Service is provided on a **best-effort basis**. We do not offer any service level agreement (SLA) or uptime guarantee at this time.
+- We may perform maintenance, updates, or service changes that result in temporary downtime, with or without advance notice.
+- We are not liable for any loss or damage resulting from service interruptions, including but not limited to lost connections, failed LLM requests, or unavailability of tunnels.
+
+#### Account Suspension and Termination
+
+- We may suspend or terminate your SaaS account if you violate these Terms, abuse the service, or engage in activity that threatens the security or availability of the service for other users.
+- We will make reasonable efforts to notify you before or at the time of suspension, except where immediate action is necessary for security reasons.
+- You may delete your SaaS account at any time by contacting [support@ankimcp.ai](mailto:support@ankimcp.ai). Account deletion removes your user data, tunnel configuration, OAuth client mappings, and subscription history.
+- Upon termination (whether by you or by us), your tunnel immediately stops functioning and all LLM client access is revoked.
+
+### 8. Data Processing and Your Anki Data
+
+This section clarifies how your Anki flashcard data is handled when using the SaaS tunnel service.
+
+#### Data Transit, Not Data Storage
+
+- When you use the SaaS tunnel, your Anki flashcard data passes through our servers in real-time as it is relayed between the LLM client and your local Anki installation.
+- Your flashcard data is **temporarily present in server memory** during transit but is **never written to disk, logged, stored in a database, or otherwise persisted** by our service.
+- We do **not** read, inspect, analyze, index, or use the content of your flashcards or LLM conversations for any purpose.
+
+#### Your Responsibility
+
+- **You own your Anki data.** We do not claim any rights to the content of your flashcards.
+- You are solely responsible for the content stored in your Anki installation and any modifications made through LLM interactions.
+- You are responsible for maintaining backups of your Anki data. We are not liable for any data loss or corruption resulting from the use of the tunnel service, LLM interactions, or any other cause.
+- You are responsible for evaluating the accuracy and appropriateness of any content generated by LLM clients and added to your Anki decks.
+
+#### Security
+
+- Connections between your CLI and our tunnel server use TLS encryption.
+- Connections between LLM clients and our tunnel server use TLS encryption.
+- Despite these measures, no system is perfectly secure. You acknowledge that transmitting data over the internet involves inherent risks.
+
+### 9. Intellectual Property
 
 - **Anki MCP** project content, documentation, and branding are owned by the project maintainers
 - **Anki** is a registered trademark of Ankitects Pty Ltd. This project is NOT affiliated with Ankitects
 - User-created flashcard content remains the property of the respective users
 
-### 8. Third-Party Services
+### 10. Third-Party Services
 
 The Service integrates with or relies on third-party services including but not limited to:
 
@@ -106,19 +182,34 @@ The Service integrates with or relies on third-party services including but not 
 - AI assistant providers (e.g., Anthropic, OpenAI)
 - GitHub for software distribution
 - [Discourse](https://www.discourse.org) (self-hosted) for the community forum
-- [Keycloak](https://www.keycloak.org) (self-hosted) for forum authentication
+- [Keycloak](https://www.keycloak.org) (self-hosted) for forum authentication, SaaS authentication, and LLM OAuth
 - [SMTP2GO](https://www.smtp2go.com) for forum email notifications
+- LLM client providers (e.g., OpenAI ChatGPT, Anthropic Claude) — these services connect to your tunnel via OAuth. We facilitate the OAuth authentication flow but do not control how these providers process your data once it reaches them.
 
 We are not responsible for the availability, terms, or policies of these third-party services.
 
-### 9. Limitation of Liability
+**Important:** When you authorize an LLM client to access your Anki data through the tunnel, that LLM provider receives your flashcard data according to their own terms and privacy policies. We recommend reviewing the terms of any LLM service before granting it access to your tunnel. We are not responsible for how LLM providers handle your data after it leaves our tunnel.
+
+### 11. Limitation of Liability
 
 To the fullest extent permitted by law, the Anki MCP project and its maintainers shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the Service.
 
-### 10. Changes to Terms
+Without limiting the above, we are specifically not liable for:
+
+- **Data loss or corruption** in your Anki installation resulting from LLM interactions, tunnel usage, or any other cause
+- **Service interruptions** including tunnel downtime, failed connections, or unavailability of the SaaS Service
+- **LLM behavior** including incorrect, harmful, or inappropriate content generated by third-party LLM clients connected to your tunnel
+- **Unauthorized access** resulting from compromised account credentials, OAuth tokens, or tunnel URLs that you have shared or failed to secure
+- **Consequential damages** such as lost study time, missed exams, or any other impact resulting from service unavailability or malfunction
+
+For paid subscription users, our total aggregate liability for any claims arising from the SaaS Service shall not exceed the amount you paid for the SaaS Service in the **twelve (12) months** preceding the claim.
+
+### 12. Changes to Terms
 
 We may update these Terms from time to time. Changes will be posted on this page with an updated effective date. Continued use of the Service after changes constitutes acceptance of the new Terms.
 
-### 11. Contact
+For material changes that significantly affect your rights or obligations (such as changes to subscription pricing or data handling), we will make reasonable efforts to notify active SaaS users via email at least **14 days** before the changes take effect.
+
+### 13. Contact
 
 For questions about these Terms, contact us at [support@ankimcp.ai](mailto:support@ankimcp.ai).
