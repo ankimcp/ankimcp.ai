@@ -56,7 +56,9 @@ params:
   description: Connect AI assistants like Claude and ChatGPT to your Anki flashcards. Create cards instantly, review with natural language, and study smarter with AI-powered spaced repetition.
 
   # SEO metadata
-  author: Anki MCP Team
+  author:
+    name: Anki MCP Team
+    email: support@ankimcp.ai
   keywords: ["anki mcp", "claude anki", "chatgpt anki", "ai flashcards", "anki integration", "model context protocol", "spaced repetition ai"]
 
   # OpenGraph metadata for social sharing (WhatsApp, Facebook, etc)

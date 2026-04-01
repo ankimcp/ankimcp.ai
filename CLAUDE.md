@@ -11,7 +11,7 @@ Hugo static site for documenting the Anki MCP Desktop project, hosted at `ankimc
 ## Technology Stack
 
 - **Hugo** v0.151.0 extended (production) - Static site generator
-- **Hextra theme** v0.11.1 - Installed as Hugo Module (NOT git submodule)
+- **Hextra theme** v0.12.1 - Installed as Hugo Module (NOT git submodule)
 - **Go** - Required for Hugo Modules. CI uses 1.21; `go.mod` declares 1.24.4 (local dev)
 - **GitHub Actions** - Deploys to GitHub Pages on push to `main` (`.github/workflows/hugo.yml`)
 - **Umami Analytics** - Self-hosted at analytics.anatoly.dev
