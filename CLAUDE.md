@@ -12,10 +12,10 @@ Hugo static site for documenting the Anki MCP Desktop project, hosted at `ankimc
 
 - **Hugo** v0.151.0 extended (production) - Static site generator
 - **Hextra theme** v0.11.1 - Installed as Hugo Module (NOT git submodule)
-- **Go** 1.21 (CI/CD), 1.24.4 (go.mod) - Required for Hugo Modules
-- **GitHub Actions** - Deploys to GitHub Pages with custom domain
+- **Go** - Required for Hugo Modules. CI uses 1.21; `go.mod` declares 1.24.4 (local dev)
+- **GitHub Actions** - Deploys to GitHub Pages on push to `main` (`.github/workflows/hugo.yml`)
 - **Umami Analytics** - Self-hosted at analytics.anatoly.dev
-- **MailerLite** - Newsletter integration (Form ID: `ZGJ6BF`)
+- **MailerLite** - Newsletter integration (Form ID: `ZGJ6BF`, account: `1854759`)
 
 ## Development Commands
 
@@ -35,6 +35,31 @@ hugo new content/docs/your-page.md        # New docs page
 hugo new content/blog/your-post.md        # New blog post
 ```
 
+## Architecture Notes
+
+### Hextra Theme CSS Convention
+The Hextra theme uses `hx:` prefixed Tailwind utility classes (e.g., `hx:mt-6`, `hx:dark:text-gray-100`). All custom layouts use this prefix. Custom CSS overrides live in `assets/css/custom.css` and use `!important` to override theme defaults.
+
+### MailerLite Form ID Coupling
+The form ID `ZGJ6BF` appears in **three places** that must stay in sync:
+- `content/_index.md` — hero button `onclick="ml('show', 'ZGJ6BF', true)"`
+- `layouts/partials/footer.html` — footer newsletter link
+- `layouts/shortcodes/newsletter.html` — embedded form shortcode
+
+The MailerLite universal script is loaded in `layouts/partials/custom/head-end.html`.
+
+### Trademark Disclaimer
+The Anki trademark text lives in `i18n/en.yaml` as the `copyright` key (used by the footer). It's NOT in any layout file directly.
+
+### Custom Sitemap
+`layouts/_default/sitemap.xml` overrides Hugo's default sitemap with:
+- Per-section priority: homepage=1.0, docs sections=0.8, docs pages=0.7, blog=0.6, other=0.5
+- Frontmatter overrides: `sitemap_priority`, `sitemap_changefreq`, `sitemap_exclude`
+
+### Reference Directories (gitignored)
+- `SEO/` — Keyword strategy, competitor analysis, schema markup docs (reference only)
+- `.claude-draft/` — Planning docs, deployment guides, TODOs
+
 ## Critical Configuration
 
 ### ⚠️ JS Minification MUST Stay Disabled
@@ -50,14 +75,11 @@ hugo new content/blog/your-post.md        # New blog post
 
 ### Custom Layouts
 Key overrides in `/layouts/`:
-- `partials/custom/head-end.html` - Contains:
-  - Canonical URLs (SEO)
-  - MailerLite universal script
-  - Schema.org structured data (SoftwareApplication, Organization, etc.)
-  - Performance hints (preconnect, dns-prefetch)
-- `blog/single.html` - Custom blog layout with author attribution for E-E-A-T SEO
-- `partials/footer.html` - Newsletter/contact links
-- `shortcodes/newsletter.html` - Newsletter shortcode
+- `partials/custom/head-end.html` — Canonical URLs, MailerLite script, Schema.org structured data (SoftwareApplication, WebSite, BlogPosting, Organization), preconnect hints
+- `blog/single.html` — Custom blog layout with breadcrumb, author attribution, tags (E-E-A-T SEO)
+- `partials/footer.html` — Newsletter/contact/Discord/GitHub links (replaces Hextra's "Powered by" section)
+- `shortcodes/newsletter.html` — Inline newsletter embed
+- `_default/sitemap.xml` — Custom sitemap with per-section priorities
 
 ## Release Process
 
