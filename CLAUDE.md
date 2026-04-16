@@ -8,12 +8,21 @@ Hugo static site for documenting the Anki MCP Desktop project, hosted at `ankimc
 
 **Important**: "Anki" is a registered trademark of Ankitects Pty Ltd. This is an independent community project NOT affiliated with Ankitects. Always include trademark disclaimers when adding content.
 
+### Content Sections
+Top-level sections under `content/`:
+- `docs/` — Product documentation (installation, features, FAQ, known issues)
+- `blog/` — Release announcements and articles
+- `about/`, `privacy/`, `terms/` — Static pages (legal pages include SaaS cloud + Discourse community terms)
+
+### No Test Suite
+This is a pure content repo. There is no test runner, no linter config, no CI verification beyond a successful Hugo build. Verification = `hugo --minify` succeeding + manual browser check via `hugo server`.
+
 ## Technology Stack
 
 - **Hugo** v0.151.0 extended (production) - Static site generator
 - **Hextra theme** v0.12.1 - Installed as Hugo Module (NOT git submodule)
 - **Go** - Required for Hugo Modules. CI uses 1.21; `go.mod` declares 1.24.4 (local dev)
-- **GitHub Actions** - Deploys to GitHub Pages on push to `main` (`.github/workflows/hugo.yml`)
+- **GitHub Actions** - Deploys to GitHub Pages on push to `main` (`.github/workflows/hugo.yml`). The workflow's `submodules: recursive` checkout option is vestigial — the theme is a Hugo Module, not a submodule — but it's harmless.
 - **Umami Analytics** - Self-hosted at analytics.anatoly.dev
 - **MailerLite** - Newsletter integration (Form ID: `ZGJ6BF`, account: `1854759`)
 
@@ -115,14 +124,13 @@ Blog-specific:
 - Link to GitHub for developer documentation
 - Include Anki trademark disclaimer on homepage and footer
 
-## Testing Checklist
+## Verification
 
-Before deployment:
-1. Run `hugo server --buildDrafts` locally
-2. Test mobile responsiveness
-3. Verify MailerLite popup works (click newsletter button)
-4. Build with `hugo --minify` to catch errors
-5. Validate structured data with [Google's Rich Results Test](https://search.google.com/test/rich-results)
+Repo-specific checks that can't be caught by the build alone:
+1. `hugo --minify` — catches template/module errors. Must pass.
+2. MailerLite popup — click the footer "Newsletter" link or hero CTA; the `ZGJ6BF` form should open. If it silently fails, check that `minify.disableJS` is still `true` in `hugo.yaml` (see Critical Configuration).
+3. Structured data — after changing `layouts/partials/custom/head-end.html`, paste a built page URL into [Google's Rich Results Test](https://search.google.com/test/rich-results).
+4. Banner dismissal — after bumping `params.banner.key`, clear localStorage (or use incognito) to confirm the banner reappears.
 
 ## Troubleshooting
 
