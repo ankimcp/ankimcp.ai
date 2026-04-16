@@ -75,7 +75,7 @@ params:
     description: Connect Claude & ChatGPT to your Anki flashcards for instant card creation and natural language reviews.
 
   images:
-    - /images/og-image.jpg
+    - /images/og-image.png
 
   banner:
     key: 'naming-update-2025'
