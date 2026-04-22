@@ -90,7 +90,11 @@ params:
 
   navbar:
     displayTitle: true
-    displayLogo: false
+    displayLogo: true
+    logo:
+      path: favicon.svg
+      width: 28
+      height: 28
 
   page:
     width: wide
