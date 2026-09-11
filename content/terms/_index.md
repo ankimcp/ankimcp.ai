@@ -6,7 +6,7 @@ sitemap_priority: 0.3
 
 ## Terms of Service
 
-**Effective Date:** September 2, 2026
+**Effective Date:** September 11, 2026
 
 {{< callout type="info" >}}
 **The short version.** This summary is for convenience only — the full Terms below are what applies.
@@ -191,7 +191,7 @@ The SaaS Service includes a text-to-speech feature that turns text you supply in
 #### Service Availability
 
 - The SaaS Service is provided on a **best-effort basis**. We do not offer any service level agreement (SLA) or uptime guarantee at this time.
-- We may perform maintenance, updates, or service changes that result in temporary downtime, with or without advance notice.
+- We may perform maintenance, updates, or service changes that result in temporary downtime, with or without advance notice. We also perform regular scheduled maintenance; the current schedule is published on our [status page](https://status.ankimcp.ai/).
 - We are not liable for any loss or damage resulting from service interruptions, including but not limited to lost connections, failed LLM requests, or unavailability of tunnels.
 
 #### Account Suspension and Termination
