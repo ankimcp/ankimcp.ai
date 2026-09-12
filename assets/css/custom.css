@@ -296,6 +296,15 @@ body > .hextra-max-page-width { width: 100%; }
   background: var(--ankimcp-primary-600, #0a72e6); /* brand blue */
 }
 
+.pricing-card__cta--disabled {
+  background: #94a3b8; /* slate-400 */
+  cursor: not-allowed;
+}
+
+.pricing-card__cta--disabled:hover {
+  filter: none;
+}
+
 /* Visible keyboard focus state */
 .pricing-card__cta:focus-visible {
   outline: 2px solid #ffffff;

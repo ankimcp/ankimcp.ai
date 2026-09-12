@@ -18,6 +18,10 @@ If you connect an AI that runs on the **same computer** as Anki — Claude Deskt
 
 You only pay when you want **remote access**: letting a web AI like ChatGPT or claude.ai, or your phone, reach your Anki from another device. That travels through the managed tunnel, which has a **free tier** to get started and the **Plus plan** ($5/month) for heavier use. And if you'd rather not keep your own computer running at all, the **Pro plan** ($15/month) adds **Hosted Anki** — a full copy of Anki running on our cloud servers, reachable by your AI around the clock even when your laptop is off.
 
+{{< callout type="warning" emoji="⏸️" >}}
+**The Pro plan (Hosted Anki) is temporarily unavailable.** New Pro subscriptions are paused for now — the Free tier and the Plus plan are unaffected. We'll announce here when Pro is back.
+{{< /callout >}}
+
 ## What's free and what's paid
 
 {{< callout emoji="🎉" >}}
@@ -76,7 +80,7 @@ The [add-on](https://ankiweb.net/shared/info/124672614) and the [CLI](https://gi
 <div class="pricing-card pricing-card--pro">
 <div class="pricing-card__header">
 <span class="pricing-card__name">Pro</span>
-<span class="pricing-card__sub">Hosted Anki</span>
+<span class="pricing-card__sub">Hosted Anki — temporarily unavailable</span>
 </div>
 <div class="pricing-card__body">
 <div class="pricing-card__price">
@@ -91,14 +95,14 @@ The [add-on](https://ankiweb.net/shared/info/124672614) and the [CLI](https://gi
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>3,000 <a href="/docs/anki-studio/text-to-speech/">text-to-speech</a> credits / month</span></li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Experimental — still being built out</li>
 </ul>
-<a class="pricing-card__cta pricing-card__cta--pro" href="https://web.ankimcp.ai/settings">Get Hosted Anki</a>
+<span class="pricing-card__cta pricing-card__cta--disabled" aria-disabled="true">Temporarily unavailable</span>
 </div>
 </div>
 </div>
 
 ## Compare plans
 
-| | Free | Plus ($5/mo) | Pro ($15/mo) |
+| | Free | Plus ($5/mo) | Pro ($15/mo) — temporarily unavailable |
 |---|---|---|---|
 | Local use — [add-on](https://ankiweb.net/shared/info/124672614) &amp; [CLI](https://github.com/ankimcp/anki-mcp-server) | ✓ | ✓ | ✓ |
 | [Remote access](/docs/how-to/connect-chatgpt-to-anki/) via the managed tunnel | ✓ | ✓ | ✓ |
