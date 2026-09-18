@@ -88,9 +88,9 @@ params:
     - /images/og-image.png
 
   banner:
-    key: 'maintenance-scheduled-2026-09-18-19'
+    key: 'maintenance-ongoing-2026-09-18'
     message: |
-      🗓️ **Scheduled maintenance** — Sep 18–19, 04:00–08:00 UTC daily. All services will be unavailable. [Details →](https://status.ankimcp.ai/)
+      🚧 **Maintenance in progress** — services unavailable until ~08:00 UTC. [Live status →](https://status.ankimcp.ai/)
 
   analytics:
     umami:
