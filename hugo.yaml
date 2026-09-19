@@ -2,6 +2,61 @@ baseURL: https://ankimcp.ai/
 locale: en-US
 title: Anki MCP
 
+# English stays at the site root so existing URLs don't move; other languages
+# live under their own prefix (/pt-br/...). Only some pages are translated —
+# untranslated ones exist in English only.
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
+languages:
+  en:
+    label: English
+    locale: en-US
+    weight: 1
+  pt-br:
+    label: Português (Brasil)
+    locale: pt-BR
+    weight: 2
+    # No Portuguese blog, so skip the empty /pt-br/tags/ and /pt-br/categories/ pages.
+    disableKinds:
+      - taxonomy
+      - term
+    params:
+      description: Conecte assistentes de IA como o Claude e o ChatGPT aos seus flashcards do Anki. Crie cards na hora, revise em linguagem natural e estude melhor com repetição espaçada e IA.
+    menus:
+      main:
+        - name: Documentação
+          pageRef: /docs
+          weight: 1
+        - name: Preços
+          pageRef: /pricing
+          weight: 2
+        # Blog and About aren't translated — link to the English pages.
+        - name: Blog
+          url: /blog/
+          weight: 3
+        - name: Sobre
+          url: /about/
+          weight: 4
+        - name: Fórum
+          url: "https://forum.ankimcp.ai/"
+          weight: 5
+        - name: Buscar
+          weight: 6
+          params:
+            type: search
+        - name: Idioma
+          weight: 7
+          params:
+            type: language-switch
+        - name: GitHub
+          weight: 8
+          url: "https://github.com/ankimcp"
+          params:
+            icon: github
+        - name: Entrar
+          weight: 9
+          url: "https://web.ankimcp.ai"
+
 # Sitemap configuration for better SEO
 sitemap:
   changefreq: weekly
@@ -34,21 +89,32 @@ menu:
     - name: About
       pageRef: /about
       weight: 4
-    - name: Search
+    - name: Forum
+      url: "https://forum.ankimcp.ai/"
       weight: 5
+    - name: Search
+      weight: 6
       params:
         type: search
+    - name: Language
+      weight: 7
+      params:
+        type: language-switch
     - name: GitHub
-      weight: 6
+      weight: 8
       url: "https://github.com/ankimcp"
       params:
         icon: github
     - name: Sign in
-      weight: 7
+      weight: 9
       url: "https://web.ankimcp.ai"
 
 markup:
   goldmark:
+    # Pages embed screenshots with raw <img src="file.png"> tags, which Hugo's
+    # shared-resource render hooks don't rewrite. Copy bundle images into each
+    # language's output so those relative paths work under /pt-br/ too.
+    duplicateResourceFiles: true
     renderer:
       unsafe: true
   highlight:

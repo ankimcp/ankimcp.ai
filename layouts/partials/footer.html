@@ -27,21 +27,21 @@
         <div class="hx:flex hx:w-full hx:flex-col hx:items-center hx:sm:items-start">
             {{- if (.Site.Params.footer.displayPoweredBy | default true) }}
             <div class="hx:font-semibold hx:flex hx:gap-4 hx:text-sm">
-                <a class="ml-onclick-form hover:hx:text-gray-900 hx:dark:hover:text-gray-100" href="javascript:void(0)" onclick="ml('show', 'ZGJ6BF', true)">Newsletter</a>
+                <a class="ml-onclick-form hover:hx:text-gray-900 hx:dark:hover:text-gray-100" href="javascript:void(0)" onclick="ml('show', 'ZGJ6BF', true)">{{ T "footerNewsletter" }}</a>
                 <span>·</span>
-                <a href="mailto:support@ankimcp.ai" class="hover:hx:text-gray-900 hx:dark:hover:text-gray-100">Email Us</a>
+                <a href="mailto:support@ankimcp.ai" class="hover:hx:text-gray-900 hx:dark:hover:text-gray-100">{{ T "footerEmailUs" }}</a>
                 <span>·</span>
-                <a href="https://forum.ankimcp.ai/" target="_blank" rel="noopener noreferrer" class="hover:hx:text-gray-900 hx:dark:hover:text-gray-100">Community Forum</a>
+                <a href="https://forum.ankimcp.ai/" target="_blank" rel="noopener noreferrer" class="hover:hx:text-gray-900 hx:dark:hover:text-gray-100">{{ T "footerCommunityForum" }}</a>
                 <span>·</span>
-                <a href="https://status.ankimcp.ai/" target="_blank" rel="noopener noreferrer" class="hover:hx:text-gray-900 hx:dark:hover:text-gray-100">Status</a>
+                <a href="https://status.ankimcp.ai/" target="_blank" rel="noopener noreferrer" class="hover:hx:text-gray-900 hx:dark:hover:text-gray-100">{{ T "footerStatus" }}</a>
             </div>
             {{- end -}}
             <div class="hx:mt-4 hx:font-semibold hx:flex hx:gap-4 hx:text-sm">
-                <a href="/privacy/" class="hover:hx:text-gray-900 hx:dark:hover:text-gray-100">Privacy</a>
+                <a href="/privacy/" class="hover:hx:text-gray-900 hx:dark:hover:text-gray-100">{{ T "footerPrivacy" }}</a>
                 <span>·</span>
-                <a href="/terms/" class="hover:hx:text-gray-900 hx:dark:hover:text-gray-100">Terms</a>
+                <a href="/terms/" class="hover:hx:text-gray-900 hx:dark:hover:text-gray-100">{{ T "footerTerms" }}</a>
                 <span>·</span>
-                <a href="/terms/#payments-refunds-and-cancellation" class="hover:hx:text-gray-900 hx:dark:hover:text-gray-100">Refunds</a>
+                <a href="/terms/#payments-refunds-and-cancellation" class="hover:hx:text-gray-900 hx:dark:hover:text-gray-100">{{ T "footerRefunds" }}</a>
             </div>
             {{- if .Site.Params.footer.displayCopyright }}<div class="hx:mt-6 hx:text-xs">{{ $copyright | markdownify }}</div>{{- end -}}
         </div>

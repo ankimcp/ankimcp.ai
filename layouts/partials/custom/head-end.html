@@ -1,6 +1,18 @@
 <!-- Canonical URL for SEO -->
 <link rel="canonical" href="{{ .Permalink }}" />
 
+<!-- Alternate-language links, only on pages that actually have a translation.
+     AllTranslations is ordered by language weight, so the first entry is the
+     English page — that's the x-default. -->
+{{- if .IsTranslated }}
+{{- range .AllTranslations }}
+<link rel="alternate" hreflang="{{ .Language.Locale }}" href="{{ .Permalink }}" />
+{{- end }}
+{{- with index .AllTranslations 0 }}
+<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
+{{- end }}
+{{- end }}
+
 <!-- Deep-linkable Hextra tabs: open the tab matching the URL hash.
      Inline (non-deferred) here in <head>, but the work runs on DOMContentLoaded,
      which fires AFTER the deferred core bundle (tabs.js) has attached its click
