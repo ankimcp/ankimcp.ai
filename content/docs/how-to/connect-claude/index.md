@@ -87,14 +87,21 @@ It's safe to share, because it only works after you sign in — requests reach y
 
 Open [claude.ai](https://claude.ai) in your browser and add the tunnel as a custom connector.
 
-1. Go to **Settings → Connectors**.
-2. Click **Add custom connector**.
-3. Paste your tunnel URL, then save.
-4. Claude asks you to sign in to AnkiMCP — sign in and approve access.
+1. In the sidebar, click **Customize**, then open **Connectors**.
+2. Click **Add**. The **Add custom connector** window opens.
+3. Give the connector a name, such as `AnkiMCP`, paste your tunnel URL into **MCP server URL**, and click **Continue**.
+
+<img src="claude-add-connector.png" width="560" alt="The Add custom connector window in claude.ai: the name AnkiMCP and the tunnel URL https://tunnel.ankimcp.ai/mcp filled in, and a Continue button." />
+
+4. Claude checks the address and shows sign-in options. It picks the right ones on its own — the choices it found are marked **Detected**. Don't change anything. Scroll to the bottom and click **Add**.
+
+<img src="claude-add-connector-confirm.png" width="480" alt="Second screen of the Add custom connector window: under OAuth client, Register automatically is selected and marked Detected, with Back and Add buttons at the bottom." />
+
+5. Claude asks you to sign in to AnkiMCP — sign in and approve access. When it's done, the connector shows a **Disconnect** button and the list of Anki tools Claude can use.
+
+<img src="claude-connector-connected.png" width="740" alt="The connected AnkiMCP connector in claude.ai: the tunnel URL https://tunnel.ankimcp.ai/mcp, a Disconnect button, and the tool permissions list with tools such as Add note and Create deck." />
 
 For the exact menu path, see Anthropic's [custom connectors guide](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp).
-
-<img src="claude-add-connector.png" width="740" alt="claude.ai Settings → Connectors with the Add custom connector dialog open: the name AnkiMCP and the tunnel URL https://tunnel.ankimcp.ai/mcp filled in." />
 
 ### It works everywhere
 

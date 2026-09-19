@@ -86,13 +86,20 @@ Pode compartilhar sem medo, porque ele só funciona depois que você entra na su
 Abra o [claude.ai](https://claude.ai) no seu navegador e adicione o túnel como um conector personalizado.
 
 1. Na barra lateral, clique em **Personalizar (Customize)** e abra **Conectores (Connectors)**.
-2. Clique em **Adicionar**. A janela **Adicionar conector personalizado (Add custom connector)** abre.
-3. Dê um nome ao conector (por exemplo, AnkiMCP), cole a URL do seu túnel no campo **URL do servidor MCP** e clique em **Continuar**.
-4. O Claude pede que você entre na sua conta AnkiMCP — entre e aprove o acesso.
+2. Clique em **Adicionar (Add)**. A janela **Adicionar conector personalizado (Add custom connector)** abre.
+3. Dê um nome ao conector, como `AnkiMCP`, cole a URL do seu túnel no campo **URL do servidor MCP (MCP server URL)** e clique em **Continuar (Continue)**.
+
+<img src="claude-add-connector.png" width="560" alt="A janela Add custom connector do claude.ai: o nome AnkiMCP e a URL do túnel https://tunnel.ankimcp.ai/mcp preenchidos, e o botão Continue." />
+
+4. O Claude confere o endereço e mostra as opções de login. Ele escolhe as certas sozinho — as opções que ele encontrou aparecem marcadas como detectadas (**Detected**, na imagem). Não mude nada. Role até o fim e clique no botão de adicionar (**Add**, na imagem).
+
+<img src="claude-add-connector-confirm.png" width="480" alt="Segunda tela da janela Add custom connector: em OAuth client, a opção Register automatically está selecionada e marcada como Detected, com os botões Back e Add embaixo." />
+
+5. O Claude pede que você entre na sua conta AnkiMCP — entre e aprove o acesso. Quando terminar, o conector mostra o botão **Desvincular (Disconnect)** e a lista de ferramentas do Anki que o Claude pode usar.
+
+<img src="claude-connector-connected.png" width="740" alt="O conector AnkiMCP já conectado no claude.ai: a URL do túnel https://tunnel.ankimcp.ai/mcp, o botão Disconnect e a lista Tool permissions com ferramentas como Add note e Create deck." />
 
 Para o caminho exato do menu, veja o [guia de conectores personalizados](https://support.claude.com/pt/articles/11175166-comece-com-conectores-personalizados-usando-mcp-remoto) da Anthropic.
-
-<img src="claude-add-connector.png" width="740" alt="claude.ai em Settings → Connectors com a janela Add custom connector aberta: o nome AnkiMCP e a URL do túnel https://tunnel.ankimcp.ai/mcp preenchidos." />
 
 ### Funciona em todo lugar
 
