@@ -71,7 +71,7 @@ No ChatGPT, vá em **Configurações (Settings) → Plugins → Explorar plugins
 1. Dê um **Nome (Name)**, como `AnkiMCP`. O ícone e a descrição são opcionais.
 2. Em **Conexão (Connection)**, mantenha **URL do servidor (Server URL)** selecionado e cole a URL do seu túnel.
 3. Deixe **Autenticação (Authentication)** em **OAuth**. O ChatGPT lê as configurações certas a partir da URL.
-4. Marque a caixa **Eu entendo e quero continuar (I understand and want to continue)** para aceitar o aviso de risco do ChatGPT sobre MCP personalizado.
+4. Marque a caixa **Entendi e quero continuar (I understand and want to continue)** para aceitar o aviso de risco do ChatGPT sobre MCP personalizado.
 5. Clique em **Criar (Create)**.
 6. O ChatGPT pede que você entre na conta do AnkiMCP — entre e aprove. Depois disso o AnkiMCP aparece em **Configurações (Settings) → Plugins**.
 
