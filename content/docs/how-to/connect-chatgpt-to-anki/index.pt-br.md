@@ -19,7 +19,7 @@ O ChatGPT roda na nuvem, então ele não enxerga o Anki no seu computador. O **a
 
 ## O que você precisa
 
-- Uma **conta no ChatGPT** em um plano que permita criar apps MCP em **Plugins**. Você vai adicionar o túnel como um deles. A OpenAI lista quais planos incluem isso na [página Developer mode and MCP apps](https://help.openai.com/en/articles/12584461-developer-mode-and-mcp-apps-in-chatgpt) (em inglês).
+- Uma **conta no ChatGPT** no plano **Plus ou superior**. Você vai adicionar o túnel como um app MCP em **Plugins**, e este guia foi testado no Plus. Para os detalhes de quais planos incluem apps MCP, veja a [página Developer mode and MCP apps](https://help.openai.com/en/articles/12584461-developer-mode-and-mcp-apps-in-chatgpt) da OpenAI (em inglês).
 - **Anki 25.07 ou mais recente**, aberto no seu computador. Baixe em [apps.ankiweb.net](https://apps.ankiweb.net/).
 - O **add-on AnkiMCP** para o Anki, código `124672614`. Você instala ele logo abaixo.
 - Uma **conta AnkiMCP**. O túnel tem um [plano gratuito e um plano pago](/pt-br/pricing/). Você entra na conta na primeira vez que conectar.
@@ -72,7 +72,7 @@ Abra o [chatgpt.com](https://chatgpt.com) no navegador e adicione o túnel como 
 
 <img src="chatgpt-sidebar-plugins.png" width="740" alt="Barra lateral esquerda do ChatGPT com New chat, Scheduled, Library, Plugins e Explore. Plugins é o quarto item." />
 
-2. Na página **Plugins**, clique em **Adicionar (Add)** no canto superior direito e escolha **Criar app MCP (Create MCP App)**.
+2. Na página **Plugins**, clique em **Adicionar (Add)** no canto superior direito e escolha **Criar app MCP (Create MCP App)**. Se **Create MCP App** não aparecer, ative primeiro o **Modo desenvolvedor (Developer mode)** em **Configurações (Settings) → Segurança e login (Security and login)**.
 
 <img src="chatgpt-add-create-mcp-app.png" width="740" alt="Página Plugins do ChatGPT com o menu Add aberto no canto superior direito, mostrando Create plugin, Upload plugin archive e Create MCP App." />
 
