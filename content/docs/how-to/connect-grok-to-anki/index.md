@@ -129,6 +129,7 @@ The add-on is free. The tunnel has a free tier to get started and a paid tier fo
 
 ## Next steps
 
+- Got a commute? [Review your cards by voice](/docs/how-to/review-anki-by-voice/) in the Grok mobile app, hands-free.
 - New to local vs. remote? Read [Remote vs local access](/docs/concepts/remote-vs-local/) to choose the right path.
 - Want better cards? Try these [AI prompts for Anki](/docs/how-to/anki-ai-prompts/).
 
