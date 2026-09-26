@@ -21,7 +21,7 @@ ChatGPT runs in the cloud, so it can't see Anki on your computer. The AnkiMCP **
 
 ## What you need
 
-- A **ChatGPT account** on a plan that supports custom apps (MCP connectors). You'll add the tunnel as one. To check whether your plan supports them, see [OpenAI's help page on connectors](https://help.openai.com/en/articles/11487775-connectors-in-chatgpt).
+- A **ChatGPT account** on a plan that lets you create MCP apps under **Plugins**. You'll add the tunnel as one. OpenAI lists which plans include this on its [Developer mode and MCP apps page](https://help.openai.com/en/articles/12584461-developer-mode-and-mcp-apps-in-chatgpt).
 - **Anki 25.07 or later**, open on your computer. Get it from [apps.ankiweb.net](https://apps.ankiweb.net/).
 - The **AnkiMCP add-on** for Anki, code `124672614`. You'll install it below.
 - An **AnkiMCP account**. The tunnel has a [free tier and a paid tier](/pricing/). You sign in the first time you connect it.
@@ -68,24 +68,45 @@ It's safe to share, because it only works after you sign in — requests reach y
 
 ## Step 4: Add the tunnel to ChatGPT
 
-In ChatGPT, go to **Settings → Plugins → Browse plugins**, then click the **+** button in the top-right corner. The **New Plugin** dialog opens.
+Open [chatgpt.com](https://chatgpt.com) in your browser and add the tunnel as an MCP app.
 
-1. Give it a **Name**, like `AnkiMCP`. The icon and description are optional.
-2. Under **Connection**, keep **Server URL** selected and paste your tunnel URL.
-3. Leave **Authentication** on **OAuth**. ChatGPT reads the right settings from the URL.
-4. Check the box **I understand and want to continue** to accept ChatGPT's custom-MCP risk notice.
-5. Click **Create**.
-6. ChatGPT asks you to sign in to AnkiMCP — sign in and approve. AnkiMCP then appears in **Settings → Plugins**.
+1. In the left sidebar, click **Plugins**.
 
-<img src="chatgpt-new-plugin.png" width="500" alt="ChatGPT's New Plugin dialog: a Name field with AnkiMCP, Connection set to Server URL with the tunnel URL pasted, Authentication set to OAuth, and the I understand and want to continue risk checkbox checked." />
+<img src="chatgpt-sidebar-plugins.png" width="740" alt="ChatGPT's left sidebar with New chat, Scheduled, Library, Plugins, and Explore. Plugins is the fourth item." />
 
-<img src="chatgpt-plugins-ankimcp.png" width="600" alt="ChatGPT Settings → Plugins showing AnkiMCP in the installed plugins list." />
+2. On the **Plugins** page, click **Add** in the top-right corner, then choose **Create MCP App**.
+
+<img src="chatgpt-add-create-mcp-app.png" width="740" alt="ChatGPT's Plugins page with the Add menu open in the top-right corner, showing Create plugin, Upload plugin archive, and Create MCP App." />
+
+3. The **Create MCP App** dialog opens. Fill it in:
+   - **Name**: something like `AnkiMCP.ai`. The icon and description are optional.
+   - **Connection**: keep **Server URL** selected and paste your tunnel URL. Ignore the **Tunnel** option — that's ChatGPT's own feature, not the AnkiMCP tunnel.
+   - **Authentication**: leave it on **OAuth**. Don't open **Advanced OAuth settings**; ChatGPT reads the right settings from the URL.
+   - Check **I understand and want to continue** to accept ChatGPT's custom-MCP risk notice, then click **Create**.
+
+<img src="chatgpt-create-mcp-app.png" width="609" alt="ChatGPT's Create MCP App dialog with an Elevated risk badge: Name and Description fields, Connection set to Server URL, Authentication set to OAuth, an Advanced OAuth settings row, the I understand and want to continue checkbox, and Cancel and Create buttons." />
+
+4. ChatGPT shows a **Connect AnkiMCP.ai** screen that explains permissions. Click **Continue to AnkiMCP.ai**.
+
+<img src="chatgpt-connect-ankimcp.png" width="492" alt="ChatGPT's Connect AnkiMCP.ai dialog listing Permissions always respected, You're in control, and Connectors may introduce risk, with a Continue to AnkiMCP.ai button." />
+
+5. AnkiMCP opens and asks you to **Grant Access to ChatGPT**. Sign in if prompted, then click **Yes**.
+
+<img src="ankimcp-grant-access-chatgpt.png" width="565" alt="AnkiMCP's Grant Access to ChatGPT page listing Offline Access, Access your Anki via the AnkiMCP tunnel (MCP), Email address, User roles, and User profile, with Yes and No buttons." />
+
+6. Back in ChatGPT, AnkiMCP.ai now shows under **Installed** on the Plugins page. Click it to open its details, where a **Try in chat** button starts a conversation with the plugin ready to use.
+
+<img src="chatgpt-plugins-installed.png" width="430" alt="ChatGPT's Plugins page with AnkiMCP.ai shown under Installed." />
+
+<img src="chatgpt-plugin-try-in-chat.png" width="740" alt="The AnkiMCP.ai plugin details page in ChatGPT, showing one app named AnkiMCP.ai and a Try in chat button." />
 
 ## Check it worked
 
-Keep Anki open, then ask ChatGPT: **"List my Anki decks."**
+Keep Anki open, then start a chat and type `@`, pick **AnkiMCP.ai** from the list, and ask: **"fetch anki decks"**.
 
-If it names your real decks, the tunnel works. You can now ask it to make cards, search your collection, or review with you.
+If it names your real decks and card counts, the tunnel works. You can now ask it to make cards, search your collection, or review with you. Mentioning the plugin with `@` tells ChatGPT to use it for that message; after the first time, it usually picks AnkiMCP.ai on its own whenever you talk about Anki.
+
+<img src="chatgpt-fetch-anki-decks.png" width="682" alt="A ChatGPT conversation: the user message @AnkiMCP.ai fetch anki decks, and ChatGPT replying that it can access the Anki collection through AnkiMCP.ai and listing 42 decks with 34,589 cards." />
 
 ## Fix common problems
 

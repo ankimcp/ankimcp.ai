@@ -19,7 +19,7 @@ O ChatGPT roda na nuvem, então ele não enxerga o Anki no seu computador. O **a
 
 ## O que você precisa
 
-- Uma **conta no ChatGPT** em um plano que aceite apps personalizados (conectores MCP). Você vai adicionar o túnel como um deles. Para saber se o seu plano aceita, veja [a página de ajuda da OpenAI sobre conectores](https://help.openai.com/en/articles/11487775-connectors-in-chatgpt).
+- Uma **conta no ChatGPT** em um plano que permita criar apps MCP em **Plugins**. Você vai adicionar o túnel como um deles. A OpenAI lista quais planos incluem isso na [página Developer mode and MCP apps](https://help.openai.com/en/articles/12584461-developer-mode-and-mcp-apps-in-chatgpt) (em inglês).
 - **Anki 25.07 ou mais recente**, aberto no seu computador. Baixe em [apps.ankiweb.net](https://apps.ankiweb.net/).
 - O **add-on AnkiMCP** para o Anki, código `124672614`. Você instala ele logo abaixo.
 - Uma **conta AnkiMCP**. O túnel tem um [plano gratuito e um plano pago](/pt-br/pricing/). Você entra na conta na primeira vez que conectar.
@@ -66,24 +66,45 @@ Pode compartilhar sem medo, porque ele só funciona depois que você entra na co
 
 ## Passo 4: adicione o túnel no ChatGPT
 
-No ChatGPT, vá em **Configurações (Settings) → Plugins → Explorar plugins (Browse plugins)** e clique no botão **+** no canto superior direito. A janela **Novo plugin (New Plugin)** abre.
+Abra o [chatgpt.com](https://chatgpt.com) no navegador e adicione o túnel como um app MCP.
 
-1. Dê um **Nome (Name)**, como `AnkiMCP`. O ícone e a descrição são opcionais.
-2. Em **Conexão (Connection)**, mantenha **URL do servidor (Server URL)** selecionado e cole a URL do seu túnel.
-3. Deixe **Autenticação (Authentication)** em **OAuth**. O ChatGPT lê as configurações certas a partir da URL.
-4. Marque a caixa **Entendi e quero continuar (I understand and want to continue)** para aceitar o aviso de risco do ChatGPT sobre MCP personalizado.
-5. Clique em **Criar (Create)**.
-6. O ChatGPT pede que você entre na conta do AnkiMCP — entre e aprove. Depois disso o AnkiMCP aparece em **Configurações (Settings) → Plugins**.
+1. Na barra lateral esquerda, clique em **Plugins**.
 
-<img src="chatgpt-new-plugin.png" width="500" alt="Janela New Plugin do ChatGPT: o campo Name com AnkiMCP, Connection definido como Server URL com a URL do túnel colada, Authentication em OAuth e a caixa de risco I understand and want to continue marcada." />
+<img src="chatgpt-sidebar-plugins.png" width="740" alt="Barra lateral esquerda do ChatGPT com New chat, Scheduled, Library, Plugins e Explore. Plugins é o quarto item." />
 
-<img src="chatgpt-plugins-ankimcp.png" width="600" alt="ChatGPT em Settings → Plugins mostrando o AnkiMCP na lista de plugins instalados." />
+2. Na página **Plugins**, clique em **Adicionar (Add)** no canto superior direito e escolha **Criar app MCP (Create MCP App)**.
+
+<img src="chatgpt-add-create-mcp-app.png" width="740" alt="Página Plugins do ChatGPT com o menu Add aberto no canto superior direito, mostrando Create plugin, Upload plugin archive e Create MCP App." />
+
+3. A janela **Criar app MCP (Create MCP App)** abre. Preencha assim:
+   - **Nome (Name)**: algo como `AnkiMCP.ai`. O ícone e a descrição são opcionais.
+   - **Conexão (Connection)**: mantenha **URL do servidor (Server URL)** selecionado e cole a URL do seu túnel. Ignore a opção **Tunnel** — é um recurso do próprio ChatGPT, não o túnel do AnkiMCP.
+   - **Autenticação (Authentication)**: deixe em **OAuth**. Não abra **Advanced OAuth settings**; o ChatGPT lê as configurações certas a partir da URL.
+   - Marque **Entendi e quero continuar (I understand and want to continue)** para aceitar o aviso de risco do ChatGPT sobre MCP personalizado e clique em **Criar (Create)**.
+
+<img src="chatgpt-create-mcp-app.png" width="609" alt="Janela Create MCP App do ChatGPT com o selo Elevated risk: campos Name e Description, Connection em Server URL, Authentication em OAuth, uma linha Advanced OAuth settings, a caixa I understand and want to continue e os botões Cancel e Create." />
+
+4. O ChatGPT mostra a tela **Connect AnkiMCP.ai**, explicando as permissões. Clique em **Continue to AnkiMCP.ai**.
+
+<img src="chatgpt-connect-ankimcp.png" width="492" alt="Janela Connect AnkiMCP.ai do ChatGPT listando Permissions always respected, You're in control e Connectors may introduce risk, com um botão Continue to AnkiMCP.ai." />
+
+5. O AnkiMCP abre e pede para você **conceder acesso ao ChatGPT (Grant Access to ChatGPT)**. Entre na conta se for pedido e clique em **Yes**.
+
+<img src="ankimcp-grant-access-chatgpt.png" width="565" alt="Página Grant Access to ChatGPT do AnkiMCP listando Offline Access, Access your Anki via the AnkiMCP tunnel (MCP), Email address, User roles e User profile, com os botões Yes e No." />
+
+6. De volta ao ChatGPT, o AnkiMCP.ai aparece em **Instalados (Installed)** na página Plugins. Clique nele para abrir os detalhes, onde o botão **Try in chat** começa uma conversa com o plugin pronto para usar.
+
+<img src="chatgpt-plugins-installed.png" width="430" alt="Página Plugins do ChatGPT com o AnkiMCP.ai em Installed." />
+
+<img src="chatgpt-plugin-try-in-chat.png" width="740" alt="Página de detalhes do plugin AnkiMCP.ai no ChatGPT, mostrando um app chamado AnkiMCP.ai e um botão Try in chat." />
 
 ## Confira se funcionou
 
-Deixe o Anki aberto e peça ao ChatGPT: **"Liste os meus baralhos do Anki."**
+Deixe o Anki aberto, comece um chat, digite `@`, escolha **AnkiMCP.ai** na lista e peça: **"buscar meus baralhos do Anki"**.
 
-Se ele disser o nome dos seus baralhos de verdade, o túnel está funcionando. Agora você pode pedir para ele criar cards, buscar na sua coleção ou revisar com você.
+Se ele disser o nome dos seus baralhos de verdade e a quantidade de cards, o túnel está funcionando. Agora você pode pedir para ele criar cards, buscar na sua coleção ou revisar com você. Mencionar o plugin com `@` diz ao ChatGPT para usá-lo naquela mensagem; depois da primeira vez, ele costuma escolher o AnkiMCP.ai sozinho sempre que você falar do Anki.
+
+<img src="chatgpt-fetch-anki-decks.png" width="682" alt="Uma conversa no ChatGPT: a mensagem do usuário @AnkiMCP.ai fetch anki decks e o ChatGPT respondendo que consegue acessar a coleção do Anki pelo AnkiMCP.ai, listando 42 baralhos com 34.589 cards." />
 
 ## Resolva problemas comuns
 
