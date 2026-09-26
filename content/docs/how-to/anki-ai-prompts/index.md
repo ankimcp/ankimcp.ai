@@ -9,7 +9,7 @@ keywords:
   - ai prompt for anki cards
   - ai flashcard prompt
   - anki ai assistant
-weight: 4
+weight: 5
 sitemap_priority: 0.8
 aliases:
   - /docs/prompts/

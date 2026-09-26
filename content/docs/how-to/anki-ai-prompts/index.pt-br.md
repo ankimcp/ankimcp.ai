@@ -9,7 +9,7 @@ keywords:
   - anki com ia
   - flashcards com ia
   - anki mcp
-weight: 4
+weight: 5
 sitemap_priority: 0.8
 ---
 

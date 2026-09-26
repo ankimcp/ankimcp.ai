@@ -8,7 +8,7 @@ keywords:
   - anki image flashcards
   - anki picture flashcards
   - anki flashcards with images
-weight: 5
+weight: 6
 sitemap_priority: 0.8
 aliases:
   - /docs/image-flashcards/

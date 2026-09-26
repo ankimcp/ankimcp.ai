@@ -11,7 +11,7 @@ keywords:
   - zed mcp anki
   - anki mcp http
   - anki cli stdio
-weight: 3
+weight: 4
 sitemap_priority: 0.8
 # Tabs repeat headings (What you need, Check it worked, Fix common problems)
 # across both panels, so the right-sidebar ToC would list them twice. Hide it.

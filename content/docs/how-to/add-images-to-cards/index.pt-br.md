@@ -9,7 +9,7 @@ keywords:
   - adicionar imagens aos cards do anki
   - flashcards com foto anki
   - anki image flashcards
-weight: 5
+weight: 6
 sitemap_priority: 0.8
 ---
 

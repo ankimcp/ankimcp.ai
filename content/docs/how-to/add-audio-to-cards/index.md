@@ -8,7 +8,7 @@ keywords:
   - anki flashcards with audio
   - anki voice
   - does anki support audio flashcards
-weight: 6
+weight: 7
 sitemap_priority: 0.8
 aliases:
   - /docs/audio-flashcards/

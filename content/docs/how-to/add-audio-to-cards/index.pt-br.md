@@ -9,7 +9,7 @@ keywords:
   - adicionar áudio aos cards do anki
   - anki pronúncia áudio
   - anki audio flashcards
-weight: 6
+weight: 7
 sitemap_priority: 0.8
 ---
 

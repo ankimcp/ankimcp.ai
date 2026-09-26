@@ -10,7 +10,7 @@ keywords:
   - túnel anki mcp não conecta
   - corrigir anki mcp
   - anki mcp pydantic_core download failed
-weight: 7
+weight: 8
 sitemap_priority: 0.7
 ---
 
