@@ -15,7 +15,7 @@ aliases:
 ---
 
 {{< callout type="warning" >}}
-**This feature is experimental.** Before you start using it, **back up your Anki collection**: export your decks as `.apkg` files, or sync everything to AnkiWeb first. Data loss is unlikely, but it is possible while the feature matures.
+**Back up your Anki collection before you start**: export your decks as `.apkg` files, or sync everything to AnkiWeb first. Data loss is unlikely, but no cloud service can rule it out, and deleting an instance is permanent.
 {{< /callout >}}
 
 **Hosted Anki gives you a real Anki desktop app running in the cloud on AnkiMCP's servers — your Anki, hosted for you. Your AI assistant can reach it any time, from anywhere, without your computer being on.**

@@ -13,7 +13,7 @@ sitemap_priority: 0.8
 ---
 
 {{< callout type="warning" >}}
-**Este recurso é experimental.** Antes de começar a usar, **faça um backup da sua coleção do Anki**: exporte os seus baralhos como arquivos `.apkg` ou sincronize tudo com o AnkiWeb primeiro. Perder dados é improvável, mas é possível enquanto o recurso amadurece.
+**Faça um backup da sua coleção do Anki antes de começar**: exporte os seus baralhos como arquivos `.apkg` ou sincronize tudo com o AnkiWeb primeiro. Perder dados é improvável, mas nenhum serviço na nuvem pode descartar isso, e apagar uma instância é definitivo.
 {{< /callout >}}
 
 **O Hosted Anki é o app do Anki de verdade rodando na nuvem, nos servidores do AnkiMCP — o seu Anki, hospedado para você. O seu assistente de IA alcança ele a qualquer hora, de qualquer lugar, sem o seu computador estar ligado.**

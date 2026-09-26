@@ -89,7 +89,6 @@ O [add-on](https://ankiweb.net/shared/info/124672614) e a [CLI](https://github.c
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>O notebook pode ficar desligado — não precisa de Anki local</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Acesso remoto ao seu Anki direto no navegador</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>3.000 créditos de <a href="/docs/anki-studio/text-to-speech/">texto para fala</a> / mês</span></li>
-<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Experimental — ainda em construção</li>
 </ul>
 <a class="pricing-card__cta pricing-card__cta--pro" href="https://web.ankimcp.ai/settings">Quero o Hosted Anki</a>
 </div>
@@ -141,7 +140,7 @@ Não para o uso local. Você só entra na sua conta quando conecta o túnel, par
 O **plano Plus custa $5 por mês** e dá acesso remoto ilimitado. O **plano Pro custa $15 por mês** e acrescenta o Hosted Anki a tudo o que o Plus já tem. Também existe um plano Free gratuito para começar, e tudo o que roda no seu próprio computador continua grátis.
 
 **O que é o Hosted Anki?**
-O Hosted Anki (incluído no **plano Pro, de $15/mês**) é uma cópia completa do Anki de verdade rodando nos nossos servidores na nuvem, em vez do seu computador. A sua IA pode alcançá-lo a qualquer momento — mesmo com o notebook desligado — e você mesmo pode abri-lo no navegador, por um acesso remoto embutido. A sua coleção e suas mídias ficam nos nossos servidores, e a sincronização com o AnkiWeb funciona (você mesmo entra no AnkiWeb dentro do acesso remoto; nunca guardamos a sua senha do AnkiWeb). É um recurso **experimental**, ainda em construção: as instâncias hibernam depois de cerca de uma hora sem uso e acordam sozinhas na próxima requisição da sua IA (de 30 a 60 segundos de partida a frio), e apagar uma instância é definitivo, então mantenha os seus próprios backups. Veja a [documentação do Hosted Anki](/pt-br/docs/hosted-anki/) para o quadro completo.
+O Hosted Anki (incluído no **plano Pro, de $15/mês**) é uma cópia completa do Anki de verdade rodando nos nossos servidores na nuvem, em vez do seu computador. A sua IA pode alcançá-lo a qualquer momento — mesmo com o notebook desligado — e você mesmo pode abri-lo no navegador, por um acesso remoto embutido. A sua coleção e suas mídias ficam nos nossos servidores, e a sincronização com o AnkiWeb funciona (você mesmo entra no AnkiWeb dentro do acesso remoto; nunca guardamos a sua senha do AnkiWeb). Algumas coisas para saber: as instâncias hibernam depois de cerca de uma hora sem uso e acordam sozinhas na próxima requisição da sua IA (de 30 a 60 segundos de partida a frio), e apagar uma instância é definitivo, então mantenha os seus próprios backups. Veja a [documentação do Hosted Anki](/pt-br/docs/hosted-anki/) para o quadro completo.
 
 **Posso cancelar ou pedir reembolso?**
 Você pode cancelar quando quiser, e o seu acesso continua ativo até o fim do período que você já pagou, sem reembolso automático do tempo não usado. O seu primeiro pagamento tem **garantia de reembolso de 14 dias**: é só mandar um e-mail para [support@ankimcp.ai](mailto:support@ankimcp.ai). Os reembolsos seguem os [Termos de Serviço](/terms/) (em inglês).

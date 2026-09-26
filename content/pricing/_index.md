@@ -89,7 +89,6 @@ The [add-on](https://ankiweb.net/shared/info/124672614) and the [CLI](https://gi
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Laptop can stay off — no local Anki needed</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>In-browser remote desktop access to your Anki</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>3,000 <a href="/docs/anki-studio/text-to-speech/">text-to-speech</a> credits / month</span></li>
-<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Experimental — still being built out</li>
 </ul>
 <a class="pricing-card__cta pricing-card__cta--pro" href="https://web.ankimcp.ai/settings">Get Hosted Anki</a>
 </div>
@@ -141,7 +140,7 @@ Not for local use. You sign in only when you connect the tunnel, so only you can
 The **Plus plan is $5 per month** for unlimited remote access. The **Pro plan is $15 per month** and adds Hosted Anki on top of everything in Plus. There's also a free tier to get started, and everything that runs on your own computer stays free.
 
 **What is Hosted Anki?**
-Hosted Anki (included in the **$15/month Pro** plan) is a full copy of the real Anki app running on our cloud servers instead of your computer. Your AI can reach it any time — even with your laptop off — and you can open it yourself in your browser through a built-in remote desktop. Your collection and media live on our servers, and AnkiWeb sync is supported (you sign in to AnkiWeb yourself inside the remote desktop; we never store your AnkiWeb password). It's an **experimental** feature we're still building out: instances sleep after about an hour of inactivity and wake automatically on your next AI request (a 30–60 second cold start), and deleting an instance is permanent, so keep your own backups. See the [Hosted Anki docs](/docs/hosted-anki/) for the full picture.
+Hosted Anki (included in the **$15/month Pro** plan) is a full copy of the real Anki app running on our cloud servers instead of your computer. Your AI can reach it any time — even with your laptop off — and you can open it yourself in your browser through a built-in remote desktop. Your collection and media live on our servers, and AnkiWeb sync is supported (you sign in to AnkiWeb yourself inside the remote desktop; we never store your AnkiWeb password). A few things to know: instances sleep after about an hour of inactivity and wake automatically on your next AI request (a 30–60 second cold start), and deleting an instance is permanent, so keep your own backups. See the [Hosted Anki docs](/docs/hosted-anki/) for the full picture.
 
 **Can I cancel or get a refund?**
 You can cancel anytime, and your access stays active until the end of the period you've already paid for, with no automatic refund for unused time. Your first payment comes with a **14-day money-back guarantee**: just email [support@ankimcp.ai](mailto:support@ankimcp.ai). Refunds are handled per the [Terms of Service](/terms/).
