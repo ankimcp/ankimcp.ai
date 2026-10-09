@@ -142,6 +142,7 @@ Use `twenty_rules`. It's built for creating well-formed flashcards. Use `anki_re
 ## Next steps
 
 - New here? Start with [Connect Claude to Anki](/docs/how-to/connect-claude/).
+- Not sure which AI approach fits you? Read [Anki AI explained](/docs/concepts/anki-ai/).
 - Want to study, not just build? Re-read the `anki_review` flow above.
 - Read the source of the card rules: [Twenty Rules of Formulating Knowledge](https://www.supermemo.com/en/blog/twenty-rules-of-formulating-knowledge).
 

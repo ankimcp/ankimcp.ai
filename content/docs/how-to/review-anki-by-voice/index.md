@@ -11,7 +11,7 @@ keywords:
   - anki audio review
   - review anki while driving
   - anki spoken flashcards
-weight: 5
+weight: 7
 sitemap_priority: 0.8
 ---
 

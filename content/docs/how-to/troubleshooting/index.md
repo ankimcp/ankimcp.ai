@@ -10,7 +10,7 @@ keywords:
   - anki mcp tunnel not connecting
   - fix anki mcp
   - anki mcp pydantic_core download failed
-weight: 8
+weight: 10
 sitemap_priority: 0.7
 aliases:
   - /docs/known-issues/

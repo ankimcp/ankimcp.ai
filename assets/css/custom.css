@@ -491,6 +491,48 @@ body > .hextra-max-page-width { width: 100%; }
   color: #6ee7b7; /* emerald-300 */
 }
 
+/* "Our option" emphasis on /docs/concepts/anki-ai/
+   ----------------------------------------------------------------------------
+   Option 4 (AnkiMCP) gets the Pro pricing card's color-only treatment: a soft
+   blue fill, no badge. `.ankimcp-pick` wraps the option's section (heading +
+   body); `.ankimcp-pick-table` wraps the comparison table, whose last body row
+   is the AnkiMCP row. Plain classes because hx:-utilities not already in the
+   prebuilt bundle render nothing (see .payments-update-badge). Brand blue is
+   recomputed from the theme's HSL inputs (see pricing block). */
+.ankimcp-pick {
+  background: #eff6ff; /* blue-50 */
+  border-left: 4px solid hsl(
+    var(--primary-hue, 212deg)
+    var(--primary-saturation, 100%)
+    calc(var(--primary-lightness, 50%) / 50 * 45)
+  );
+  border-radius: 0.5rem;
+  padding: 0.25rem 1.25rem 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.ankimcp-pick > h3:first-child {
+  margin-top: 0.75rem !important;
+}
+
+.dark .ankimcp-pick {
+  background: #152136; /* dark blue tint, matches .dark .pricing-card--pro */
+  border-left-color: hsl(
+    var(--primary-hue, 212deg)
+    var(--primary-saturation, 100%)
+    calc(var(--primary-lightness, 50%) / 50 * 62)
+  );
+}
+
+.ankimcp-pick-table tbody tr:last-child td {
+  background: #eff6ff !important; /* blue-50 */
+  font-weight: 500;
+}
+
+.dark .ankimcp-pick-table tbody tr:last-child td {
+  background: #152136 !important;
+}
+
 /* "Sign in" navbar button — the menu entry pointing at the dashboard.
    The theme offers no per-item class, so target it by destination. */
 .hextra-nav-container a[href^="https://web.ankimcp.ai"] {

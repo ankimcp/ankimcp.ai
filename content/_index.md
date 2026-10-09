@@ -19,7 +19,7 @@ sitemap_priority: 1.0
 </div>
 
 <div class="hx:mb-6 hx:text-center hx:text-sm hx:text-gray-500 hx:dark:text-gray-400">
-  MCP (Model Context Protocol) is the open standard that lets AI assistants work with other apps — here, your Anki. <a href="/docs/concepts/what-is-mcp/" class="hx:underline">Learn how it works</a>.
+  MCP (Model Context Protocol) is the open standard that lets AI assistants work with other apps — here, your Anki. <a href="/docs/concepts/what-is-mcp/" class="hx:underline">Learn how it works</a>, or see every way to use <a href="/docs/concepts/anki-ai/" class="hx:underline">Anki AI</a>.
 </div>
 
 <div class="hx:mb-6 hero-buttons">
