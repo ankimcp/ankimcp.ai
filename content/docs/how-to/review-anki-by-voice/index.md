@@ -1,7 +1,7 @@
 ---
-title: "How to Review Anki Cards by Voice, Hands-Free (Grok & ChatGPT)"
+title: "How to Review Anki Cards by Voice, Hands-Free (Grok, ChatGPT & Claude)"
 linkTitle: "Review cards by voice"
-description: "Review your Anki cards hands-free on your commute. Start a voice chat in Grok or ChatGPT, say which deck to review, answer out loud, and rate each card by voice."
+description: "Review your Anki cards hands-free on your commute. Start a voice chat in Grok, ChatGPT, or Claude, say which deck to review, answer out loud, and rate each card by voice."
 keywords:
   - anki voice review
   - review anki hands-free
@@ -9,6 +9,7 @@ keywords:
   - anki voice mode
   - grok anki voice
   - chatgpt voice anki
+  - claude voice anki
   - anki audio review
   - review anki while driving
   - anki spoken flashcards
@@ -16,14 +17,14 @@ weight: 7
 sitemap_priority: 0.8
 ---
 
-**Review your Anki cards by voice while you walk, drive, or ride the train. Start a voice chat in Grok or ChatGPT, say which deck to review, answer each card out loud, and rate it by voice. Anki records the reviews as if you'd done them at your desk.**
+**Review your Anki cards by voice while you walk, drive, or ride the train. Start a voice chat in Grok, ChatGPT, or Claude, say which deck to review, answer each card out loud, and rate it by voice. Anki records the reviews as if you'd done them at your desk.**
 
-This works in **Grok** and in **ChatGPT**. Both run the AnkiMCP connector inside voice mode, so they can pull your due cards, read them to you, and save your ratings while your phone stays in your pocket. One catch in ChatGPT: only the **Standard** and **Advanced** voice models call connectors. The **Live** model doesn't, so pick one of the other two before you start. Claude connects to Anki too, but its voice mode doesn't use connectors yet.
+This works in **Grok**, **ChatGPT**, and **Claude**. All three run the AnkiMCP connector inside voice mode, so they can pull your due cards, read them to you, and save your ratings while your phone stays in your pocket. One catch in ChatGPT: only the **Standard** and **Advanced** voice models call connectors. The **Live** model doesn't, so pick one of the other two before you start.
 
 ## What you need
 
-- **The Grok or ChatGPT mobile app** on iOS or Android, signed in to the same account you use on the web.
-- **AnkiMCP connected to that app.** If you haven't done that yet, follow [Connect Grok to Anki](/docs/how-to/connect-grok-to-anki/) or [Connect ChatGPT to Anki](/docs/how-to/connect-chatgpt-to-anki/) first. It takes about 5 minutes and you only do it once.
+- **The Grok, ChatGPT, or Claude mobile app** on iOS or Android, signed in to the same account you use on the web.
+- **AnkiMCP connected to that app.** If you haven't done that yet, follow [Connect Grok to Anki](/docs/how-to/connect-grok-to-anki/), [Connect ChatGPT to Anki](/docs/how-to/connect-chatgpt-to-anki/), or [Connect Claude to Anki](/docs/how-to/connect-claude/) first. It takes about 5 minutes and you only do it once.
 - **Anki open on your computer at home**, with the tunnel connected. The app reaches your cards through the tunnel, so Anki has to stay running while you review.
 - **Earbuds**, unless you like talking to your phone in public.
 
@@ -31,7 +32,7 @@ This works in **Grok** and in **ChatGPT**. Both run the AnkiMCP connector inside
 
 ## Why this works
 
-The AnkiMCP add-on gives the AI three review tools: one to fetch the next due card in true scheduler order, one to show the question and then the answer, and one to rate the card (Again, Hard, Good, Easy). Grok's and ChatGPT's voice modes can call those tools mid-conversation. So a voice review is a normal Anki review, just with the AI reading and listening instead of you tapping. Your intervals, your FSRS scheduling, and your streak all update the same way.
+The AnkiMCP add-on gives the AI three review tools: one to fetch the next due card in true scheduler order, one to show the question and then the answer, and one to rate the card (Again, Hard, Good, Easy). The voice modes in Grok, ChatGPT, and Claude can call those tools mid-conversation. So a voice review is a normal Anki review, just with the AI reading and listening instead of you tapping. Your intervals, your FSRS scheduling, and your streak all update the same way.
 
 ## Step 1: Start a voice chat with the connector on
 
@@ -49,7 +50,17 @@ The AnkiMCP add-on gives the AI three review tools: one to fetch the next due ca
 
 <img src="chatgpt-voice-review-decks.jpg" width="360" alt="ChatGPT Voice on a phone: the user asks for a list of their AnkiMCP decks, ChatGPT reports it successfully connected to the AnkiMCP server and shows the live collection with deck and card counts." />
 
-The steps below say Grok, but the same prompts and ratings work word for word in ChatGPT.
+**Claude**
+
+1. Open the Claude app and start a **new chat**. The AnkiMCP connector you added on claude.ai is already available here.
+2. Tap the **voice** button. Any model works; it's tested with Opus and Fable.
+3. Ask for your decks. Claude shows a "Listed AnkiMCP decks" step while it calls the tool, then answers from your live collection.
+
+<img src="claude-voice-review-decks.jpg" width="360" alt="Claude voice mode on a phone: a collapsed 'Listed AnkiMCP decks' tool call, then Claude's reply naming the user's ankimcp.ai deck and its subdecks and offering to pull the cards." />
+
+Say **"Anki"**, not "AnkiMCP". Speech-to-text turns "AnkiMCP" into things like "anti-deck", as in the screenshot; "my Anki decks" always lands.
+
+The steps below say Grok, but the same prompts and ratings work word for word in ChatGPT and Claude.
 
 ## Step 2: Ask for a review, one card at a time
 
@@ -114,15 +125,13 @@ Some cards carry markup from imports or add-ons. Ask Grok to "read the plain tex
 **ChatGPT talks about Anki but never fetches anything.**
 Your voice model is set to **Live**. Go to **Settings → Voice → Model** and pick **Standard** or **Advanced**, then start a new voice chat.
 
-## What about Claude?
+## Which app should you use?
 
-Claude connects to Anki the same way, through the AnkiMCP tunnel. See [Connect Claude to Anki](/docs/how-to/connect-claude/). In text chat it runs a review session well, and it has a built-in [Review session prompt](/docs/how-to/anki-ai-prompts/) for it.
-
-The gap is voice. As of October 2026, Claude's voice mode doesn't call custom connectors, so a spoken review can't reach Anki. When that changes, this page will cover it. Until then, use Grok or ChatGPT on your commute.
+Whichever one you already have AnkiMCP connected to. All three run the same review tools through the same tunnel, so the review itself is identical. Claude has a built-in [Review session prompt](/docs/how-to/anki-ai-prompts/) that sets up the one-card-at-a-time flow for you, which saves the long prompt in Step 2.
 
 ## Next steps
 
-- Not connected yet? Start with [Connect Grok to Anki](/docs/how-to/connect-grok-to-anki/) or [Connect ChatGPT to Anki](/docs/how-to/connect-chatgpt-to-anki/).
+- Not connected yet? Start with [Connect Grok to Anki](/docs/how-to/connect-grok-to-anki/), [Connect ChatGPT to Anki](/docs/how-to/connect-chatgpt-to-anki/), or [Connect Claude to Anki](/docs/how-to/connect-claude/).
 - Want better cards to review? Try these [AI prompts for Anki](/docs/how-to/anki-ai-prompts/).
 - Curious what else the add-on can do? See the [tool reference](/docs/reference/addon/tools/).
 
