@@ -10,6 +10,9 @@ keywords:
   - túnel anki mcp não conecta
   - corrigir anki mcp
   - anki mcp pydantic_core download failed
+  - anki mcp atualizar ferramentas
+  - claude conector atualizar lista de ferramentas
+  - chatgpt plugin atualizar ferramentas
 weight: 10
 sitemap_priority: 0.7
 ---
@@ -66,6 +69,24 @@ Uma IA remota alcança o seu computador por um **túnel**. O túnel só repassa 
 Para a configuração completa, veja [Conectar o ChatGPT ao Anki](/pt-br/docs/how-to/connect-chatgpt-to-anki/).
 
 **Avançado:** Se você vir `421 Invalid Host header` (cabeçalho de host inválido) depois de definir um hostname personalizado para o servidor HTTP do add-on, veja [Remote Access Security](/docs/concepts/remote-access-security/) (em inglês) para liberar esse nome.
+
+## A sua IA não vê as ferramentas novas depois de atualizar o add-on
+
+**Sintoma:** Você atualizou o add-on AnkiMCP, mas a sua IA continua usando as ferramentas antigas, diz que uma ferramenta não existe ou chama uma que foi removida. Os recursos novos das notas de versão não aparecem.
+
+O Claude e o ChatGPT leem a lista de ferramentas **uma vez, quando você conecta**, e guardam essa cópia. Uma atualização do add-on muda a lista do seu lado, mas a IA continua usando a cópia antiga até você mandar ela olhar de novo. Nada está quebrado; só precisa atualizar.
+
+**Claude (claude.ai).** Abra **Configurações (Settings) → Conectores (Connectors)**, clique em **AnkiMCP**, depois no menu **⋮** ao lado de **Desconectar (Disconnect)** e escolha **Atualizar lista de ferramentas (Refresh tools list)**. A lista de permissões das ferramentas é atualizada na hora.
+
+<img src="claude-refresh-tools-list.png" width="640" alt="Configurações do Claude, Conectores, página do conector AnkiMCP: o menu de três pontos ao lado de Disconnect está aberto, mostrando Refresh tools list e Remove. Abaixo, a lista Tool permissions com as ferramentas somente leitura." />
+
+**ChatGPT.** Abra **Configurações (Settings) → Plugins**, clique em **AnkiMCP.ai**, role até **Gerenciar app (Manage app)** e clique em **Atualizar ferramentas (Refresh tools)**.
+
+<img src="chatgpt-refresh-tools.png" width="640" alt="Configurações do ChatGPT, Plugins, página do plugin AnkiMCP.ai: a seção About com a URL do túnel e, abaixo, a seção Manage app com o botão Refresh tools." />
+
+**Clientes de desktop.** Claude Desktop, Claude Code, Cursor, Cline e Zed buscam a lista de ferramentas quando iniciam, então feche o cliente por completo e abra de novo. Se um cliente insistir na lista antiga, desligue e ligue o servidor AnkiMCP nas configurações de MCP dele.
+
+Depois de atualizar, peça à sua IA para **listar os seus baralhos do Anki** uma vez. Se funcionar, as ferramentas novas já estão em uso.
 
 ## As edições de nota dão certo, mas a nota não muda
 

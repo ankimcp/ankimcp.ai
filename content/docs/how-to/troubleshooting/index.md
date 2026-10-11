@@ -10,6 +10,9 @@ keywords:
   - anki mcp tunnel not connecting
   - fix anki mcp
   - anki mcp pydantic_core download failed
+  - anki mcp refresh tools
+  - claude connector refresh tools list
+  - chatgpt plugin refresh tools
 weight: 10
 sitemap_priority: 0.7
 aliases:
@@ -69,6 +72,24 @@ A remote AI reaches your computer through a **tunnel**. The tunnel only relays r
 For full setup, see [Connect ChatGPT to Anki](/docs/how-to/connect-chatgpt-to-anki/).
 
 **Advanced:** If you see `421 Invalid Host header` after setting a custom hostname for the add-on's HTTP server, see [Remote Access Security](/docs/concepts/remote-access-security/) to allow that name.
+
+## Your AI doesn't see the new tools after an add-on update
+
+**Symptom:** You updated the AnkiMCP add-on, but your AI still uses the old tools, says a tool doesn't exist, or calls one that was removed. New features from the release notes don't show up.
+
+Claude and ChatGPT read the list of tools **once, when you connect**, and keep that copy. An add-on update changes the list on your side, but the AI keeps using its old copy until you tell it to look again. Nothing is broken; it just needs a refresh.
+
+**Claude (claude.ai).** Open **Settings → Connectors**, click **AnkiMCP**, then the **⋮** menu next to **Disconnect** and choose **Refresh tools list**. The tool permissions list updates in place.
+
+<img src="claude-refresh-tools-list.png" width="640" alt="Claude settings, Connectors, AnkiMCP connector page: the three-dot menu next to Disconnect is open, showing Refresh tools list and Remove. Below it, the Tool permissions list with read-only tools." />
+
+**ChatGPT.** Open **Settings → Plugins**, click **AnkiMCP.ai**, scroll to **Manage app**, and click **Refresh tools**.
+
+<img src="chatgpt-refresh-tools.png" width="640" alt="ChatGPT settings, Plugins, AnkiMCP.ai plugin page: the About section with the tunnel URL, then the Manage app section with a Refresh tools button." />
+
+**Desktop clients.** Claude Desktop, Claude Code, Cursor, Cline, and Zed fetch the tool list when they start, so quit the client fully and open it again. If a client keeps an old list, switch the AnkiMCP server off and on in its MCP settings.
+
+After the refresh, ask your AI to **list your Anki decks** once. If that works, the new tools are in use.
 
 ## Note edits succeed but the note doesn't change
 

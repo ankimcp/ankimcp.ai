@@ -154,9 +154,9 @@ params:
     - /images/og-image.png
 
   banner:
-    key: 'maintenance-complete-2026-10-04'
+    key: 'refresh-tools-2026-10'
     message: |
-      ✅ **Maintenance completed** — all services are back online. [Status →](https://status.ankimcp.ai/)
+      🔄 **Updated the add-on?** Claude and ChatGPT keep an old copy of the tool list until you refresh it. [How to refresh →](/docs/how-to/troubleshooting/#your-ai-doesnt-see-the-new-tools-after-an-add-on-update)
 
   analytics:
     umami:
