@@ -1,13 +1,14 @@
 ---
-title: "How to Review Anki Cards by Voice, Hands-Free (Grok)"
+title: "How to Review Anki Cards by Voice, Hands-Free (Grok & ChatGPT)"
 linkTitle: "Review cards by voice"
-description: "Review your Anki cards hands-free on your commute. Start a voice chat in Grok, say which deck to review, answer out loud, and rate each card by voice."
+description: "Review your Anki cards hands-free on your commute. Start a voice chat in Grok or ChatGPT, say which deck to review, answer out loud, and rate each card by voice."
 keywords:
   - anki voice review
   - review anki hands-free
   - anki while commuting
   - anki voice mode
   - grok anki voice
+  - chatgpt voice anki
   - anki audio review
   - review anki while driving
   - anki spoken flashcards
@@ -15,28 +16,40 @@ weight: 7
 sitemap_priority: 0.8
 ---
 
-**Review your Anki cards by voice while you walk, drive, or ride the train. Start a voice chat in Grok, say which deck to review, answer each card out loud, and rate it by voice. Anki records the reviews as if you'd done them at your desk.**
+**Review your Anki cards by voice while you walk, drive, or ride the train. Start a voice chat in Grok or ChatGPT, say which deck to review, answer each card out loud, and rate it by voice. Anki records the reviews as if you'd done them at your desk.**
 
-Right now **Grok is the only AI app where this fully works**. It runs the AnkiMCP connector inside voice mode, so it can pull your due cards, read them to you, and save your ratings while your phone stays in your pocket. ChatGPT and Claude both connect to Anki, but their voice modes don't use connectors yet. When that changes, the same steps will work there too.
+This works in **Grok** and in **ChatGPT**. Both run the AnkiMCP connector inside voice mode, so they can pull your due cards, read them to you, and save your ratings while your phone stays in your pocket. One catch in ChatGPT: only the **Standard** and **Advanced** voice models call connectors. The **Live** model doesn't, so pick one of the other two before you start. Claude connects to Anki too, but its voice mode doesn't use connectors yet.
 
 ## What you need
 
-- **The Grok mobile app** on iOS or Android, signed in to the same account you use on grok.com.
-- **AnkiMCP connected to Grok.** If you haven't done that yet, follow [Connect Grok to Anki](/docs/how-to/connect-grok-to-anki/) first. It takes about 5 minutes and you only do it once.
-- **Anki open on your computer at home**, with the tunnel connected. Grok reaches your cards through the tunnel, so Anki has to stay running while you review.
+- **The Grok or ChatGPT mobile app** on iOS or Android, signed in to the same account you use on the web.
+- **AnkiMCP connected to that app.** If you haven't done that yet, follow [Connect Grok to Anki](/docs/how-to/connect-grok-to-anki/) or [Connect ChatGPT to Anki](/docs/how-to/connect-chatgpt-to-anki/) first. It takes about 5 minutes and you only do it once.
+- **Anki open on your computer at home**, with the tunnel connected. The app reaches your cards through the tunnel, so Anki has to stay running while you review.
 - **Earbuds**, unless you like talking to your phone in public.
 
 **Time:** as long as your review takes. Ten cards is a few minutes.
 
 ## Why this works
 
-The AnkiMCP add-on gives the AI three review tools: one to fetch the next due card in true scheduler order, one to show the question and then the answer, and one to rate the card (Again, Hard, Good, Easy). Grok's voice mode can call those tools mid-conversation. So a voice review is a normal Anki review, just with Grok reading and listening instead of you tapping. Your intervals, your FSRS scheduling, and your streak all update the same way.
+The AnkiMCP add-on gives the AI three review tools: one to fetch the next due card in true scheduler order, one to show the question and then the answer, and one to rate the card (Again, Hard, Good, Easy). Grok's and ChatGPT's voice modes can call those tools mid-conversation. So a voice review is a normal Anki review, just with the AI reading and listening instead of you tapping. Your intervals, your FSRS scheduling, and your streak all update the same way.
 
 ## Step 1: Start a voice chat with the connector on
+
+**Grok**
 
 1. Open the Grok app and start a **new chat**.
 2. Tap the **+** button, open **Connectors**, and make sure **AnkiMCP.ai** is switched on. It usually stays on from last time.
 3. Tap the **voice** button to enter voice mode.
+
+**ChatGPT**
+
+1. Open the ChatGPT app, go to **Settings → Voice**, and set **Model** to **Standard** or **Advanced**. The **Live** model skips connectors, so with Live selected ChatGPT will chat about Anki but never reach your cards.
+2. Start a **new chat** and tap the **voice** button.
+3. Ask for your decks. The first time, ChatGPT confirms it connected to your AnkiMCP server, then reads from your live collection.
+
+<img src="chatgpt-voice-review-decks.jpg" width="360" alt="ChatGPT Voice on a phone: the user asks for a list of their AnkiMCP decks, ChatGPT reports it successfully connected to the AnkiMCP server and shows the live collection with deck and card counts." />
+
+The steps below say Grok, but the same prompts and ratings work word for word in ChatGPT.
 
 ## Step 2: Ask for a review, one card at a time
 
@@ -98,18 +111,21 @@ Grok may have skipped the rating step. Ask it "did you rate that card?" If not, 
 **Grok reads HTML or formatting.**
 Some cards carry markup from imports or add-ons. Ask Grok to "read the plain text only". If a deck is full of it, cleaning the cards once at your desk is the real fix.
 
-## What about ChatGPT and Claude?
+**ChatGPT talks about Anki but never fetches anything.**
+Your voice model is set to **Live**. Go to **Settings → Voice → Model** and pick **Standard** or **Advanced**, then start a new voice chat.
 
-Both connect to Anki the same way, through the AnkiMCP tunnel. See [Connect ChatGPT to Anki](/docs/how-to/connect-chatgpt-to-anki/) and [Connect Claude to Anki](/docs/how-to/connect-claude/). In text chat, both can run a review session, and Claude has a built-in [Review session prompt](/docs/how-to/anki-ai-prompts/) for it.
+## What about Claude?
 
-The gap is voice. As of September 2026, neither ChatGPT's nor Claude's voice mode calls custom connectors, so a spoken review can't reach Anki. When either adds that, this page will cover it. Until then, Grok is the one to use on your commute.
+Claude connects to Anki the same way, through the AnkiMCP tunnel. See [Connect Claude to Anki](/docs/how-to/connect-claude/). In text chat it runs a review session well, and it has a built-in [Review session prompt](/docs/how-to/anki-ai-prompts/) for it.
+
+The gap is voice. As of October 2026, Claude's voice mode doesn't call custom connectors, so a spoken review can't reach Anki. When that changes, this page will cover it. Until then, use Grok or ChatGPT on your commute.
 
 ## Next steps
 
-- Not connected yet? Start with [Connect Grok to Anki](/docs/how-to/connect-grok-to-anki/).
+- Not connected yet? Start with [Connect Grok to Anki](/docs/how-to/connect-grok-to-anki/) or [Connect ChatGPT to Anki](/docs/how-to/connect-chatgpt-to-anki/).
 - Want better cards to review? Try these [AI prompts for Anki](/docs/how-to/anki-ai-prompts/).
 - Curious what else the add-on can do? See the [tool reference](/docs/reference/addon/tools/).
 
 ---
 
-*Disclaimer: "Anki" is a registered trademark of Ankitects Pty Ltd. AnkiMCP is an independent, community-built project and is **not** affiliated with, endorsed by, or sponsored by Ankitects. MCP is an open standard originated by Anthropic; AnkiMCP is likewise not affiliated with or endorsed by Anthropic. Grok is a product of xAI; AnkiMCP is not affiliated with or endorsed by xAI.*
+*Disclaimer: "Anki" is a registered trademark of Ankitects Pty Ltd. AnkiMCP is an independent, community-built project and is **not** affiliated with, endorsed by, or sponsored by Ankitects. MCP is an open standard originated by Anthropic; AnkiMCP is likewise not affiliated with or endorsed by Anthropic. Grok is a product of xAI and ChatGPT is a product of OpenAI; AnkiMCP is not affiliated with or endorsed by either.*
