@@ -26,6 +26,8 @@ I'm a software developer, a student, and a daily Anki user who got tired of manu
 
 This project is actively maintained and developed with assistance from [Claude Code](https://claude.ai/code), Anthropic's AI coding assistant. Every feature is tested in my own daily study routine before release.
 
+I also make [MCP Warp](https://mcpwarp.io), a tunnel that gives any local MCP server a public, sign-in-protected address — see [using AnkiMCP with MCP Warp](/docs/how-to/anki-with-mcp-warp/).
+
 **Why I Built This**: I use Anki for programming, language learning, and technical concepts. Creating well-formatted cards was taking hours every week. Now, with AnkiMCP, I can create cards instantly while reading documentation, watching lectures, or having conversations with AI. This tool saves me hours weekly and makes studying more engaging.
 
 ### Project Vision
