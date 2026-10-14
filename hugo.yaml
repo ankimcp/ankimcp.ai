@@ -153,6 +153,10 @@ params:
   images:
     - /images/og-image.png
 
+  # Affonso affiliate program id. Empty = the pixel tag is not rendered
+  # (see layouts/partials/custom/head-end.html).
+  affonsoProgramId: ""
+
   banner:
     key: 'refresh-tools-2026-10'
     message: |

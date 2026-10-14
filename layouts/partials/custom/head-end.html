@@ -1,3 +1,140 @@
+<!-- First-touch marketing attribution (UTM / click id / external referrer →
+     ankimcp_attr cookie on the registrable domain, read by the dashboard after
+     sign-in). Verbatim copy of the "Marketing site snippet" in
+     anki-mcp-saas/docs/marketing-attribution.md — the SaaS repo has a parity
+     test against that block, so change the logic there first, then re-copy. -->
+<script>
+  (function () {
+    var COOKIE = "ankimcp_attr";
+    var MAX_AGE_SECONDS = 180 * 24 * 60 * 60;
+    var MAX_VALUE_LENGTH = 200;
+    var UTM_KEYS = [
+      ["utm_source", "source"],
+      ["utm_medium", "medium"],
+      ["utm_campaign", "campaign"],
+      ["utm_content", "content"],
+      ["utm_term", "term"],
+    ];
+    var CLICK_ID_TYPES = ["gclid", "fbclid", "msclkid", "ttclid"];
+    // Our checkout return path: coming back from Polar is not a first touch.
+    var IGNORED_REFERRER_DOMAINS = ["polar.sh"];
+    // Keycloak brokers Google login, so the dashboard can land from this host.
+    var IGNORED_REFERRER_HOSTS = ["accounts.google.com"];
+    // Stay well under the ~4 KB per-cookie browser limit; the least useful
+    // fields go first when a record is too long.
+    var MAX_COOKIE_VALUE_LENGTH = 3500;
+    var SIZE_TRIM_ORDER = ["term", "content", "landingPath"];
+
+    function isIgnoredReferrer(host) {
+      return (
+        IGNORED_REFERRER_HOSTS.indexOf(host) !== -1 ||
+        IGNORED_REFERRER_DOMAINS.some(function (domain) {
+          return (
+            host === domain || host.slice(-(domain.length + 1)) === "." + domain
+          );
+        })
+      );
+    }
+
+    function encodeCookieValue(attribution) {
+      var record = { v: 1 };
+      for (var key in attribution) record[key] = attribution[key];
+      return encodeURIComponent(JSON.stringify(record));
+    }
+
+    function clean(value) {
+      if (!value) return undefined;
+      var stripped = value.replace(/[\u0000-\u001f\u007f]/g, "").trim();
+      return stripped ? stripped.slice(0, MAX_VALUE_LENGTH) : undefined;
+    }
+
+    function cookieDomain(hostname) {
+      if (
+        /^\d{1,3}(\.\d{1,3}){3}$/.test(hostname) ||
+        hostname.indexOf(":") !== -1
+      ) {
+        return undefined;
+      }
+      var labels = hostname.split(".");
+      if (labels.length < 2) return undefined;
+      return labels.slice(-2).join(".");
+    }
+
+    function readCookie(name) {
+      var parts = document.cookie.split(";");
+      for (var i = 0; i < parts.length; i++) {
+        var pieces = parts[i].trim().split("=");
+        if (pieces[0] === name) return pieces.slice(1).join("=");
+      }
+      return null;
+    }
+
+    function externalReferrer() {
+      if (!document.referrer) return undefined;
+      var host;
+      try {
+        host = new URL(document.referrer).hostname;
+      } catch (e) {
+        return undefined;
+      }
+      var own = cookieDomain(location.hostname) || location.hostname;
+      if (host === own || host.slice(-(own.length + 1)) === "." + own) {
+        return undefined;
+      }
+      return clean(host);
+    }
+
+    if (readCookie(COOKIE) !== null) return;
+
+    var params = new URLSearchParams(location.search);
+    var attribution = {};
+    for (var i = 0; i < UTM_KEYS.length; i++) {
+      var utm = clean(params.get(UTM_KEYS[i][0]));
+      if (utm) attribution[UTM_KEYS[i][1]] = utm;
+    }
+    for (var j = 0; j < CLICK_ID_TYPES.length; j++) {
+      var clickId = clean(params.get(CLICK_ID_TYPES[j]));
+      if (clickId) {
+        attribution.clickIdType = CLICK_ID_TYPES[j];
+        attribution.clickId = clickId;
+        break;
+      }
+    }
+    var hasParams = Object.keys(attribution).length > 0;
+    var referrer = externalReferrer();
+    if (!hasParams && (!referrer || isIgnoredReferrer(referrer))) return;
+
+    if (referrer) attribution.referrer = referrer;
+    var landingPath = clean(location.pathname);
+    if (landingPath) attribution.landingPath = landingPath;
+    attribution.capturedAt = new Date().toISOString();
+
+    var value = encodeCookieValue(attribution);
+    for (var k = 0; k < SIZE_TRIM_ORDER.length; k++) {
+      if (value.length <= MAX_COOKIE_VALUE_LENGTH) break;
+      delete attribution[SIZE_TRIM_ORDER[k]];
+      value = encodeCookieValue(attribution);
+    }
+    if (value.length > MAX_COOKIE_VALUE_LENGTH) return;
+
+    var domain = cookieDomain(location.hostname);
+    var cookie = [
+      COOKIE + "=" + value,
+      "Max-Age=" + MAX_AGE_SECONDS,
+      "Path=/",
+      "SameSite=Lax",
+    ];
+    if (domain) cookie.push("Domain=" + domain);
+    if (location.protocol === "https:") cookie.push("Secure");
+    document.cookie = cookie.join("; ");
+  })();
+</script>
+
+<!-- Affonso affiliate pixel — rendered only once params.affonsoProgramId is set. -->
+{{ with site.Params.affonsoProgramId }}
+<script async defer src="https://cdn.affonso.io/js/pixel.min.js" data-affonso="{{ . }}" data-cookie_duration="60"></script>
+{{ end }}
+
 <!-- Canonical URL for SEO -->
 <link rel="canonical" href="{{ .Permalink }}" />
 
