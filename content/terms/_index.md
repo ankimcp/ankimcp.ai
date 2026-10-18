@@ -129,9 +129,9 @@ The AnkiMCP SaaS cloud service ("SaaS Service") provides hosted tunnel infrastru
 
 The SaaS Service currently offers three subscription tiers:
 
-- **Free tier:** includes a monthly allowance of tunnel requests (currently 100 authenticated ("signed-in") and 1,000 unauthenticated ("authless") requests per month) and a monthly allowance of text-to-speech credits (currently 100). No payment required. Available to all registered users.
-- **Plus tier:** removes the request limits (unlimited requests) and includes a larger monthly text-to-speech allowance (currently 1,000 credits) for a recurring fee (currently $5 per month). See "Payments, Refunds, and Cancellation" below for billing terms.
-- **Pro tier:** includes everything in the Plus tier, raises the monthly text-to-speech allowance (currently 3,000 credits), and adds the **Hosted Anki** feature (see below) for a recurring fee (currently $15 per month). The Pro tier's features, availability, and pricing may change; material changes are announced as described in Section 12 (Changes to Terms).
+- **Free tier:** includes a monthly allowance of tunnel requests (currently 100 authenticated ("signed-in") and 1,000 unauthenticated ("authless") requests per month) and a monthly allowance of text-to-speech credits (currently 500). No payment required. Available to all registered users.
+- **Plus tier:** removes the request limits (unlimited requests) and includes a larger monthly text-to-speech allowance (currently 10,000 credits) for a recurring fee (currently $5 per month). See "Payments, Refunds, and Cancellation" below for billing terms.
+- **Pro tier:** includes everything in the Plus tier, raises the monthly text-to-speech allowance (currently 30,000 credits), and adds the **Hosted Anki** feature (see below) for a recurring fee (currently $15 per month). The Pro tier's features, availability, and pricing may change; material changes are announced as described in Section 12 (Changes to Terms).
 
 We reserve the right to modify tier features, request allowances, credit allowances, introduce new tiers, or adjust pricing with reasonable notice. Changes to paid tier pricing will not apply to active subscription periods.
 
