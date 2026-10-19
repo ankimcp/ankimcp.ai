@@ -99,7 +99,7 @@ The catch is that Anki only works if *you* do two things: make good cards and sh
 
 First, the payoff. You get durable memory for a small, steady amount of daily study. By reviewing only what you're about to forget, you remember far more than cramming, in less total time.
 
-But writing clear, well-formed cards is real work. And the daily review habit takes discipline. For many people, this extra work is where the habit breaks down.
+But writing clear, well-formed cards is real work (see [the twenty rules](/docs/concepts/twenty-rules/) for what "well-formed" means). And the daily review habit takes discipline. For many people, this extra work is where the habit breaks down.
 
 That's the gap worth closing. What if an AI assistant could turn what you're studying into well-formed cards, and quiz you through reviews like a patient tutor? That's the problem **AnkiMCP** was built to solve, and it's where the rest of this guide goes next: [What is MCP?](/docs/concepts/what-is-mcp/)
 

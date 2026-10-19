@@ -36,7 +36,7 @@ Both come built into AnkiMCP.
 
 | Prompt | What it does |
 |---|---|
-| `twenty_rules` | Coaches the AI to write effective cards using Dr. Piotr Wozniak's "Twenty Rules of Formulating Knowledge." Keeps cards simple, atomic, and clear. Best for turning notes or textbooks into cards. |
+| `twenty_rules` | Coaches the AI to write effective cards using Dr. Piotr Wozniak's ["Twenty Rules of Formulating Knowledge."](/docs/concepts/twenty-rules/) Keeps cards simple, atomic, and clear. Best for turning notes or textbooks into cards. |
 | `anki_review` | Guides a spaced-repetition review session: sync, show one card at a time, wait for your answer, then rate it (Again, Hard, Good, Easy). Best for daily study. |
 
 Prompts can change between releases. For the latest list, see the [AnkiMCP repo](https://github.com/ankimcp/anki-mcp-server).

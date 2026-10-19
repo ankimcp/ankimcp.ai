@@ -34,7 +34,7 @@ Os dois já vêm dentro do AnkiMCP.
 
 | Prompt | O que ele faz |
 |---|---|
-| `twenty_rules` | Ensina a IA a escrever cards eficazes usando as "Vinte Regras para Formular Conhecimento", do Dr. Piotr Wozniak. Mantém os cards simples, atômicos e claros. Melhor para transformar anotações ou livros em cards. |
+| `twenty_rules` | Ensina a IA a escrever cards eficazes usando as ["Vinte Regras para Formular Conhecimento"](/docs/concepts/twenty-rules/) (em inglês), do Dr. Piotr Wozniak. Mantém os cards simples, atômicos e claros. Melhor para transformar anotações ou livros em cards. |
 | `anki_review` | Conduz uma sessão de revisão com repetição espaçada: sincroniza, mostra um card por vez, espera a sua resposta e depois pede a nota (De novo / Again, Difícil / Hard, Bom / Good, Fácil / Easy). Melhor para o estudo diário. |
 
 Os prompts podem mudar de uma versão para outra. Para ver a lista mais recente, veja o [repositório do AnkiMCP](https://github.com/ankimcp/anki-mcp-server) (em inglês).
