@@ -132,6 +132,15 @@ Hosted Anki is different from the tunnel. To run a copy of Anki on our servers, 
 - **AnkiWeb password is never stored:** if you sync your hosted instance with AnkiWeb, you enter your AnkiWeb credentials yourself, inside your remote desktop session, directly with AnkiWeb. Your AnkiWeb password is **never stored, transmitted to, or accessible by AnkiMCP.**
 - **Retention:** your stored collection and media persist for as long as your hosted instance exists. When you delete the instance (or when it is removed after account deletion), that data is **permanently removed** and cannot be recovered. You are responsible for your own backups — see [Data Retention](#5-data-retention) below.
 
+##### AnkiMCP App for Android (AnkiDroid)
+
+The AnkiMCP app for Android connects AnkiDroid on your phone to the same tunnel. In addition to the SaaS account data above, when you use the Android app we process:
+
+- **Push token:** when you turn on remote access, the app registers a push token (a Firebase Cloud Messaging token or installation ID), together with your platform and app version, with our relay server. We use it only to wake the app when an AI assistant calls it. Push delivery is handled by **Google Firebase** under Google's privacy policy. The token is deleted when you turn remote access off or sign out, and a token that stops working is removed automatically.
+- **Google Play purchase token:** if you buy a subscription inside the app, the app sends the Google Play purchase token to our server so we can verify the purchase with Google Play and activate your plan. **Google Play is the payment processor** for in-app purchases; your card details are handled by Google and never reach our servers.
+
+The app does not send your flashcards to us except as tunnel transit, described under Data Transit above.
+
 ### 2. Information We Do Not Collect
 
 - **No cookies** are set by the main website (ankimcp.ai). The community forum (forum.ankimcp.ai) and the SaaS dashboard (web.ankimcp.ai) use cookies for authentication — see the respective sections above.
@@ -154,6 +163,8 @@ We rely on the following third-party services:
 | MailerLite | Newsletter delivery | [MailerLite Privacy Policy](https://www.mailerlite.com/legal/privacy-policy) |
 | Polar Software, Inc. (merchant of record) | Payment processing and checkout (since Sep 2026) | [Polar Privacy Policy](https://polar.sh/legal/privacy-policy) |
 | Paddle (until Sep 1, 2026) | Payment processing (historical — retains past payment data) | [Paddle Privacy Policy](https://www.paddle.com/legal/privacy) |
+| Google Play | Payment processing for subscriptions bought in the Android app | [Google Privacy Policy](https://policies.google.com/privacy) |
+| Google Firebase (Cloud Messaging) | Push notifications that wake the Android app | [Firebase Privacy](https://firebase.google.com/support/privacy) |
 | Microsoft Azure (AI Speech) | Speech synthesis — text you submit for audio generation is processed by Microsoft Azure | [Microsoft Privacy Statement](https://privacy.microsoft.com/privacystatement) |
 | Discourse (self-hosted) | Community forum | [Discourse Privacy Policy](https://www.discourse.org/privacy) |
 | Keycloak (self-hosted) | Authentication for forum, SaaS accounts, and LLM OAuth | [Keycloak Privacy](https://www.keycloak.org/privacy) |
@@ -184,7 +195,7 @@ Since we use cookieless, anonymous analytics, there is no personal website analy
 **SaaS users** additionally have the right to:
 
 - **Access your data** — view your account information, connection history, and subscription status through the SaaS dashboard.
-- **Delete your account** — request complete deletion of your SaaS account and all associated data by contacting [support@ankimcp.ai](mailto:support@ankimcp.ai). Account deletion removes your user record, OAuth client mappings, and subscription history, except records we are legally required to retain (for example for tax or accounting purposes). This action is irreversible.
+- **Delete your account** — delete your SaaS account yourself in the dashboard (**Settings → General → Delete account**), or by emailing [support@ankimcp.ai](mailto:support@ankimcp.ai) from the account's address. Account deletion removes your login, user record, OAuth client mappings, subscription history, push token, and any hosted data, except records we are legally required to retain (for example for tax or accounting purposes). This action is irreversible.
 - **Cancel your subscription** — downgrade from a paid tier to the free tier at any time through the dashboard.
 - **Disconnect your client** — disconnect your local AnkiMCP add-on or CLI from the tunnel at any time, immediately stopping all data transit through our servers.
 - **Delete Hosted Anki data** — if you use Hosted Anki, delete your hosted instance at any time to permanently remove the collection and media stored for it from our servers.
@@ -200,6 +211,7 @@ Since we use cookieless, anonymous analytics, there is no personal website analy
 - **SaaS account data** (email, name, avatar, Keycloak ID) is retained for the lifetime of your account and deleted upon account deletion
 - **Service logs** are retained for up to **31 days** and then automatically purged. IP addresses of tunnel and MCP connections are not logged
 - **OAuth client registrations** are retained while your account is active. They are deleted when you delete your account
+- **Android push tokens** are retained while remote access is on in the Android app. They are deleted when you turn remote access off, sign out, or delete your account, and a token that stops working is removed automatically
 - **Subscription history and usage statistics** (tier changes, monthly request counts, timestamps) are retained for the lifetime of your account for audit purposes and deleted upon account deletion, except records we are legally required to retain (for example for tax or accounting purposes), which are kept for the statutory period and then deleted
 - **Diagnostic traces** are retained for up to **30 days** and **performance metrics** for up to **7 days**, then automatically purged. This data does not contain flashcard content
 - **In-memory tunnel state** (active connection data) exists only while your client is connected and is lost when the connection ends or the server restarts
