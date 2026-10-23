@@ -26,7 +26,14 @@ The app runs next to AnkiDroid and talks to it through AnkiDroid's official API.
 - **Remote access** works with Claude on the web, desktop, or mobile. The app connects your phone to AnkiMCP's tunnel service through its own relay (`ankidroid.ankimcp.ai`), using the same AnkiMCP account as the [Anki add-on](/docs/concepts/add-on-vs-cli/). When Claude needs your phone, a push message wakes the app, and it answers through the tunnel. You need an AnkiMCP account.
 - **Local Wi-Fi** works with Claude Desktop or Claude Code on a computer on the same Wi-Fi. The computer talks to your phone directly, and nothing goes through AnkiMCP's servers. You don't need an account.
 
-Your collection stays on your phone. The app sends only the answer to each request your AI makes, and AnkiMCP never stores those answers. See the [Privacy Policy](/privacy/#ankimcp-app-for-android-ankidroid) for details.
+You can use both at the same time, and the phone's remote access works alongside the add-on on your computer.
+
+Your collection stays on your phone. In remote access, only your AI's requests and the app's answers pass through AnkiMCP's relay, and they're never stored. See the [Privacy Policy](/privacy/#ankimcp-app-for-android-ankidroid) for details.
+
+## Get started
+
+- **[Remote access](/docs/ankidroid-mcp/remote-access/)**: sign in, connect, and add one connector in Claude. Works with Claude everywhere.
+- **[Local Wi-Fi](/docs/ankidroid-mcp/local-wifi/)**: connect Claude Desktop or Claude Code on your home network, with no account.
 
 ## What you need
 
@@ -35,94 +42,13 @@ Your collection stays on your phone. The app sends only the answer to each reque
 - An **AnkiMCP account** for remote access. The tunnel has a [free tier and paid tiers](/pricing/).
 - **Google Play services** for automatic wake-ups in remote access. Without them, you can still tap **Connect** yourself.
 
-## Set up remote access
+## Google Play or GitHub
 
-1. Install the app and open it. When it asks for access to AnkiDroid, allow it.
-2. On the **Remote** tab, tap **Sign in**. Open the page it shows, check that the code matches, and approve. You can sign in with Google, GitHub, or email and password. On Android 13 and later, allow notifications when asked.
-3. Tap **Connect**. A green dot means the phone is connected.
-4. In Claude, go to **Settings → Connectors → Add custom connector**. Paste the MCP server URL from the app (tap **Copy URL**), then sign in with the same AnkiMCP account. The URL is the same for everyone:
+The app is on Google Play, and as an APK on [GitHub Releases](https://github.com/ankimcp/ankidroid-mcp/releases). Both builds run the same code, but they're signed with different keys:
 
-   ```text
-   https://ankidroid.ankimcp.ai/mcp
-   ```
-
-5. Ask Claude: **"list my Anki decks"**.
-
-This address is separate from the [Anki add-on's tunnel](/docs/how-to/connect-claude/), so you can connect both your phone and your computer at the same time.
-
-After that, Claude wakes your phone whenever it needs it. The app disconnects when the screen turns off, or after 15, 30, or 60 idle minutes (you choose). The **Remote access** switch at the top of the Remote tab turns remote access off completely.
-
-## Set up local Wi-Fi
-
-1. On the **Local** tab, turn on **Local server (Wi-Fi)**.
-2. Turn on **Require access token** if you share the Wi-Fi with people you don't trust. Without it, anyone on the same network can reach your collection.
-3. Tap **Copy URL** (and **Copy token** if you turned on **Require access token**), or tap **Share** to send both to your computer.
-4. Add the URL to Claude Code or Claude Desktop on that computer, as shown below.
-
-The URL looks like `http://192.168.1.20:8765/mcp`: your phone's Wi-Fi address, the port (8765 unless you change it on the **Local server** card), and `/mcp`. Replace the example address below with yours.
-
-Claude on the web, and Claude Desktop's own **custom connectors**, can't use local mode. They connect from Anthropic's cloud, which can't reach a phone on your home network.
-
-### Claude Code
-
-```bash
-claude mcp add --transport http ankidroid http://192.168.1.20:8765/mcp
-```
-
-With **Require access token** on, add the token as a header:
-
-```bash
-claude mcp add --transport http ankidroid http://192.168.1.20:8765/mcp \
-  --header "Authorization: Bearer YOUR_TOKEN"
-```
-
-### Claude Desktop
-
-Claude Desktop reaches the phone through [mcp-remote](https://www.npmjs.com/package/mcp-remote), so you need [Node.js](https://nodejs.org/) installed. Open **Settings → Developer → Edit Config**, add this to `claude_desktop_config.json`, and restart Claude Desktop:
-
-```json
-{
-  "mcpServers": {
-    "ankidroid": {
-      "command": "npx",
-      "args": ["-y", "mcp-remote", "http://192.168.1.20:8765/mcp", "--allow-http", "--transport", "http-only"]
-    }
-  }
-}
-```
-
-With **Require access token** on, pass the token through an environment variable:
-
-```json
-{
-  "mcpServers": {
-    "ankidroid": {
-      "command": "npx",
-      "args": [
-        "-y", "mcp-remote", "http://192.168.1.20:8765/mcp", "--allow-http", "--transport", "http-only",
-        "--header", "Authorization:${AUTH_HEADER}"
-      ],
-      "env": { "AUTH_HEADER": "Bearer YOUR_TOKEN" }
-    }
-  }
-}
-```
-
-Keep `Authorization:${AUTH_HEADER}` exactly as written, with no space after the colon. The space lives in the `env` value instead, so `npx` doesn't split it.
-
-### If the computer can't reach the phone
-
-- **On a Mac,** allow the app that runs Claude Code or Claude Desktop (Terminal, iTerm, or Claude) under **System Settings → Privacy & Security → Local Network**. Without it, the connection fails with `EHOSTUNREACH`.
-- **The phone's address changed.** It changes when the phone joins another network or gets a new address from the router. Update the URL on your computer, or reserve a fixed address for the phone in your router.
-- **Guest Wi-Fi** often blocks devices from talking to each other. Put both on the same regular network.
-- **The phone stops answering with the screen off.** Nothing can wake the app in local mode, so turn battery optimisation off for AnkiMCP (see [Keep the app awake](#keep-the-app-awake)).
-- **After a reboot,** the local server stays off until you open the app.
-
-While the server runs, a **Local MCP server** notification stays up with a **Stop local server** button. The app doesn't need to stay open.
-
-{{< callout type="warning" >}}
-Local mode is plain, unencrypted HTTP. Everything crosses your Wi-Fi in the open, including the token. Use it only on a home network you trust.
-{{< /callout >}}
+- You can't install one over the other. To switch, uninstall first. You'll need to sign in and set things up again; your AnkiDroid collection isn't touched.
+- Google Play updates the app automatically. The GitHub APK you update by hand.
+- Plus and Pro are sold through Google Play. Install the app from Google Play to subscribe in the app. A plan bought on the web works in either build.
 
 ## Plans
 
@@ -135,7 +61,7 @@ You can subscribe in the app through Google Play, or on the web. Manage the subs
 
 ## Keep the app awake
 
-Many Android phones freeze background apps to save battery. This is common on Xiaomi, Redmi, Poco, Realme, Oppo, OnePlus, Vivo, iQOO, Huawei, and Honor. If requests time out, allow **both** AnkiMCP and AnkiDroid to run in the background. On these phones, the **Battery** card in the app shows the exact steps for your phone and has buttons that open both apps' App info pages.
+Many Android phones pause background apps to save battery. This is common on Xiaomi, Redmi, Poco, Realme, Oppo, OnePlus, Vivo, iQOO, Huawei, and Honor. If requests time out, allow **both** AnkiMCP and AnkiDroid to run in the background. On these phones, the **Battery** card in the app shows the exact steps for your phone and has buttons that open both apps' App info pages.
 
 ## Limitations
 

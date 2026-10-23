@@ -41,7 +41,7 @@ AnkiMCP is a free, open-source Model Context Protocol (MCP) server that connects
 
 ### 3. Open-Source License
 
-The **client-side components** of AnkiMCP — such as the [CLI server](https://github.com/ankimcp/anki-mcp-server) and the [Anki add-on](https://github.com/ankimcp/anki-mcp-server-addon), and the AnkiMCP app for Android, together with any other software we distribute via GitHub — are open source, distributed under the licenses specified in their repositories. Your use of that software is governed by those licenses.
+The **client-side components** of AnkiMCP — such as the [CLI server](https://github.com/ankimcp/anki-mcp-server) and the [Anki add-on](https://github.com/ankimcp/anki-mcp-server-addon), and the [AnkiMCP app for Android](https://github.com/ankimcp/ankidroid-mcp), together with any other software we distribute via GitHub — are open source, distributed under the licenses specified in their repositories. Your use of that software is governed by those licenses.
 
 The **SaaS platform** — the tunnel infrastructure, the dashboard, and the systems that provision and manage Hosted Anki instances — is **not** open source. It is proprietary software operated by us and made available to you as a service under these Terms.
 

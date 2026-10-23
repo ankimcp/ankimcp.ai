@@ -16,7 +16,7 @@ sitemap_priority: 0.3
 - Two optional features are different. **Hosted Anki** runs a copy of Anki on our servers, so your collection and media **are stored there** while your instance exists and are permanently removed when you delete it. Your **AnkiWeb password is never stored** — you enter it yourself inside the remote desktop. The **media library** stores the files you upload or generate (text you submit for audio generation is processed by Microsoft Azure) until you delete them.
 - The community forum and the cloud service each need their own account; the forum and the SaaS dashboard use cookies to keep you signed in.
 - The **AnkiMCP app for Android** has no analytics or crash reporting. Your collection stays on your phone; only your AI's requests and the app's answers pass through our relay, and they're never stored.
-- Our application logs do **not** record the IP addresses of normal tunnel or MCP traffic. Our request traces record the network address each request came from, for up to 30 days. If our systems detect possible abuse, we may keep additional technical data to investigate it. Service logs are kept for up to 31 days; performance metrics for 7 days.
+- Our application logs do **not** record the IP addresses of normal tunnel or MCP traffic. Our request traces record the network address each request came from, for up to 14 days. If our systems detect possible abuse, we may keep additional technical data to investigate it. Service logs are kept for up to 14 days; performance metrics for 7 days.
 - Email [support@ankimcp.ai](mailto:support@ankimcp.ai) to see or delete the data we hold about you.
 {{< /callout >}}
 
@@ -37,7 +37,7 @@ Umami **does not use cookies**, does not track users across sites, and does not 
 We want to know which campaigns and partners bring people to AnkiMCP. For that we use two cookies, set only in the cases below:
 
 - **Attribution cookie (`ankimcp_attr`).** If you arrive at ankimcp.ai from an ad, a campaign link, or another website, we set a first-party cookie that records where you came from: campaign tags in the link (such as `utm_source`), an ad click identifier if the link has one, the referring website's domain, and the page you landed on. It lasts up to 180 days. If you sign up, we save the first of these records to your account. If you start a checkout on the web, we pass only the campaign source, medium, and name to our Payment Provider with the order. We do not send this data to advertising platforms, and we don't use it for anything but measuring where our users come from.
-- **Referral cookie (Affonso).** While our affiliate program is running, ankimcp.ai and the dashboard load a script from [Affonso](https://affonso.io), our affiliate platform. Loading it lets Affonso receive technical data such as your IP address and browser details. If you arrive through a partner's referral link, the script sets a referral cookie that lasts up to 60 days. If you then subscribe on the web, we save the referral to your account and pass it to our Payment Provider with the order, so the partner can be credited. Affonso receives the details of the referred purchase (such as your name, email address, amounts, refunds, and cancellations) from our Payment Provider, acting as our data processor. Partners see referred customers anonymously unless we choose otherwise. Purchases in the Android app are never attributed to a partner.
+- **Referral cookie (Affonso).** While our affiliate program is running, ankimcp.ai and the dashboard load a script from [Affonso](https://affonso.io), our affiliate platform. Loading it lets Affonso receive technical data such as your IP address and browser details. If you arrive through a partner's referral link, the script sets a referral cookie that lasts up to 60 days. If you then start a checkout on the web, we save the referral to your account and pass it to our Payment Provider with the order, so the partner can be credited. Affonso receives the details of the referred purchase (such as your name, email address, amounts, refunds, and cancellations) from our Payment Provider, acting as our data processor. Partners see referred customers anonymously unless we choose otherwise. Purchases in the Android app are never attributed to a partner.
 
 You can block or delete these cookies in your browser at any time; the site works the same without them.
 
@@ -68,6 +68,7 @@ When you create a SaaS account, we collect:
 - **Account identifiers:** a unique user ID assigned to your account.
 - **Authentication method:** which social login provider you used, or that you registered with email/password.
 - **Cookies:** when you sign in to the SaaS dashboard (web.ankimcp.ai), it sets httpOnly authentication and session cookies. These are required for sign-in and are not used for tracking.
+- **Sign-in records:** our sign-in service records each sign-in attempt (sign-ins, failed sign-ins, registrations, sign-outs, and token exchanges), including the IP address, the time, the app you signed in to, and the result. We use these records for security and to investigate account problems.
 
 SaaS accounts are managed through our self-hosted [Keycloak](https://www.keycloak.org) identity provider, which also handles forum authentication.
 
@@ -78,7 +79,7 @@ When you connect your AnkiMCP client (the add-on, the CLI, or the Android app) t
 - **Connection metadata:** connect and disconnect times, your plan, your account email and ID, and which kind of client connected (the add-on or the Android app). During normal operation our application logs do **not** record the IP addresses of tunnel or MCP connections (see [Service Monitoring](#service-monitoring-opentelemetry) and [Security and Abuse Prevention](#security-and-abuse-prevention) below).
 - **Connection state:** whether your client is currently connected, and while it is, the client's type and version, for display on your dashboard and to route LLM requests.
 
-Connection state is short-lived routing data on the tunnel server and is not persisted to a database. Connection metadata appears in service logs, which are retained for up to **31 days**. Our network infrastructure provider (Cloudflare) may process connection metadata, including IP addresses, at the network edge under its own privacy policy.
+Connection state is short-lived routing data on the tunnel server and is not persisted to a database. Connection metadata appears in service logs, which are retained for up to **14 days**. Our network infrastructure provider (Cloudflare) may process connection metadata, including IP addresses, at the network edge under its own privacy policy.
 
 ##### LLM OAuth Data
 
@@ -122,7 +123,7 @@ OpenTelemetry data is used exclusively for service reliability and debugging. It
 
 To protect the SaaS Service and its users, our systems monitor for signs of abuse, misuse, and violations of our [Terms of Service](/terms/). When they detect possible abuse, we may record additional technical data about the activity involved, such as IP addresses and request metadata, and use it to investigate, to block the activity, and to enforce our Terms. We don't publish the details of how detection works, because doing so would make it easier to get around.
 
-This data is used only for security and enforcement. It is deleted together with our service logs, within **31 days**, unless we need it for longer for an ongoing investigation or to establish, exercise, or defend legal claims. It never includes the content of your flashcards.
+This data is used only for security and enforcement. It is deleted together with our service logs, within **14 days**, unless we need it for longer for an ongoing investigation or to establish, exercise, or defend legal claims. It never includes the content of your flashcards.
 
 ##### Data Transit (Anki Flashcard Data)
 
@@ -224,13 +225,14 @@ Since we use cookieless, anonymous analytics, there is no personal website analy
 - **Forum IP addresses** are retained for security and anti-abuse purposes
 - **Forum account deletion** anonymizes your posts (author replaced with a generic label) but does not remove the post content, as other users may have relied on or replied to it
 - **SaaS account data** (email, name, avatar, Keycloak ID) is retained for the lifetime of your account and deleted upon account deletion
-- **Service logs** are retained for up to **31 days** and then automatically purged. They don't record the IP addresses of normal tunnel and MCP traffic
-- **Security and abuse data** is deleted with the service logs within **31 days**, unless needed for longer for an ongoing investigation or a legal claim (see [Security and Abuse Prevention](#security-and-abuse-prevention))
+- **Service logs** are retained for up to **14 days** and then automatically purged. They don't record the IP addresses of normal tunnel and MCP traffic
+- **Sign-in records** (including IP addresses) are deleted after **30 days**; copies in our daily backups are kept up to 7 days longer
+- **Security and abuse data** is deleted with the service logs within **14 days**, unless needed for longer for an ongoing investigation or a legal claim (see [Security and Abuse Prevention](#security-and-abuse-prevention))
 - **OAuth client registrations** are retained while your account is active. They are deleted when you delete your account
 - **Android push tokens** are retained while remote access is on in the Android app. They are deleted when you turn remote access off, sign out, or delete your account. A token that Firebase reports as no longer valid is deleted the next time we try to use it
 - **Google Play purchase records** (purchase token, plan, status, and period end) are retained for the lifetime of your account and deleted upon account deletion, except records we are legally required to retain
 - **Subscription history and usage statistics** (tier changes, monthly request counts, timestamps) are retained for the lifetime of your account for audit purposes and deleted upon account deletion, except records we are legally required to retain (for example for tax or accounting purposes), which are kept for the statutory period and then deleted
-- **Diagnostic traces** (including the network address each request came from) are retained for up to **30 days** and **performance metrics** for up to **7 days**, then automatically purged. This data does not contain flashcard content
+- **Diagnostic traces** (including the network address each request came from) are retained for up to **14 days** and **performance metrics** for up to **7 days**, then automatically purged. This data does not contain flashcard content
 - **Google Play purchase notifications** have their contents erased after **90 days**; the remaining record that each one arrived is deleted upon account deletion
 - **In-memory tunnel state** (active connection data) exists only while your client is connected and is lost when the connection ends or the server restarts
 - **Media library files** (uploaded files and generated audio, including the source text stored in a file's description) are retained until you delete them and are **permanently deleted upon account deletion**
