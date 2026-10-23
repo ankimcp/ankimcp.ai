@@ -21,6 +21,9 @@
     --bad-bg: #fdecec;
     --bad-fg: #7a1c1c;
     --bad-dot: #d64545;
+    --off-bg: #f0f0f0;
+    --off-fg: #4a4a4a;
+    --off-dot: #9a9a9a;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -34,6 +37,8 @@
       --warn-fg: #ffd580;
       --bad-bg: #3d1414;
       --bad-fg: #ff9a9a;
+      --off-bg: #23262b;
+      --off-fg: #b8b8b8;
     }
   }
   * { box-sizing: border-box; }
@@ -178,15 +183,24 @@
       <span class="dot" style="background:var(--warn-dot)"></span>
       Scheduled maintenance
     </p>
-    <ul class="notice-window">
-      <li><s>October 17, 2026 · 04:00–08:00 UTC (4 hours)</s> — cancelled</li>
-      <li>October 24, 2026 · 01:00–05:00 UTC (4 hours)</li>
-    </ul>
+    <p class="notice-window">October 24, 2026 · 01:00–05:00 UTC (4 hours)</p>
     <p class="notice-body">
       All AnkiMCP services will be unavailable during this window. Sync
       resumes automatically afterwards — no action needed.
     </p>
-    <p class="notice-posted">Posted 2026-10-14 17:00 UTC · Update 2026-10-23 12:00 UTC</p>
+    <p class="notice-posted">Posted 2026-10-23 12:00 UTC</p>
+  </div>
+  <div class="notice-card" style="background:var(--off-bg);color:var(--off-fg)">
+    <p class="notice-title">
+      <span class="dot" style="background:var(--off-dot)"></span>
+      Maintenance cancelled
+    </p>
+    <p class="notice-window"><s>October 17, 2026 · 04:00–08:00 UTC (4 hours)</s></p>
+    <p class="notice-body">
+      This window was cancelled — no downtime took place. The work moved to
+      October 24, see above.
+    </p>
+    <p class="notice-posted">Posted 2026-10-14 17:00 UTC · Cancelled 2026-10-23 12:00 UTC</p>
   </div>
   <div class="notice-card" style="background:var(--ok-bg);color:var(--ok-fg)">
     <p class="notice-title">
