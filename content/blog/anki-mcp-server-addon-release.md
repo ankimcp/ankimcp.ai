@@ -167,7 +167,3 @@ Or enter code `124672614` in *Tools → Add-ons → Get Add-ons...*
 - [Report Issues](https://github.com/ankimcp/anki-mcp-server-addon/issues)
 
 More features coming as development continues.
-
----
-
-{{< newsletter >}}

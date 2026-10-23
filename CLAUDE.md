@@ -24,7 +24,6 @@ This is a pure content repo. There is no test runner, no linter config, no CI ve
 - **Go** - Required for Hugo Modules. CI uses 1.21; `go.mod` declares 1.24.4 (local dev)
 - **GitHub Actions** - Builds the site and deploys it to **Cloudflare Workers Static Assets** via `cloudflare/wrangler-action` on push to `main` (`.github/workflows/hugo.yml`). A second workflow (`.github/workflows/status.yml`) deploys the `status/` page independently. The main workflow's `submodules: recursive` checkout option is vestigial — the theme is a Hugo Module, not a submodule — but it's harmless.
 - **Umami Analytics** - Self-hosted at analytics.anatoly.dev
-- **MailerLite** - Newsletter integration (Form ID: `ZGJ6BF`, account: `1854759`)
 
 ## Development Commands
 
@@ -48,14 +47,6 @@ hugo new content/blog/your-post.md        # New blog post
 
 ### Hextra Theme CSS Convention
 The Hextra theme uses `hx:` prefixed Tailwind utility classes (e.g., `hx:mt-6`, `hx:dark:text-gray-100`). All custom layouts use this prefix. Custom CSS overrides live in `assets/css/custom.css` and use `!important` to override theme defaults.
-
-### MailerLite Form ID Coupling
-The form ID `ZGJ6BF` appears in **three places** that must stay in sync:
-- `content/_index.md` — hero button `onclick="ml('show', 'ZGJ6BF', true)"`
-- `layouts/partials/footer.html` — footer newsletter link
-- `layouts/shortcodes/newsletter.html` — embedded form shortcode
-
-The MailerLite universal script is loaded in `layouts/partials/custom/head-end.html`.
 
 ### Trademark Disclaimer
 The Anki trademark text lives in `i18n/en.yaml` as the `copyright` key (used by the footer). It's NOT in any layout file directly.
@@ -84,10 +75,9 @@ The Anki trademark text lives in `i18n/en.yaml` as the `copyright` key (used by 
 
 ### Custom Layouts
 Key overrides in `/layouts/`:
-- `partials/custom/head-end.html` — Canonical URLs, MailerLite script, Schema.org structured data (SoftwareApplication, WebSite, BlogPosting, Organization), preconnect hints
+- `partials/custom/head-end.html` — Canonical URLs, first-touch attribution snippet, Schema.org structured data (SoftwareApplication, WebSite, BlogPosting, Organization), preconnect hints
 - `blog/single.html` — Custom blog layout with breadcrumb, author attribution, tags (E-E-A-T SEO)
-- `partials/footer.html` — Adds Newsletter/Email/Community Forum/Status links (Status points to https://status.ankimcp.ai/); keeps Hextra's `displayPoweredBy`/copyright logic (driven by `params.footer` in hugo.yaml)
-- `shortcodes/newsletter.html` — Inline newsletter embed
+- `partials/footer.html` — Adds Email/Community Forum/Status links (Status points to https://status.ankimcp.ai/) and Privacy/Terms/Refunds/Delete Account links; keeps Hextra's `displayPoweredBy`/copyright logic (driven by `params.footer` in hugo.yaml)
 - `_default/sitemap.xml` — Custom sitemap with per-section priorities
 
 ## Release Process
@@ -160,9 +150,8 @@ Blog-specific:
 
 Repo-specific checks that can't be caught by the build alone:
 1. `hugo --minify` — catches template/module errors. Must pass.
-2. MailerLite popup — click the footer "Newsletter" link or hero CTA; the `ZGJ6BF` form should open. If it silently fails, check that `minify.disableJS` is still `true` in `hugo.yaml` (see Critical Configuration).
-3. Structured data — after changing `layouts/partials/custom/head-end.html`, paste a built page URL into [Google's Rich Results Test](https://search.google.com/test/rich-results).
-4. Banner dismissal — after bumping `params.banner.key`, clear localStorage (or use incognito) to confirm the banner reappears.
+2. Structured data — after changing `layouts/partials/custom/head-end.html`, paste a built page URL into [Google's Rich Results Test](https://search.google.com/test/rich-results).
+3. Banner dismissal — after bumping `params.banner.key`, clear localStorage (or use incognito) to confirm the banner reappears.
 
 ## Troubleshooting
 

@@ -52,5 +52,3 @@ The source code and issue trackers are on GitHub: the [CLI server](https://githu
 ### Credits
 
 This website is built with [Hextra](https://imfing.github.io/hextra/), a modern, fast, and flexible Hugo theme.
-
-{{< newsletter >}}

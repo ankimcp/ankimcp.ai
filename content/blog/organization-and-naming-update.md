@@ -112,7 +112,3 @@ If you have any questions or encounter issues with the migration:
 - [Email Support](mailto:support@ankimcp.ai) - Direct support
 
 These changes are part of the ongoing effort to maintain a well-organized project.
-
----
-
-{{< newsletter >}}

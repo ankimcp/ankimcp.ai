@@ -20,7 +20,7 @@ Deletion is **immediate and irreversible**.
 
 ### Before you delete: two things that block deletion
 
-The dashboard refuses to delete an account that still has an active subscription or a hosted Anki instance, and tells you which one is in the way. Clear them first:
+The dashboard refuses to delete an account that still has a subscription set to renew or a hosted Anki instance, and tells you which one is in the way. Clear them first. A subscription you've already cancelled, still running until the end of its period, doesn't block deletion.
 
 - **Cancel your subscription.**
   - Bought in the Android app through Google Play: cancel it in the **Play Store** (Play Store → your profile → Payments & subscriptions → Subscriptions). AnkiMCP can't cancel a Google Play subscription for you.
