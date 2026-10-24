@@ -548,3 +548,26 @@ body > .hextra-max-page-width { width: 100%; }
 .hextra-nav-container a[href^="https://web.ankimcp.ai"]:hover {
   filter: brightness(0.92);
 }
+
+/* Site-wide announcement banner: brand blue instead of the theme's near-black,
+   and the message link rendered as a white button. */
+.hextra-banner {
+  background: var(--ankimcp-primary-600, #0a72e6) !important;
+}
+
+.hextra-banner a {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.2rem 0.75rem;
+  border-radius: 9999px;
+  background: #ffffff;
+  color: var(--ankimcp-primary-600, #0a72e6) !important;
+  font-weight: 700;
+  text-decoration: none !important;
+  white-space: nowrap;
+  transition: filter 0.15s ease;
+}
+
+.hextra-banner a:hover {
+  filter: brightness(0.92);
+}
