@@ -158,9 +158,9 @@ params:
   affonsoProgramId: ""
 
   banner:
-    key: 'refresh-tools-2026-10'
+    key: 'maintenance-2026-10-24'
     message: |
-      🔄 **Updated the add-on?** Claude and ChatGPT keep an old copy of the tool list until you refresh it. [How to refresh →](/docs/how-to/troubleshooting/#your-ai-doesnt-see-the-new-tools-after-an-add-on-update)
+      🛠️ **Maintenance in progress** — Hosted Anki, Studio and the API may be unavailable until 05:00 UTC on October 24. Sync resumes automatically. [Status page →](https://status.ankimcp.ai/)
 
   analytics:
     umami:
