@@ -158,9 +158,9 @@ params:
   affonsoProgramId: ""
 
   banner:
-    key: 'refresh-tools-2026-10'
+    key: 'ankidroid-testers-2026-10'
     message: |
-      🔄 **Updated the add-on?** Claude and ChatGPT keep an old copy of the tool list until you refresh it. [How to refresh →](/docs/how-to/troubleshooting/#your-ai-doesnt-see-the-new-tools-after-an-add-on-update)
+      📱 **AnkiMCP for AnkiDroid is coming to Google Play.** Use Claude with your AnkiDroid decks and help us test it. [Become a tester →](https://docs.google.com/forms/d/e/1FAIpQLSfif8EwvBu4R-CNPC66bK9z7fA89sdBBa4td_n0n3iQrFMoNg/viewform)
 
   analytics:
     umami:
