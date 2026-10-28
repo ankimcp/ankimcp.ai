@@ -549,10 +549,36 @@ body > .hextra-max-page-width { width: 100%; }
   filter: brightness(0.92);
 }
 
-/* Site-wide announcement banner: brand blue instead of the theme's near-black,
+/* Site-wide announcement banner: brand-blue gradient instead of the theme's near-black,
    and the message link rendered as a white button. */
 .hextra-banner {
-  background: var(--ankimcp-primary-600, #0a72e6) !important;
+  background: linear-gradient(90deg, #0a5fc2 0%, var(--ankimcp-primary-600, #0a72e6) 45%, #6d4ce6 100%) !important;
+}
+
+/* Gift callout inside the banner: warm amber pill so the offer stands out. */
+.hextra-banner .banner-gift {
+  display: inline-block;
+  margin: 0.15rem 0.25rem;
+  padding: 0.1rem 0.6rem;
+  border-radius: 9999px;
+  background: #fde68a;
+  color: #78350f;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* On phones the message wraps to several lines; keep it clear of the
+   absolutely-positioned close button and let the gift pill wrap too. */
+@media (max-width: 480px) {
+  .hextra-banner > div > div {
+    padding-left: 0 !important;
+    padding-right: 1.75rem !important;
+  }
+
+  .hextra-banner .banner-gift {
+    white-space: normal;
+    border-radius: 0.75rem;
+  }
 }
 
 .hextra-banner a {
