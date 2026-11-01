@@ -158,9 +158,9 @@ params:
   affonsoProgramId: ""
 
   banner:
-    key: 'maintenance-2026-11-01-scheduled-30m'
+    key: 'maintenance-2026-11-01-in-progress'
     message: |
-      🛠️ **Scheduled maintenance: November 1, 02:00–02:30 UTC** — expect brief errors and reconnects; hosted Anki restarts once. [Status page →](https://status.ankimcp.ai/)
+      🛠️ **Maintenance in progress** until about 02:30 UTC — expect brief errors and reconnects; hosted Anki restarts once. [Status page →](https://status.ankimcp.ai/)
       📱 **AnkiMCP for AnkiDroid is coming to Google Play** — help us test it with your own decks. <span class="banner-gift">🎁 First 30 testers get 1 month of AnkiMCP Plus free</span> [Become a tester →](https://docs.google.com/forms/d/e/1FAIpQLSfif8EwvBu4R-CNPC66bK9z7fA89sdBBa4td_n0n3iQrFMoNg/viewform)
 
   analytics:
