@@ -59,6 +59,7 @@ O [add-on](https://ankiweb.net/shared/info/124672614) e a [CLI](https://github.c
 <div class="pricing-card__price">
 <span class="pricing-card__amount">$5</span>
 <span class="pricing-card__period">por mês</span>
+<span class="pricing-card__yearly">ou $50/ano — 2 meses grátis</span>
 </div>
 <ul class="pricing-card__features">
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Tudo do plano Free</li>
@@ -82,6 +83,7 @@ O [add-on](https://ankiweb.net/shared/info/124672614) e a [CLI](https://github.c
 <div class="pricing-card__price">
 <span class="pricing-card__amount">$15</span>
 <span class="pricing-card__period">por mês</span>
+<span class="pricing-card__yearly">ou $150/ano — 2 meses grátis</span>
 </div>
 <ul class="pricing-card__features">
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Tudo do plano Plus</li>
@@ -97,7 +99,7 @@ O [add-on](https://ankiweb.net/shared/info/124672614) e a [CLI](https://github.c
 
 ## Compare os planos
 
-| | Free | Plus ($5/mês) | Pro ($15/mês) |
+| | Free | Plus ($5/mês ou $50/ano) | Pro ($15/mês ou $150/ano) |
 |---|---|---|---|
 | Uso local — [add-on](https://ankiweb.net/shared/info/124672614) &amp; [CLI](https://github.com/ankimcp/anki-mcp-server) | ✓ | ✓ | ✓ |
 | [Acesso remoto](/pt-br/docs/how-to/connect-chatgpt-to-anki/) pelo túnel gerenciado | ✓ | ✓ | ✓ |
@@ -137,7 +139,7 @@ Dá. Se a sua IA roda no mesmo computador que o Anki, você nunca precisa de con
 Não para o uso local. Você só entra na sua conta quando conecta o túnel, para que só você alcance os seus próprios flashcards.
 
 **Quanto custam os planos pagos?**
-O **plano Plus custa $5 por mês** e dá acesso remoto ilimitado. O **plano Pro custa $15 por mês** e acrescenta o Hosted Anki a tudo o que o Plus já tem. Também existe um plano Free gratuito para começar, e tudo o que roda no seu próprio computador continua grátis.
+O **plano Plus custa $5 por mês** e dá acesso remoto ilimitado. O **plano Pro custa $15 por mês** e acrescenta o Hosted Anki a tudo o que o Plus já tem. Os dois planos também podem ser pagos por ano — **$50/ano no Plus** e **$150/ano no Pro** —, o que equivale a dois meses grátis. Também existe um plano Free gratuito para começar, e tudo o que roda no seu próprio computador continua grátis.
 
 **O que é o Hosted Anki?**
 O Hosted Anki (incluído no **plano Pro, de $15/mês**) é uma cópia completa do Anki de verdade rodando nos nossos servidores na nuvem, em vez do seu computador. A sua IA pode alcançá-lo a qualquer momento — mesmo com o notebook desligado — e você mesmo pode abri-lo no navegador, por um acesso remoto embutido. A sua coleção e suas mídias ficam nos nossos servidores, e a sincronização com o AnkiWeb funciona (você mesmo entra no AnkiWeb dentro do acesso remoto; nunca guardamos a sua senha do AnkiWeb). Algumas coisas para saber: as instâncias hibernam depois de cerca de uma hora sem uso e acordam sozinhas na próxima requisição da sua IA (de 30 a 60 segundos de partida a frio), e apagar uma instância é definitivo, então mantenha os seus próprios backups. Veja a [documentação do Hosted Anki](/pt-br/docs/hosted-anki/) para o quadro completo.

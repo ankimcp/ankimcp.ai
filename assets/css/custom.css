@@ -193,6 +193,24 @@ body > .hextra-max-page-width { width: 100%; }
   color: #9ca3af; /* gray-400 */
 }
 
+.pricing-card__yearly {
+  align-self: flex-start;
+  margin-top: 0.6rem;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid #6ee7b7; /* emerald-300 */
+  border-radius: 9999px;
+  background: #d1fae5; /* emerald-100 */
+  color: #065f46; /* emerald-800 */
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.dark .pricing-card__yearly {
+  border-color: #047857; /* emerald-700 */
+  background: rgba(16, 185, 129, 0.18); /* emerald-500 tint */
+  color: #6ee7b7; /* emerald-300 */
+}
+
 /* Feature list */
 .pricing-card__features {
   list-style: none;
