@@ -158,9 +158,9 @@ params:
   affonsoProgramId: ""
 
   banner:
-    key: 'maintenance-2026-11-01-completed'
+    key: 'maintenance-2026-11-07-scheduled'
     message: |
-      ✅ **Maintenance completed** — all services are back online. No action needed. [Status page →](https://status.ankimcp.ai/)
+      🛠️ **Scheduled maintenance: November 7, 02:00–06:00 UTC** — all AnkiMCP services will be unavailable. [Status page →](https://status.ankimcp.ai/)
 
   analytics:
     umami:
