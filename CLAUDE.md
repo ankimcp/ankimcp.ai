@@ -100,6 +100,9 @@ The site runs on **Cloudflare Workers Static Assets**, not GitHub Pages. Two ind
 
 Both configs are live on their custom domains — `routes` points `ankimcp-ai` at `ankimcp.ai` and `ankimcp-status` at `status.ankimcp.ai` — and `workers_dev`/`preview_urls` are `false` in both, so neither Worker is reachable on its `*.workers.dev` URL. `www.ankimcp.ai` is handled separately by a zone Single Redirect rule (see the history below), not by a route.
 
+### ⚠️ HARD RULE: status page and banner changes are never left uncommitted
+Any edit to `status/index.html` or to `params.banner` in `hugo.yaml` is a **public announcement**, not content work. It MUST be committed and pushed **in the same turn it is made**, staging only those two files (`git add hugo.yaml status/index.html`), regardless of the general "never commit until asked" rule — asking for a status/banner update IS the instruction to publish it. An uncommitted status edit is worse than none: the live page keeps announcing stale information. This has happened twice (a Nov 7 2026 "cancelled" notice sat uncommitted for a week while the public page still said "scheduled"). Before ending any turn, if `git status` shows either file modified, commit and push it.
+
 ### Updating the status page
 Edit `status/index.html` (the "EDIT HERE" block near the top holds the current notice and its "Last updated" timestamp — templates for maintenance/incident notices are inline as HTML comments), commit, and push — the `status.yml` workflow deploys it automatically. The page is a manually-posted announcements page, not a live monitoring dashboard — there's no per-component status list. To deploy it locally instead: `npx wrangler deploy -c status/wrangler.jsonc`.
 
