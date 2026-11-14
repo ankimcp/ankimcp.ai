@@ -158,9 +158,9 @@ params:
   affonsoProgramId: ""
 
   banner:
-    key: 'maintenance-2026-11-14-in-progress'
+    key: 'maintenance-2026-11-14-completed-studio-tools'
     message: |
-      🛠️ **Maintenance in progress** until about 06:00 UTC — all AnkiMCP services are unavailable. [Status page →](https://status.ankimcp.ai/)
+      ✅ **Maintenance completed** — all services are back online, and Anki Studio now has a PDF Reader and a Video Player. [See every Studio tool →](https://ankimcp.ai/docs/reference/studio/tools/) · [Status page →](https://status.ankimcp.ai/)
 
   analytics:
     umami:

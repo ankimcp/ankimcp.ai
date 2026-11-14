@@ -191,6 +191,7 @@ ChatGPT finds the right chapter in the whole textbook on its own, creates the de
 - New here? Start with [Get started](/docs/get-started/).
 - Want better cards faster? See [Anki AI prompts](/docs/how-to/anki-ai-prompts/).
 - Want diagrams from the PDF on your cards? See [Add images to cards](/docs/how-to/add-images-to-cards/).
+- Working through a long textbook? Read it in the [PDF Reader](/docs/anki-studio/pdf-reader/) and let your AI make cards from your highlights, notes, and captures as you go — no attaching needed.
 - See [Every way to use AI with Anki](/docs/concepts/anki-ai/).
 
 ---

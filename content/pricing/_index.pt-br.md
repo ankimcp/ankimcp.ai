@@ -43,7 +43,7 @@ O [add-on](https://ankiweb.net/shared/info/124672614) e a [CLI](https://github.c
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>100 requisições com login / mês</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>1.000 requisições sem login (authless) / mês</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>O túnel desconecta após 24 horas sem uso</li>
-<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>100 créditos de <a href="/docs/anki-studio/text-to-speech/">texto para fala (text-to-speech)</a> / mês</span></li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>500 créditos de <a href="/docs/anki-studio/text-to-speech/">texto para fala (text-to-speech)</a> / mês</span></li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>1 <a href="/docs/anki-studio/knowledge-roadmap/">mapa de conhecimento</a></span></li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>30 MB de armazenamento na <a href="/docs/anki-studio/media-library/">biblioteca de mídia</a></span></li>
 </ul>
@@ -66,7 +66,7 @@ O [add-on](https://ankiweb.net/shared/info/124672614) e a [CLI](https://github.c
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Requisições ilimitadas, com ou sem login</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Nenhum limite mensal para ficar controlando</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>O túnel fica conectado — sem desconexão por inatividade</li>
-<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>1.000 créditos de <a href="/docs/anki-studio/text-to-speech/">texto para fala</a> / mês</span></li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>10.000 créditos de <a href="/docs/anki-studio/text-to-speech/">texto para fala</a> / mês</span></li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span><a href="/docs/anki-studio/knowledge-roadmap/">Mapas de conhecimento</a> ilimitados</span></li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>1 GB de armazenamento na <a href="/docs/anki-studio/media-library/">biblioteca de mídia</a></span></li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Apoia o desenvolvimento ativo &amp; os novos recursos</li>
@@ -90,7 +90,8 @@ O [add-on](https://ankiweb.net/shared/info/124672614) e a [CLI](https://github.c
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span><a href="/pt-br/docs/hosted-anki/">Hosted Anki</a>: o seu Anki roda na nossa nuvem, sempre ao alcance da sua IA</span></li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>O notebook pode ficar desligado — não precisa de Anki local</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Acesso remoto ao seu Anki direto no navegador</li>
-<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>3.000 créditos de <a href="/docs/anki-studio/text-to-speech/">texto para fala</a> / mês</span></li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>30.000 créditos de <a href="/docs/anki-studio/text-to-speech/">texto para fala</a> / mês</span></li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>3 GB de armazenamento na <a href="/docs/anki-studio/media-library/">biblioteca de mídia</a></span></li>
 </ul>
 <a class="pricing-card__cta pricing-card__cta--pro" href="https://web.ankimcp.ai/settings">Quero o Hosted Anki</a>
 </div>
@@ -106,9 +107,9 @@ O [add-on](https://ankiweb.net/shared/info/124672614) e a [CLI](https://github.c
 | Requisições com login / mês | 100 | Ilimitadas | Ilimitadas |
 | Requisições sem login / mês | 1.000 | Ilimitadas | Ilimitadas |
 | Desconexão do túnel por inatividade | Desconecta após 24 h sem uso | Nenhuma | Nenhuma |
-| Créditos de [texto para fala](/docs/anki-studio/text-to-speech/) / mês | 100 | 1.000 | 3.000 |
+| Créditos de [texto para fala](/docs/anki-studio/text-to-speech/) / mês | 500 | 10.000 | 30.000 |
 | [Mapas de conhecimento](/docs/anki-studio/knowledge-roadmap/) | 1 | Ilimitados | Ilimitados |
-| Armazenamento na [biblioteca de mídia](/docs/anki-studio/media-library/) | 30 MB | 1 GB | 1 GB |
+| Armazenamento na [biblioteca de mídia](/docs/anki-studio/media-library/) | 30 MB | 1 GB | 3 GB |
 | [Hosted Anki](/pt-br/docs/hosted-anki/) na nossa nuvem | — | — | ✓ |
 | Acesso remoto ao seu Anki no navegador | — | — | ✓ |
 
@@ -151,7 +152,7 @@ Você pode cancelar quando quiser, e o seu acesso continua ativo até o fim do p
 Uma requisição é uma chamada que a sua IA faz ao Anki pelo túnel. Uma única instrução sua pode usar várias requisições — por exemplo, "crie 10 cards" pode contar como 10 requisições se a IA adicionar um por um, ou menos se ela adicionar tudo de uma vez. O plano Free cobre **100 requisições com login** (feitas por um aplicativo de IA conectado à sua conta) e **1.000 requisições sem login** (pelo endereço privado que dispensa login, que você pode ativar com a opção **Authless access** no seu Tunnel Dashboard — ela vem desligada) por mês. No plano Free o túnel também **desconecta após 24 horas sem uso** — se a sua IA passou um dia sem fazer nenhuma requisição, você reconecta pelo add-on ou pela CLI antes da próxima. O plano Plus ($5/mês) tira os dois limites de requisições e mantém o túnel conectado, sem desconexão por inatividade; o Pro tem o mesmo.
 
 **O que são os créditos de texto para fala?**
-São a sua cota mensal do recurso [Text to Speech](/docs/anki-studio/text-to-speech/) do Anki Studio, que transforma texto em áudio para os cards. **Um crédito é um caractere cobrado**, contado do jeito que o nosso provedor de voz conta: letras, espaços e pontuação contam, um caractere chinês (assim como kanji em japonês e hanja em coreano) conta como dois, e a marcação extra que as opções de estilo, velocidade ou tom acrescentam também entra na conta. Todo plano tem uma cota — **100 créditos no plano Free, 1.000 no Plus e 3.000 no Pro**. Os créditos são renovados no começo de cada mês do calendário (UTC), e os que sobram não acumulam. Uma geração que o provedor de voz recusar não custa nada para você.
+São a sua cota mensal do recurso [Text to Speech](/docs/anki-studio/text-to-speech/) do Anki Studio, que transforma texto em áudio para os cards. **Um crédito é um caractere cobrado**, contado do jeito que o nosso provedor de voz conta: letras, espaços e pontuação contam, um caractere chinês (assim como kanji em japonês e hanja em coreano) conta como dois, e a marcação extra que as opções de estilo, velocidade ou tom acrescentam também entra na conta. Todo plano tem uma cota — **500 créditos no plano Free, 10.000 no Plus e 30.000 no Pro**. Os créditos são renovados no começo de cada mês do calendário (UTC), e os que sobram não acumulam. Uma geração que o provedor de voz recusar não custa nada para você.
 
 ---
 

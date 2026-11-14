@@ -91,6 +91,7 @@ The [add-on](https://ankiweb.net/shared/info/124672614) and the [CLI](https://gi
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Laptop can stay off — no local Anki needed</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>In-browser remote desktop access to your Anki</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>30,000 <a href="/docs/anki-studio/text-to-speech/">text-to-speech</a> credits / month</span></li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>3 GB <a href="/docs/anki-studio/media-library/">media library</a> storage</span></li>
 </ul>
 <a class="pricing-card__cta pricing-card__cta--pro" href="https://web.ankimcp.ai/settings">Get Hosted Anki</a>
 </div>
@@ -108,7 +109,7 @@ The [add-on](https://ankiweb.net/shared/info/124672614) and the [CLI](https://gi
 | Tunnel inactivity timeout | Disconnects after 24 h idle | None | None |
 | [Text-to-speech](/docs/anki-studio/text-to-speech/) credits / month | 500 | 10,000 | 30,000 |
 | [Knowledge roadmaps](/docs/anki-studio/knowledge-roadmap/) | 1 | Unlimited | Unlimited |
-| [Media library](/docs/anki-studio/media-library/) storage | 30 MB | 1 GB | 1 GB |
+| [Media library](/docs/anki-studio/media-library/) storage | 30 MB | 1 GB | 3 GB |
 | [Hosted Anki](/docs/hosted-anki/) in our cloud | — | — | ✓ |
 | In-browser remote desktop to your Anki | — | — | ✓ |
 

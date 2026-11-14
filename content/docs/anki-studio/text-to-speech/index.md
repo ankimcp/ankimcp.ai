@@ -52,9 +52,9 @@ Each plan includes a monthly allowance. These are the current allowances and may
 
 | Plan | Credits per month |
 |---|---|
-| Free | 100 |
-| Plus ($5/month) | 1,000 |
-| Pro ($15/month) | 3,000 |
+| Free | 500 |
+| Plus ($5/month) | 10,000 |
+| Pro ($15/month) | 30,000 |
 
 The allowance **resets at the start of each calendar month**, in UTC. Unused credits don't carry over into the next month.
 
@@ -64,13 +64,15 @@ The allowance **resets at the start of each calendar month**, in UTC. Unused cre
 
 Every generation is an **mp3** — the only output format — saved in your media library, in the folder you name (or the root if you name none). The file is tagged `tts` and carries a description with the text, voice, and settings used, so you can find it or reproduce it later. A very long text is trimmed in that description.
 
-Two media library limits apply, the same ones as for anything you upload. A single file can be at most **2 MiB**. The audio also counts against your **total storage** — 30 MiB on the free plan, 1 GiB on a paid plan. See [Media Library](/docs/anki-studio/media-library/) for the full picture.
+Two media library limits apply, the same ones as for anything you upload. A single file can be at most **2 MiB**. The audio also counts against your **total storage** — 30 MiB on the free plan, 1 GiB on Plus, 3 GiB on Pro. See [Media Library](/docs/anki-studio/media-library/) for the full picture.
 
 If a name is already taken, the library saves the file under a slightly different name and tells your AI the real path. So always trust the path in the reply.
 
 ## How the audio gets into Anki
 
 The media library is cloud storage, not your Anki collection. To put a clip on a real card, your AI does the same thing it does for any web audio. First it opens the file to get a temporary link. Then it uses your Anki connection to store the file in your collection and write Anki's `[sound:hola.mp3]` tag into a field. That tag is what shows the play button during review.
+
+When you draft cards in the [Sandbox](/docs/anki-studio/sandbox/#pictures-and-sounds-from-your-media-library), your AI writes `[sound:ankimcp-media:<id>]` into the field instead and pushes the card with `sandbox_push_card`. That tool copies the mp3 into Anki and swaps in the right tag for you.
 
 That step needs your Anki connected, through the add-on or the CLI — see [Add-on vs CLI](/docs/concepts/add-on-vs-cli/).
 

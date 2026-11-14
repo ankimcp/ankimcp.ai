@@ -40,7 +40,8 @@ A few limits keep storage sane. These are the current settings and may change:
 |---|---|
 | Largest single file | 2 MiB |
 | Total storage, free plan | 30 MiB |
-| Total storage, paid plan | 1 GiB |
+| Total storage, Plus plan | 1 GiB |
+| Total storage, Pro plan | 3 GiB |
 
 The dashboard shows how much of your space you've used and tells you up front if a file is too large, before the upload starts.
 
@@ -77,6 +78,8 @@ Your AI can:
 - **Label a file** — update a file's tags and description so it's easier to find later (`media_library_update_file`).
 
 Uploading, deleting, moving, and renaming are **yours to do in the dashboard** — your AI can't do those over MCP. So a typical flow is: you upload a diagram and give it a clear name, then in your next conversation your AI finds it, previews it, and puts it on the cards it drafts with you in the [Sandbox](/docs/anki-studio/sandbox/).
+
+The temporary link is for viewing only — it expires, so it never goes on a card. When your AI adds a note to Anki directly, it uses that link to store the file in your Anki collection first. On sandbox cards it writes a lasting `ankimcp-media:<id>` reference into the field instead, and pushes the card with `sandbox_push_card`, which copies the file into Anki for you. See [Pictures and sounds from your Media Library](/docs/anki-studio/sandbox/#pictures-and-sounds-from-your-media-library).
 
 ---
 
