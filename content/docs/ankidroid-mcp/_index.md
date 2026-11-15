@@ -16,7 +16,7 @@ sitemap_priority: 0.8
 AnkiMCP for AnkiDroid is an Android app that connects your AI assistant to [AnkiDroid](https://github.com/ankidroid/Anki-Android) on your phone. Claude can then read your decks, add and edit notes, and run a review session, using the collection you already study from. You don't need a computer.
 
 {{< callout type="info" >}}
-**Early access.** The app is in its first release (0.1.0). It's in testing on Google Play first, then rolls out to everyone.
+**Now on Google Play:** [get AnkiMCP for AnkiDroid](https://play.google.com/store/apps/details?id=ai.ankimcp.ankidroid). The app is in early access, so features may change, and it may not work on every device or AnkiDroid version.
 {{< /callout >}}
 
 ## How it works
@@ -32,6 +32,8 @@ Your collection stays on your phone. In remote access, only your AI's requests a
 
 ## Get started
 
+Install the app from [Google Play](https://play.google.com/store/apps/details?id=ai.ankimcp.ankidroid), then pick how to connect:
+
 - **[Remote access](/docs/ankidroid-mcp/remote-access/)**: sign in, connect, and add one connector in Claude. Works with Claude everywhere.
 - **[Local Wi-Fi](/docs/ankidroid-mcp/local-wifi/)**: connect Claude Desktop or Claude Code on your home network, with no account.
 
@@ -44,7 +46,7 @@ Your collection stays on your phone. In remote access, only your AI's requests a
 
 ## Google Play or GitHub
 
-The app is on Google Play, and as an APK on [GitHub Releases](https://github.com/ankimcp/ankidroid-mcp/releases). Both builds run the same code, but they're signed with different keys:
+The app is on [Google Play](https://play.google.com/store/apps/details?id=ai.ankimcp.ankidroid), and as an APK on [GitHub Releases](https://github.com/ankimcp/ankidroid-mcp/releases). Both builds run the same code, but they're signed with different keys:
 
 - You can't install one over the other. To switch, uninstall first. You'll need to sign in and set things up again; your AnkiDroid collection isn't touched.
 - Google Play updates the app automatically. The GitHub APK you update by hand.
