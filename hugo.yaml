@@ -158,9 +158,9 @@ params:
   affonsoProgramId: ""
 
   banner:
-    key: 'maintenance-2026-11-14-completed-studio-tools'
+    key: 'black-friday-2026'
     message: |
-      ✅ **Maintenance completed** — all services are back online, and Anki Studio now has a PDF Reader and a Video Player. [See every Studio tool →](https://ankimcp.ai/docs/reference/studio/tools/) · [Status page →](https://status.ankimcp.ai/)
+      🖤 **Black Friday: 4 months free on yearly plans** — Plus $40/year, Pro $120/year for your first year, through November 30. [See pricing →](/pricing/)
 
   analytics:
     umami:
