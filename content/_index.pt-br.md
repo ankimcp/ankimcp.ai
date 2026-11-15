@@ -23,8 +23,8 @@ sitemap_priority: 1.0
 </div>
 
 <div class="hx:mb-6 hero-buttons">
-{{< hextra/hero-button text="Começar agora" link="/pt-br/docs/get-started/" >}}
-{{< hextra/hero-button text="Baixar o add-on" link="https://ankiweb.net/shared/info/124672614" >}}
+{{< hextra/hero-button text="Add-on do Anki" link="https://ankiweb.net/shared/info/124672614" >}}
+{{< hextra/hero-button text="AnkiDroid MCP" link="https://play.google.com/store/apps/details?id=ai.ankimcp.ankidroid" >}}
 </div>
 
 <div class="hx:mt-6"></div>
