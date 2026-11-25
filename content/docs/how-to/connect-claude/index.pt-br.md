@@ -255,7 +255,24 @@ Você deve ver `anki` com o status de conectado. Com o Anki aberto, peça ao Cla
 
 {{< /tabs >}}
 
+## Escolha quais ferramentas do Anki o Claude pode usar sem perguntar
+
+Por padrão, o Claude pode parar e pedir a sua aprovação antes de mexer no seu Anki, com um botão **Allow once** (permitir uma vez). Você pode decidir, ferramenta por ferramenta, o que o Claude faz sozinho e o que ele pergunta antes.
+
+1. No Claude, abra **Plugins** na barra lateral e clique em **AnkiMCP**.
+2. Abra a aba **Permissions**.
+3. Escolha uma configuração para cada ferramenta, ou para um grupo inteiro de uma vez no menu ao lado do nome do grupo. **Always allow** deixa o Claude usar a ferramenta sem perguntar. **Needs approval** faz o Claude perguntar antes.
+
+<img src="claude-tool-permissions.png" width="740" alt="A aba Permissions do conector AnkiMCP no Claude. O grupo Read-only tools está em Always allow, e cada ferramenta dele, como Card Statistics, Find Notes e Card Memory State, tem o seu próprio menu Always allow." />
+
+As ferramentas vêm em grupos. As **Read-only tools** (ferramentas só de leitura), como buscar notas ou ler as estatísticas dos cards, só olham a sua coleção. As ferramentas que mudam a coleção, como adicionar notas ou avaliar um card durante a revisão, ficam em outro grupo mais abaixo na lista. Se o Claude pergunta antes de cada avaliação de card, é esse grupo de baixo que você precisa mudar: colocar só o grupo de leitura em **Always allow** não acaba com esses pedidos.
+
+Mais um detalhe: essas configurações valem quando o Claude está no modo **Manual**. No modo **Auto**, quem decide é uma verificação automática. Ela bloqueia ações que considera arriscadas e pode usar outras ferramentas sem perguntar, mesmo as que estão em **Needs approval**. Se você quer que o Claude sempre pergunte antes de usar uma ferramenta também no modo Auto, escolha **Always ask** na linha dessa ferramenta.
+
 ## Perguntas frequentes
+
+**O Claude pede aprovação para cada ação. Dá para desligar isso?**
+Dá. No Claude, abra **Plugins → AnkiMCP → Permissions** e coloque as ferramentas em que você confia em **Always allow**. As ferramentas que mudam os seus cards, como avaliar um card, ficam em um grupo próprio abaixo das ferramentas só de leitura, então confira os dois. Veja [Escolha quais ferramentas do Anki o Claude pode usar sem perguntar](#escolha-quais-ferramentas-do-anki-o-claude-pode-usar-sem-perguntar).
 
 **Isso funciona no meu celular?**
 Sim, pelo caminho Web. Assim que o conector está na sua conta do Claude, ele aparece no app do Claude no celular depois que você entra na conta. O suporte a conectores no celular está em beta, então algumas funções podem não funcionar perfeitamente ainda. As configurações do pacote Desktop e do Claude Code ficam em um único computador e não chegam ao seu celular.

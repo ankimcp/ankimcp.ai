@@ -257,7 +257,24 @@ You should see `anki` with a connected status. With Anki open, ask Claude Code: 
 
 {{< /tabs >}}
 
+## Choose which Anki tools Claude can use without asking
+
+By default, Claude may stop and ask you to approve an action before it touches your Anki, with an **Allow once** button. You can decide, tool by tool, what Claude does on its own and what it asks about first.
+
+1. In Claude, open **Plugins** in the sidebar and click **AnkiMCP**.
+2. Open the **Permissions** tab.
+3. Pick a setting for each tool, or for a whole group at once with the menu next to the group name. **Always allow** lets Claude use the tool without asking. **Needs approval** makes Claude ask first.
+
+<img src="claude-tool-permissions.png" width="740" alt="The AnkiMCP connector's Permissions tab in Claude. The Read-only tools group is set to Always allow, and each tool in it, such as Card Statistics, Find Notes, and Card Memory State, has its own Always allow menu." />
+
+The tools come in groups. **Read-only tools**, like searching notes or reading card stats, only look at your collection. The tools that change it, like adding notes or rating a card during a review, are in a separate group further down the list. If Claude keeps asking before every card rating, that lower group is the one to change: setting only the read-only group to **Always allow** won't stop those prompts.
+
+One more thing to know: these settings apply when Claude is in **Manual** mode. In **Auto** mode, an automated check decides instead. It blocks actions it flags as risky and may run other tools without asking, even ones set to **Needs approval**. If you want Claude to always ask before a tool in Auto mode too, choose **Always ask** on that tool's row.
+
 ## Common questions
+
+**Claude asks me to approve every action. Can I turn that off?**
+Yes. Open **Plugins → AnkiMCP → Permissions** in Claude and set the tools you trust to **Always allow**. Tools that change your cards, like rating a card, are in their own group below the read-only tools, so check both. See [Choose which Anki tools Claude can use without asking](#choose-which-anki-tools-claude-can-use-without-asking).
 
 **Does this work on my phone?**
 Yes, through the Web path. Once the connector is on your Claude account, it appears in the Claude mobile app after you sign in. Mobile connector support is in beta, so some features may not work perfectly yet. The Desktop bundle and Claude Code setups stay on one computer and do not reach your phone.
