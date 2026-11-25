@@ -85,8 +85,8 @@ Pode compartilhar sem medo, porque ele só funciona depois que você entra na su
 
 Abra o [claude.ai](https://claude.ai) no seu navegador e adicione o túnel como um conector personalizado.
 
-1. Na barra lateral, clique em **Personalizar (Customize)** e abra **Conectores (Connectors)**.
-2. Clique em **Adicionar (Add)**. A janela **Adicionar conector personalizado (Add custom connector)** abre.
+1. Na barra lateral, clique em **Plugins**.
+2. Clique em **Adicionar (Add)** no canto superior direito e escolha **Adicionar conector personalizado (Add custom connector)**. A janela **Adicionar conector personalizado (Add custom connector)** abre.
 3. Dê um nome ao conector, como `AnkiMCP`, cole a URL do seu túnel no campo **URL do servidor MCP (MCP server URL)** e clique em **Continuar (Continue)**.
 
 <img src="claude-add-connector.png" width="560" alt="A janela Add custom connector do claude.ai: o nome AnkiMCP e a URL do túnel https://tunnel.ankimcp.ai/mcp preenchidos, e o botão Continue." />

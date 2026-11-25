@@ -87,8 +87,8 @@ It's safe to share, because it only works after you sign in — requests reach y
 
 Open [claude.ai](https://claude.ai) in your browser and add the tunnel as a custom connector.
 
-1. In the sidebar, click **Customize**, then open **Connectors**.
-2. Click **Add**. The **Add custom connector** window opens.
+1. In the sidebar, click **Plugins**.
+2. Click **Add** in the top right, then choose **Add custom connector**. The **Add custom connector** window opens.
 3. Give the connector a name, such as `AnkiMCP`, paste your tunnel URL into **MCP server URL**, and click **Continue**.
 
 <img src="claude-add-connector.png" width="560" alt="The Add custom connector window in claude.ai: the name AnkiMCP and the tunnel URL https://tunnel.ankimcp.ai/mcp filled in, and a Continue button." />
