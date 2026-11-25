@@ -79,7 +79,7 @@ For full setup, see [Connect ChatGPT to Anki](/docs/how-to/connect-chatgpt-to-an
 
 Claude and ChatGPT read the list of tools **once, when you connect**, and keep that copy. An add-on update changes the list on your side, but the AI keeps using its old copy until you tell it to look again. Nothing is broken; it just needs a refresh.
 
-**Claude (claude.ai).** Open **Settings → Connectors**, click **AnkiMCP**, then the **⋮** menu next to **Disconnect** and choose **Refresh tools list**. The tool permissions list updates in place.
+**Claude (claude.ai).** Click **Plugins** in the sidebar, click **AnkiMCP**, then open the **⋯** menu at the top right and choose **Refresh tools list**. The tool permissions list updates in place.
 
 <img src="claude-refresh-tools-list.png" width="640" alt="Claude settings, Connectors, AnkiMCP connector page: the three-dot menu next to Disconnect is open, showing Refresh tools list and Remove. Below it, the Tool permissions list with read-only tools." />
 

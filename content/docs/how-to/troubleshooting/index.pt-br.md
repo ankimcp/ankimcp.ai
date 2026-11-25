@@ -76,7 +76,7 @@ Para a configuração completa, veja [Conectar o ChatGPT ao Anki](/pt-br/docs/ho
 
 O Claude e o ChatGPT leem a lista de ferramentas **uma vez, quando você conecta**, e guardam essa cópia. Uma atualização do add-on muda a lista do seu lado, mas a IA continua usando a cópia antiga até você mandar ela olhar de novo. Nada está quebrado; só precisa atualizar.
 
-**Claude (claude.ai).** Abra **Configurações (Settings) → Conectores (Connectors)**, clique em **AnkiMCP**, depois no menu **⋮** ao lado de **Desconectar (Disconnect)** e escolha **Atualizar lista de ferramentas (Refresh tools list)**. A lista de permissões das ferramentas é atualizada na hora.
+**Claude (claude.ai).** Clique em **Plugins** na barra lateral, clique em **AnkiMCP**, depois abra o menu **⋯** no canto superior direito e escolha **Atualizar lista de ferramentas (Refresh tools list)**. A lista de permissões das ferramentas é atualizada na hora.
 
 <img src="claude-refresh-tools-list.png" width="640" alt="Configurações do Claude, Conectores, página do conector AnkiMCP: o menu de três pontos ao lado de Disconnect está aberto, mostrando Refresh tools list e Remove. Abaixo, a lista Tool permissions com as ferramentas somente leitura." />
 

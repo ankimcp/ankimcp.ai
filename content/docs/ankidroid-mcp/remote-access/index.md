@@ -85,7 +85,7 @@ You don't need to stay connected. Later, Claude wakes your phone whenever it nee
 
 ## Step 4: Add the connector in Claude
 
-1. In Claude, go to **Settings → Connectors → Add custom connector**. You can do this on [claude.ai](https://claude.ai) or in the desktop app; the connector then works in the Claude app on your phone too.
+1. In Claude, click **Plugins** in the sidebar, then **Add → Add custom connector**. You can do this on [claude.ai](https://claude.ai) or in the desktop app; the connector then works in the Claude app on your phone too.
 2. Paste the URL and sign in with the **same AnkiMCP account** you used in the app.
 3. Start a chat and ask: **"list my Anki decks"**.
 4. The first time Claude uses a tool, it asks for permission. Tap **Allow once**, or **Always allow** so it stops asking.
