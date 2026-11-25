@@ -97,9 +97,9 @@ Open [claude.ai](https://claude.ai) in your browser and add the tunnel as a cust
 
 <img src="claude-add-connector-confirm.png" width="480" alt="Second screen of the Add custom connector window: under OAuth client, Register automatically is selected and marked Detected, with Back and Add buttons at the bottom." />
 
-5. Claude asks you to sign in to AnkiMCP — sign in and approve access. When it's done, the connector shows a **Disconnect** button and the list of Anki tools Claude can use.
+5. Claude asks you to sign in to AnkiMCP — sign in and approve access. When it's done, the connector shows **Connected** and the list of Anki tools Claude can use.
 
-<img src="claude-connector-connected.png" width="740" alt="The connected AnkiMCP connector in claude.ai: the tunnel URL https://tunnel.ankimcp.ai/mcp, a Disconnect button, and the tool permissions list with tools such as Add note and Create deck." />
+<img src="claude-connector-connected.png" width="740" alt="The AnkiMCP connector page in claude.ai Plugins: the AnkiMCP connector marked Connected, the connector URL https://tunnel.ankimcp.ai/mcp, and its read-only and write/delete tools, such as find_notes, add_note, and card_suspend." />
 
 For the exact menu path, see Anthropic's [custom connectors guide](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp).
 
