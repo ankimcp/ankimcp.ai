@@ -151,6 +151,15 @@ You can cancel anytime, and your access stays active until the end of the period
 **What counts as a request, and what do the limits mean?**
 One request is one call your AI makes to Anki through the tunnel. A single instruction from you can use several requests — for example, "create 10 cards" may count as 10 requests if the AI adds them one by one, or fewer if it adds them in a batch. The free tier covers **100 signed-in** requests (from an AI app signed in with your account) and **1,000 authless** requests (through the private no-sign-in address you can enable with the **Authless access** toggle in your Tunnel Dashboard — it's off by default) per month. On the free tier the tunnel also **disconnects after 24 hours of inactivity** — if your AI hasn't made a request for a day, you reconnect from the add-on or CLI before the next one. The Plus plan ($5/month) removes both request limits and keeps the tunnel connected with no inactivity timeout; Pro includes the same.
 
+**I've used up my monthly requests. How do I upgrade?**
+When your AI says the Anki connection's monthly quota is used up, your account has reached the free tier's limit. To remove it, sign in to your [web dashboard](https://web.ankimcp.ai/settings) with the same account you use for the tunnel. On the **Settings** page, scroll down to **Plan**, pick **Monthly** or **Yearly**, and click **Subscribe to Plus**. Plus ($5/month) is the cheapest plan with no request limits. If you also want Hosted Anki, click **Subscribe to Pro** ($15/month) instead.
+
+![The AnkiMCP web dashboard Settings page. At the bottom, the Plan section shows the active Free Plan, a Monthly/Yearly toggle, and two buttons: Subscribe to Plus at $5/month and Subscribe to Pro at $15/month.](/images/upgrade/settings-plan.png)
+
+The button opens a secure checkout page from Polar, our payment provider. Enter your card details and click **Subscribe now**.
+
+![The Polar checkout page for the Plus plan at $5/month, with fields for email, card number, expiration date, security code, cardholder name, and billing country, and a Subscribe now button.](/images/upgrade/checkout.png)
+
 **What are text-to-speech credits?**
 They're your monthly allowance for the [Text to Speech](/docs/anki-studio/text-to-speech/) feature in Anki Studio, which turns text into card audio. **One credit is one billed character**, counted the way our speech provider counts it: letters, spaces, and punctuation all count, a Chinese character (also kanji in Japanese and hanja in Korean) counts as two, and the extra markup a style, rate, or pitch option adds is counted too. Every plan gets an allowance — **500 credits on the free tier, 10,000 on Plus, 30,000 on Pro**. Credits reset at the start of each calendar month (UTC), and unused credits don't carry over. A generation the speech provider refuses costs you nothing.
 

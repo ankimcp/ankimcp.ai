@@ -151,6 +151,15 @@ Você pode cancelar quando quiser, e o seu acesso continua ativo até o fim do p
 **O que conta como requisição e o que os limites significam?**
 Uma requisição é uma chamada que a sua IA faz ao Anki pelo túnel. Uma única instrução sua pode usar várias requisições — por exemplo, "crie 10 cards" pode contar como 10 requisições se a IA adicionar um por um, ou menos se ela adicionar tudo de uma vez. O plano Free cobre **100 requisições com login** (feitas por um aplicativo de IA conectado à sua conta) e **1.000 requisições sem login** (pelo endereço privado que dispensa login, que você pode ativar com a opção **Authless access** no seu Tunnel Dashboard — ela vem desligada) por mês. No plano Free o túnel também **desconecta após 24 horas sem uso** — se a sua IA passou um dia sem fazer nenhuma requisição, você reconecta pelo add-on ou pela CLI antes da próxima. O plano Plus ($5/mês) tira os dois limites de requisições e mantém o túnel conectado, sem desconexão por inatividade; o Pro tem o mesmo.
 
+**Usei todas as minhas requisições do mês. Como faço upgrade?**
+Quando a sua IA avisa que a cota mensal da conexão com o Anki acabou, a sua conta chegou ao limite do plano Free. Para tirar o limite, entre no seu [painel web](https://web.ankimcp.ai/settings) com a mesma conta que você usa no túnel. Na página **Settings**, desça até **Plan**, escolha **Monthly** (mensal) ou **Yearly** (anual) e clique em **Subscribe to Plus**. O Plus ($5/mês) é o plano mais barato sem limite de requisições. Se também quiser o Hosted Anki, clique em **Subscribe to Pro** ($15/mês).
+
+![A página Settings do painel web do AnkiMCP. Na parte de baixo, a seção Plan mostra o Free Plan ativo, a opção Monthly/Yearly e dois botões: Subscribe to Plus por $5/mês e Subscribe to Pro por $15/mês.](/images/upgrade/settings-plan.png)
+
+O botão abre uma página de pagamento segura da Polar, a nossa processadora de pagamentos. Preencha os dados do cartão e clique em **Subscribe now**.
+
+![A página de pagamento da Polar para o plano Plus por $5/mês, com campos de email, número do cartão, validade, código de segurança, nome do titular e país de cobrança, e o botão Subscribe now.](/images/upgrade/checkout.png)
+
 **O que são os créditos de texto para fala?**
 São a sua cota mensal do recurso [Text to Speech](/docs/anki-studio/text-to-speech/) do Anki Studio, que transforma texto em áudio para os cards. **Um crédito é um caractere cobrado**, contado do jeito que o nosso provedor de voz conta: letras, espaços e pontuação contam, um caractere chinês (assim como kanji em japonês e hanja em coreano) conta como dois, e a marcação extra que as opções de estilo, velocidade ou tom acrescentam também entra na conta. Todo plano tem uma cota — **500 créditos no plano Free, 10.000 no Plus e 30.000 no Pro**. Os créditos são renovados no começo de cada mês do calendário (UTC), e os que sobram não acumulam. Uma geração que o provedor de voz recusar não custa nada para você.
 
